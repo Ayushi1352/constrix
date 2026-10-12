@@ -1,26 +1,123 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  The design is drawn on a 1686px wide canvas. Every spacing utility is one
+  "design pixel" (w-388 = 388px in the design) and fs-* sets font sizes the
+  same way. From 1280px up the root font size follows the viewport, so the
+  desktop layout keeps the design's exact proportions on every screen.
+*/
+@theme {
+  --spacing: 0.0625rem;
+
+  --color-copper: #c87a2e;
+  --color-copper-light: #eb9a43;
+  --color-copper-dark: #a95e1e;
+  --color-flame: #c87a2e;
+  --color-tangerine: #d48032;
+  --color-nav: #0a1c26;
+  --color-ink: #0a1c26;
+  --color-coal: #0a1c26;
+  --color-night: #061219;
+  --color-panel: #08161f;
+  --color-cream: #fcf8f4;
+  --color-peach: #fceddd;
+  --color-mist: #f9fbfc;
+  --color-slate: #5e6870;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-poppins: var(--ff-poppins), sans-serif;
+  --font-montserrat: var(--ff-montserrat), sans-serif;
+  --font-rajdhani: var(--ff-rajdhani), sans-serif;
+  --font-roboto: var(--ff-roboto), sans-serif;
+  --font-figtree: var(--ff-figtree), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility fs-* {
+  font-size: calc(--value(integer) * 0.0625rem);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: min(16px, calc(100vw / 105.375));
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #0a1c26;
+  font-family: var(--ff-poppins), sans-serif;
+  overflow-x: clip;
+}
+
+a[href],
+button:not(:disabled),
+[role="button"],
+select {
+  cursor: pointer;
+}
+
+.section-space {
+  padding-block: 3rem;
+}
+
+@media (min-width: 640px) {
+  .section-space {
+    padding-block: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-space {
+    padding-block: 5rem;
+  }
+}
+
+.section-space-bottom {
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .section-space-bottom {
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-space-bottom {
+    padding-bottom: 5rem;
+  }
+
+  .home-hero {
+    height: calc(100svh - 72px);
+  }
+
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .home-hero {
+      height: calc(100svh - 160px);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .home-hero {
+      height: calc(100svh - 14rem);
+    }
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
 }
