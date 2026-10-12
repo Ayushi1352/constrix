@@ -51,15 +51,15 @@ export default function About({ detailed = false }: { detailed?: boolean }) {
             ) : (
               <Link
                 href={about.button.href}
-                className="mt-30 inline-flex h-52 items-stretch font-montserrat fs-15 font-medium text-white xl:mt-39 xl:h-61 xl:w-254 xl:fs-18"
+                className="group mt-30 inline-flex h-52 items-stretch font-montserrat fs-15 font-medium text-white xl:mt-39 xl:h-61 xl:w-254 xl:fs-18"
               >
-                <span className="flex flex-1 items-center gap-18 bg-[#111a2c] px-24 xl:gap-20 xl:px-27">
+                <span className="flex flex-1 items-center gap-18 bg-[#111a2c] px-24 transition-colors group-hover:bg-copper xl:gap-20 xl:px-27">
                   {about.button.label}
                   <svg viewBox="0 0 60 10" className="h-10 w-50 xl:w-60" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden="true">
                     <path d="M0 5h58M54 1.500 58.500 5 54 8.500" />
                   </svg>
                 </span>
-                <span className="w-16 bg-[#d9761e] xl:w-18" />
+                <span className="w-16 bg-[#d9761e] transition-colors group-hover:bg-[#111a2c] xl:w-18" />
               </Link>
             )}
           </div>
@@ -68,10 +68,10 @@ export default function About({ detailed = false }: { detailed?: boolean }) {
         {/* two photos with the experience badge; positions are % of the 770x715 design box */}
         <div className="@container relative mx-auto aspect-[770/715] w-full max-w-560 lg:w-1/2 xl:mr-0 xl:ml-auto xl:w-770 xl:max-w-none">
           <div className="absolute top-0 left-0 h-[96.1%] w-[46.75%] overflow-hidden">
-            <Image src={about.imageLeft} alt="Building under construction" fill sizes="(min-width: 1024px) 23vw, 46vw" className="object-cover" />
+            <Image src={about.imageLeft} alt={about.imageLeftAlt} fill sizes="(min-width: 1024px) 23vw, 46vw" className="object-cover" />
           </div>
           <div className="absolute top-[2.5%] right-0 h-[97.5%] w-[49.5%] overflow-hidden">
-            <Image src={about.imageRight} alt="Construction worker on site" fill sizes="(min-width: 1024px) 24vw, 49vw" className="object-cover" />
+            <Image src={about.imageRight} alt={about.imageRightAlt} fill sizes="(min-width: 1024px) 24vw, 49vw" className="object-cover" />
           </div>
           <div className="absolute top-[36.6%] left-[38.9%] flex h-[27.8%] w-[27.6%] flex-col items-center justify-center bg-linear-to-br from-[#e9a755] via-[#d57f2e] to-[#b15a1b] text-center font-montserrat text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
             <span className="text-[8.6cqw] leading-[1] font-extrabold tracking-[-0.02em]">{about.badgeValue}</span>

@@ -80,6 +80,7 @@ const site = {
   hero: sec.Banner.variants.ConstrixBanner1,
   banner: sec.Banner.variants.ConstrixBanner1,
   pageBanner: sec.PageBanner.variants.ConstrixPageBanner1,
+  pages: sec.PageBanner.variants.ConstrixPageBanner1.pages,
   about: sec.About.variants.ConstrixAbout1,
   aboutUsSection: sec.About.variants.ConstrixAbout1,
   services: sec.Services.variants.ConstrixServices1,
@@ -143,6 +144,23 @@ export const faq = site.faq;
 export const terms = site.terms;
 export const privacy = site.privacy;
 export const sitemap = site.sitemap;
+
+// Browser tab title: "<page> | <site name>"
+export const pageTitle = (title: string) => `${title} | ${site.site.name}`;
+
+// Phone, email and address live once in site.json (Header > site > contact).
+export const contactInfo = site.site.contact;
+
+// A card either carries its own `lines` or points at a contact field with `source`.
+export function contactLines(item: { source?: string; lines?: string[] }): string[] {
+  if (!item.source) return item.lines ?? [];
+  const value = contactInfo[item.source as keyof typeof contactInfo];
+  return Array.isArray(value) ? value : [value];
+}
+
+// Fills {phone} / {email} placeholders inside long text such as the privacy policy.
+export const fillContact = (text: string) =>
+  text.replaceAll("{phone}", contactInfo.phone).replaceAll("{email}", contactInfo.email);
 
 export type SiteData = typeof site;
 export { site };

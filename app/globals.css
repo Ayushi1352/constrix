@@ -44,7 +44,12 @@ html {
 
 @media (min-width: 1280px) {
   html {
-    font-size: min(16px, calc(100vw / 105.375));
+    /*
+      Header (140) + nav (84) + home banner (672) = 896 design pixels. The
+      height term keeps all three inside one screen, so the banner's feature
+      row is never cut off on short or zoomed-in screens.
+    */
+    font-size: max(10px, min(16px, calc(100vw / 105.375), calc(100svh / 56.25)));
   }
 }
 
@@ -93,19 +98,15 @@ select {
     padding-bottom: 5rem;
   }
 
+  /* min-height, so the feature row is never clipped on short screens */
   .home-hero {
-    height: calc(100svh - 72px);
+    min-height: calc(100svh - 160px);
   }
 
-  @media (min-width: 1024px) and (max-width: 1279px) {
-    .home-hero {
-      height: calc(100svh - 160px);
-    }
-  }
-
+  /* 672 design pixels: the banner's height on the 1686px canvas */
   @media (min-width: 1280px) {
     .home-hero {
-      height: calc(100svh - 14rem);
+      min-height: 42rem;
     }
   }
 }

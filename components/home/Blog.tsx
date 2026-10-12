@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { site as data } from "@/data";
@@ -13,8 +16,12 @@ function Arrow({ className }: { className?: string }) {
 }
 
 // `limit` shows only the first posts (home page); the Blog page shows all of them.
-export default function Blog({ limit }: { limit?: number }) {
+export default function Blog({ limit, showViewAll = true, pageSize = 6 }: { limit?: number; showViewAll?: boolean; pageSize?: number }) {
+  const [currentPage, setCurrentPage] = useState(1);
   const posts = limit ? blog.posts.slice(0, limit) : blog.posts;
+  const totalPages = !limit && posts.length > 0 ? Math.ceil(posts.length / pageSize) : 1;
+  const safePage = Math.min(currentPage, totalPages || 1);
+  const visiblePosts = limit ? posts : posts.slice((safePage - 1) * pageSize, safePage * pageSize);
 
   return (
     <section className="section-space bg-white">
@@ -28,18 +35,20 @@ export default function Blog({ limit }: { limit?: number }) {
           {blog.title} <span className="text-copper">{blog.highlight}</span>
         </h2>
         <p className="mx-auto mt-8 max-w-590 text-center fs-14 leading-20 text-[#5c6170] xl:mt-6 xl:max-w-none xl:whitespace-pre-line">{blog.text}</p>
-        <div className="mt-20 flex justify-center xl:absolute xl:top-52 xl:right-55 xl:mt-0">
-          <Link
-            href={blog.button.href}
-            className="inline-flex h-46 w-177 items-center justify-center gap-24 border-[1.5px] border-copper fs-14 font-semibold text-copper transition-colors hover:bg-copper hover:text-white"
-          >
-            {blog.button.label}
-            <Arrow className="h-16 w-24" />
-          </Link>
-        </div>
+        {showViewAll && (
+          <div className="mt-20 flex justify-center xl:absolute xl:top-52 xl:right-55 xl:mt-0">
+            <Link
+              href={blog.button.href}
+              className="inline-flex h-46 w-177 items-center justify-center gap-24 border-[1.5px] border-copper fs-14 font-semibold text-copper transition-colors hover:bg-copper hover:text-white"
+            >
+              {blog.button.label}
+              <Arrow className="h-16 w-24" />
+            </Link>
+          </div>
+        )}
 
         <div className="mt-32 grid gap-x-16 gap-y-32 sm:grid-cols-2 lg:grid-cols-3 xl:mt-24 xl:gap-y-61">
-          {posts.map((post) => (
+          {visiblePosts.map((post) => (
             <article
               key={post.slug}
               className="group flex flex-col overflow-hidden rounded-[4px] bg-mist shadow-[0_3px_14px_rgba(15,25,45,0.09)]"
@@ -76,6 +85,46 @@ export default function Blog({ limit }: { limit?: number }) {
             </article>
           ))}
         </div>
+
+        {!limit && totalPages > 1 && (
+          <div className="mt-28 flex items-center justify-center gap-10"> 
+            <button
+              type="button"
+              onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+              disabled={safePage === 1}
+              className="flex size-40 items-center justify-center rounded-full border border-[#d8dfe6] bg-white text-coal transition-colors enabled:hover:border-copper enabled:hover:bg-copper enabled:hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+              aria-label="Previous blog page"
+            >
+              <svg viewBox="0 0 24 16" className="h-16 w-24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <path d="M23 8H2M9 1.5 2 8l7 6.5" />
+              </svg>
+            </button>
+            <div className="flex items-center gap-8 fs-15 text-coal">
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                <button
+                  key={page}
+                  type="button"
+                  onClick={() => setCurrentPage(page)}
+                  className={`flex size-34 items-center justify-center rounded-full transition-colors ${safePage === page ? "bg-copper text-white" : "bg-[#f7f4f2] text-coal hover:bg-copper hover:text-white"}`}
+                  aria-label={`Go to blog page ${page}`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+              disabled={safePage === totalPages}
+              className="flex size-40 items-center justify-center rounded-full border border-[#d8dfe6] bg-white text-coal transition-colors enabled:hover:border-copper enabled:hover:bg-copper enabled:hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+              aria-label="Next blog page"
+            >
+              <svg viewBox="0 0 24 16" className="h-16 w-24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                <path d="M1 8h21M15 1.5 22 8l-7 6.5" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

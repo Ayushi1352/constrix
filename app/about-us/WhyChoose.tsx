@@ -39,7 +39,7 @@ export default function WhyChoose() {
         <div className="relative aspect-[755/494] w-full overflow-hidden rounded-[4px] lg:w-1/2 xl:ml-auto xl:w-755">
           <Image
             src={whyChoose.image}
-            alt="Engineer reviewing plans on a construction site"
+            alt={whyChoose.imageAlt}
             fill
             sizes="(min-width: 1024px) 46vw, 100vw"
             className="object-cover"

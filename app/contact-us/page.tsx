@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/common/PageBanner";
+import { site as data, pageTitle } from "@/data";
 import InfoCards from "./InfoCards";
 import ContactForm from "./ContactForm";
 import Location from "./Location";
 
-export const metadata: Metadata = { title: "Contact Us | Constrix" };
+const { title } = data.pages.contactUs;
+
+export const metadata: Metadata = { title: pageTitle(title) };
 
 export default function ContactUsPage() {
   return (
     <>
-      <PageBanner title="Contact Us" />
+      <PageBanner title={title} />
       <section className="section-space bg-linear-to-b from-[#fdfdfd] from-10% to-cream to-40%">
         <InfoCards />
         <div className="mx-auto mt-32 flex w-full max-w-1686 flex-col gap-32 px-16 sm:px-24 lg:flex-row lg:gap-24 xl:mt-40 xl:px-0 xl:pl-39">

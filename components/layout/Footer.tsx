@@ -7,23 +7,21 @@ const { site, footer, services } = data;
 const serviceLinks = services.items
   .filter((item) => item.showInGrid)
   .map((item) => ({ label: item.title, href: `/our-services/${item.slug}` }));
-const legalLinks = footer.supportLinks.filter(
-  (link) => link.href === "/privacy-policy" || link.href === "/terms-and-conditions" || link.href === "/sitemap",
-);
+const legalLinks = footer.supportLinks.filter((link) => link.legal);
 
 function LinkColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <div>
-      <h3 className="fs-14 font-extrabold tracking-[0.1em] text-white uppercase xl:fs-16">{title}</h3>
-      <span className="mt-8 block h-3 w-42 bg-copper xl:mt-7" />
-      <ul className="mt-16 space-y-10 xl:mt-20 xl:space-y-10">
+      <h3 className="fs-12 font-extrabold tracking-[0.08em] text-white uppercase sm:fs-13 xl:fs-16">{title}</h3>
+      <span className="mt-8 block h-3 w-36 bg-copper sm:w-38 xl:mt-7 xl:w-42" />
+      <ul className="mt-12 space-y-8 sm:mt-14 xl:mt-20 xl:space-y-10">
         {links.map((link) => (
           <li key={link.label}>
             <Link
               href={link.href}
-              className="flex items-center gap-10 fs-14 leading-21 text-[#e6e6e6] transition-colors hover:text-copper xl:fs-15 xl:leading-21"
+              className="flex items-center gap-8 fs-12 leading-18 text-[#e6e6e6] transition-colors hover:text-copper sm:fs-13 sm:leading-20 lg:fs-14 lg:leading-21 xl:fs-15 xl:leading-21 xl:gap-10"
             >
-              <Icon name="chevronRight" className="-ml-3 size-14 shrink-0 text-copper xl:size-16" strokeWidth={2.6} />
+              <Icon name="chevronRight" className="-ml-2 size-12 shrink-0 text-copper sm:size-13 xl:-ml-3 xl:size-16" strokeWidth={2.6} />
               {link.label}
             </Link>
           </li>
@@ -34,18 +32,19 @@ function LinkColumn({ title, links }: { title: string; links: { label: string; h
 }
 
 export default function Footer() {
-  const mapHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(footer.address.join(" "))}`;
+  const mapHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.contact.address.join(" "))}`;
   const contacts = [
-    { icon: "pinFill", lines: footer.address, href: mapHref, external: true },
-    { icon: "phoneFill", lines: footer.phones, href: (line: string) => `tel:${line.replace(/[^\d+]/g, "")}` },
-    { icon: "mailFill", lines: [footer.email], href: (line: string) => `mailto:${line}` },
+    { icon: "pinFill", lines: site.contact.address, href: mapHref, external: true },
+    { icon: "phoneFill", lines: [site.contact.phone], href: (line: string) => `tel:${line.replace(/[^\d+]/g, "")}` },
+    { icon: "mailFill", lines: [site.contact.email], href: (line: string) => `mailto:${line}` },
   ];
 
   return (
     <footer className="bg-night font-montserrat">
       <div className="mx-auto w-full max-w-1686 px-20 sm:px-32 xl:pr-56 xl:pl-66">
-        <div className="grid gap-x-32 gap-y-32 pt-40 pb-32 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[28.375rem_15.9375rem_17.8125rem_245px] xl:justify-between xl:gap-0 xl:pt-72 xl:pb-24">
-          <div className="sm:col-span-2 lg:col-span-3 xl:col-span-1 xl:border-r xl:border-white/8 xl:pr-40 xl:pb-32">
+        {/* mobile: quick links + services share a row; tablet: get in touch joins that row */}
+        <div className="grid grid-cols-2 gap-x-16 gap-y-32 pt-40 pb-32 sm:gap-x-28 md:grid-cols-[1fr_1.1fr_1.3fr] md:gap-x-24 xl:grid-cols-[28.375rem_15.9375rem_17.8125rem_245px] xl:justify-between xl:gap-0 xl:pt-72 xl:pb-24">
+          <div className="col-span-2 md:col-span-3 xl:col-span-1 xl:border-r xl:border-white/8 xl:pr-40 xl:pb-32">
             <Link href="/" className="inline-block xl:ml-5">
               <Image
                 src={site.logoWhite}
@@ -61,25 +60,25 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="xl:pt-13 xl:pl-40">
+          <div className="min-w-0 xl:pt-13 xl:pl-40">
             <LinkColumn title={footer.quickLinksTitle} links={footer.quickLinks} />
           </div>
-          <div className="xl:pt-13">
+          <div className="min-w-0 xl:pt-13">
             <LinkColumn title={footer.servicesTitle} links={serviceLinks} />
           </div>
 
-          <div className="xl:border-l xl:border-white/8 xl:pt-13">
-            <h3 className="fs-14 font-extrabold tracking-[0.1em] text-white uppercase xl:fs-16">
+          <div className="col-span-2 min-w-0 md:col-span-1 xl:border-l xl:border-white/8 xl:pt-13">
+            <h3 className="fs-14 font-extrabold tracking-[0.1em] text-white uppercase md:fs-13 md:tracking-[0.08em] lg:fs-14 lg:tracking-[0.1em] xl:fs-16">
               {footer.contactTitle}
             </h3>
-            <span className="mt-8 block h-3 w-42 bg-copper xl:mt-7" />
-            <ul className="mt-16 space-y-12 xl:mt-20 xl:space-y-12">
+            <span className="mt-8 block h-3 w-42 bg-copper md:w-38 lg:w-42 xl:mt-7" />
+            <ul className="mt-16 space-y-12 md:mt-14 lg:mt-16 xl:mt-20 xl:space-y-12">
               {contacts.map((contact) => (
-                <li key={contact.icon} className="flex items-center gap-20 xl:gap-28">
-                  <span className="flex size-44 shrink-0 items-center justify-center border-2 border-copper text-copper-light xl:size-48">
-                    <Icon name={contact.icon} className="size-22 xl:size-26" />
+                <li key={contact.icon} className="flex items-center gap-20 md:gap-12 lg:gap-20 xl:gap-28">
+                  <span className="flex size-44 shrink-0 items-center justify-center border-2 border-copper text-copper-light md:size-38 lg:size-44 xl:size-48">
+                    <Icon name={contact.icon} className="size-22 md:size-18 lg:size-22 xl:size-26" />
                   </span>
-                  <span className="fs-14 leading-21 break-words xl:fs-15 xl:leading-22">
+                  <span className="min-w-0 fs-14 leading-21 break-words md:fs-13 md:leading-20 lg:fs-14 lg:leading-21 xl:fs-15 xl:leading-22">
                     {contact.lines.map((line) => (
                       <a
                         key={line}

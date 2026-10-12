@@ -1,5 +1,5 @@
 import Icon from "@/components/common/Icon";
-import { site as data } from "@/data";
+import { site as data, contactLines } from "@/data";
 
 export default function InfoCards() {
   return (
@@ -15,7 +15,7 @@ export default function InfoCards() {
           <div className="min-w-0 xl:pt-4">
             <h3 className="fs-18 leading-28 font-semibold text-[#111418] xl:fs-20 xl:leading-30">{card.title}</h3>
             <p className="mt-2 fs-15 leading-26 break-words text-[#555b64] xl:mt-5 xl:fs-18 xl:leading-32 xl:tracking-[-0.01em] xl:whitespace-nowrap">
-              {card.lines.map((line) => (
+              {contactLines(card).map((line) => (
                 <span key={line} className="block">
                   {line}
                 </span>

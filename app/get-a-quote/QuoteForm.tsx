@@ -57,7 +57,7 @@ export default function QuoteForm() {
           </Field>
           <button
             type="submit"
-            className="flex h-60 items-center justify-center gap-20 rounded-[4px] bg-copper fs-18 font-semibold text-white transition-colors hover:bg-copper-dark sm:col-span-2 xl:-mt-3 xl:h-71 xl:gap-24 xl:fs-20"
+            className="flex h-60 items-center justify-center gap-20 rounded-[4px] border border-copper bg-copper fs-18 font-semibold text-white transition-colors hover:bg-white hover:text-copper sm:col-span-2 xl:-mt-3 xl:h-71 xl:gap-24 xl:fs-20"
           >
             {form.button}
             <Icon name="arrowRight" className="size-22" strokeWidth={2.2} />

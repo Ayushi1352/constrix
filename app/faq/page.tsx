@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/common/PageBanner";
-import { site as data } from "@/data";
+import { site as data, pageTitle } from "@/data";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions (FAQ) | Constrix",
-  description: "Find clear answers to common questions about Constrix construction services, costs, timelines, and warranties.",
+  title: pageTitle(data.faq.metaTitle),
+  description: data.faq.metaDescription,
 };
 
 export default function FaqPage() {
@@ -26,13 +26,13 @@ export default function FaqPage() {
 
           {/* Simple Clean Numbered Q&A List */}
           <div className="mt-40 space-y-36 sm:mt-48 sm:space-y-40">
-            {faq.items.map((item) => (
+            {faq.items.map((item, index) => (
               <section
-                key={item.number}
+                key={item.question}
                 className="border-t border-[#f0f0f0] pt-32 sm:pt-36"
               >
                 <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
-                  <span className="text-copper">{item.number}.</span> {item.question}
+                  <span className="text-copper">{index + 1}.</span> {item.question}
                 </h2>
                 <p className="mt-12 font-figtree fs-15 leading-26 text-[#5e6870] sm:mt-14 sm:fs-16 sm:leading-28">
                   {item.answer}

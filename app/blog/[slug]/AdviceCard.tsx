@@ -21,7 +21,7 @@ export default function AdviceCard() {
         <p className="mt-14 max-w-360 fs-16 leading-27 text-white xl:mt-18 xl:max-w-none xl:fs-20 xl:leading-31 xl:whitespace-pre-line">{help.text}</p>
         <Link
           href={help.button.href}
-          className="mt-20 inline-flex h-56 items-center justify-center gap-20 rounded-[2px] bg-copper px-30 fs-17 font-semibold text-white transition-colors hover:bg-copper-dark xl:mt-22 xl:h-65 xl:w-217 xl:px-0 xl:fs-18"
+          className="mt-20 inline-flex h-56 items-center justify-center gap-20 rounded-[2px] border border-copper bg-copper px-30 fs-17 font-semibold text-white transition-colors hover:bg-white hover:text-copper xl:mt-22 xl:h-65 xl:w-217 xl:px-0 xl:fs-18"
         >
           {help.button.label}
           <Icon name="arrowRight" className="size-20" strokeWidth={2.4} />

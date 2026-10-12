@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageBanner from "@/components/common/PageBanner";
-import { site as data } from "@/data";
+import { site as data, pageTitle } from "@/data";
 
 export const metadata: Metadata = {
-  title: "Sitemap | Constrix",
-  description: "Browse all pages, construction services, project categories, and articles on the Constrix website.",
+  title: pageTitle(data.sitemap.metaTitle),
+  description: data.sitemap.metaDescription,
 };
 
 export default function SitemapPage() {
@@ -14,7 +14,7 @@ export default function SitemapPage() {
   const mainPages = [
     ...nav.map((item) => ({ label: item.label, href: item.href })),
     { label: data.header.button.label, href: data.header.button.href },
-    { label: "Client Testimonials", href: "/testimonials" },
+    sitemap.testimonialsLink,
   ];
 
   const serviceLinks = services.items.map((svc) => ({
@@ -23,8 +23,8 @@ export default function SitemapPage() {
   }));
 
   const projectCategories = projects.categories.map((cat) => ({
-    label: `${cat} Construction Projects`,
-    href: `/our-projects`,
+    label: `${cat} ${sitemap.projectLinkSuffix}`,
+    href: sitemap.projectsHref,
   }));
 
   const blogPosts = blog.posts.map((post) => ({
@@ -57,10 +57,10 @@ export default function SitemapPage() {
             {/* 1. Main Pages */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
               <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
-                <span className="text-copper">1.</span> Main Pages
+                <span className="text-copper">1.</span> {sitemap.groups.main.title}
               </h2>
               <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
-                Primary navigation and essential company destinations:
+                {sitemap.groups.main.text}
               </p>
               <ul className="mt-14 grid gap-10 sm:grid-cols-2">
                 {mainPages.map((page) => (
@@ -79,10 +79,10 @@ export default function SitemapPage() {
             {/* 2. Construction Services */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
               <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
-                <span className="text-copper">2.</span> Construction Services
+                <span className="text-copper">2.</span> {sitemap.groups.services.title}
               </h2>
               <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
-                Turnkey civil, residential, commercial, and industrial engineering solutions:
+                {sitemap.groups.services.text}
               </p>
               <ul className="mt-14 grid gap-10 sm:grid-cols-2">
                 {serviceLinks.map((svc) => (
@@ -101,10 +101,10 @@ export default function SitemapPage() {
             {/* 3. Project Categories */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
               <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
-                <span className="text-copper">3.</span> Projects & Portfolio
+                <span className="text-copper">3.</span> {sitemap.groups.projects.title}
               </h2>
               <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
-                Completed and ongoing construction works by sector:
+                {sitemap.groups.projects.text}
               </p>
               <ul className="mt-14 grid gap-10 sm:grid-cols-2">
                 {projectCategories.map((cat, i) => (
@@ -123,10 +123,10 @@ export default function SitemapPage() {
             {/* 4. Blog & Articles */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
               <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
-                <span className="text-copper">4.</span> Blog & Industry Articles
+                <span className="text-copper">4.</span> {sitemap.groups.blog.title}
               </h2>
               <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
-                Construction tips, design ideas, and industry insights:
+                {sitemap.groups.blog.text}
               </p>
               <ul className="mt-14 space-y-10">
                 {blogPosts.map((post, i) => (
@@ -145,10 +145,10 @@ export default function SitemapPage() {
             {/* 5. Legal & Support */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
               <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
-                <span className="text-copper">5.</span> Support & Legal Information
+                <span className="text-copper">5.</span> {sitemap.groups.support.title}
               </h2>
               <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
-                Contractual terms, privacy commitments, and customer assistance:
+                {sitemap.groups.support.text}
               </p>
               <ul className="mt-14 grid gap-10 sm:grid-cols-2">
                 {supportPages.map((page) => (

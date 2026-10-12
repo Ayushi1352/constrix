@@ -33,10 +33,10 @@ export default function Hero() {
         />
       ))}
       {/* left fade that keeps the text readable */}
-      <div className="absolute inset-0 bg-[#0c1a26]/70 lg:bg-transparent lg:bg-linear-to-r lg:from-[#0c1a26] lg:from-20% lg:via-[#0c1a26]/75 lg:via-42% lg:to-transparent lg:to-58%" />
-      <div className="absolute inset-x-0 bottom-0 h-200 bg-linear-to-t from-[#08121b] via-[#08121b]/70 to-transparent" />
+      <div className="absolute inset-0 bg-[#0a1c26]/70 lg:bg-transparent lg:bg-linear-to-r lg:from-[#0a1c26] lg:from-20% lg:via-[#0a1c26]/75 lg:via-42% lg:to-transparent lg:to-58%" />
+      <div className="absolute inset-x-0 bottom-0 h-200 bg-linear-to-t from-[#061219] via-[#061219]/70 to-transparent" />
 
-      <div className="relative mx-auto h-full w-full max-w-1686 px-20 pt-40 pb-20 sm:px-32 sm:pt-56 xl:px-0 xl:pt-90 xl:pb-0 xl:pl-111">
+      <div className="relative mx-auto h-full w-full max-w-1686 px-20 pt-40 pb-28 sm:px-32 sm:pt-56 xl:px-0 xl:pt-90 xl:pb-36 xl:pl-111">
         <p className="flex items-center gap-14 fs-12 font-light tracking-[0.32em] text-white uppercase sm:fs-14 xl:gap-17 xl:fs-18">
           <span className="h-2 w-34 shrink-0 bg-[#e8923c] xl:w-52" />
           {slide.label}
@@ -53,14 +53,14 @@ export default function Hero() {
         <div className="mt-26 flex flex-wrap gap-14 xl:mt-28 xl:gap-23">
           <Link
             href={primaryButton.href}
-            className="inline-flex h-50 items-center justify-center gap-14 rounded-[3px] bg-[#de8836] px-26 fs-15 font-semibold text-white transition-colors hover:bg-copper-dark xl:h-58 xl:w-221 xl:px-0 xl:fs-18"
+            className="inline-flex h-50 items-center justify-center gap-14 rounded-[3px] border border-[#de8836] bg-[#de8836] px-26 fs-15 font-semibold text-white transition-colors hover:bg-white hover:text-copper xl:h-58 xl:w-221 xl:px-0 xl:fs-18"
           >
             {primaryButton.label}
             <Icon name="arrowRight" className="size-20 xl:size-24" strokeWidth={2} />
           </Link>
           <Link
             href={secondaryButton.href}
-            className="inline-flex h-50 items-center justify-center gap-14 rounded-[3px] border border-white/80 px-26 fs-15 font-semibold text-white transition-colors hover:bg-white hover:text-coal xl:h-58 xl:w-227 xl:px-0 xl:fs-18"
+            className="inline-flex h-50 items-center justify-center gap-14 rounded-[3px] border border-white/80 px-26 fs-15 font-semibold text-white transition-colors hover:border-copper hover:bg-copper hover:text-white xl:h-58 xl:w-227 xl:px-0 xl:fs-18"
           >
             {secondaryButton.label}
             <Icon name="arrowRight" className="size-20 xl:size-24" strokeWidth={2} />
@@ -89,7 +89,7 @@ export default function Hero() {
               type="button"
               aria-label={`Go to slide ${index + 1}`}
               onClick={() => setCurrent(index)}
-              className={`h-3 w-22 transition-colors ${index === current ? "bg-[#e8923c]" : "bg-white/35"}`}
+              className={`h-3 w-22 transition-colors ${index === current ? "bg-[#e8923c]" : "bg-white/35 hover:bg-[#e8923c]"}`}
             />
           ))}
         </div>

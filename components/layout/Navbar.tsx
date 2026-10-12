@@ -35,28 +35,28 @@ export default function Navbar() {
           </Link>
 
           <div className="flex items-center">
-            <a href={`tel:${header.phone.replace(/\s/g, "")}`} className="hidden items-center gap-14 lg:flex">
+            <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} className="hidden items-center gap-14 lg:flex">
               <span className="flex size-48 items-center justify-center rounded-full bg-[#fbede3] text-copper xl:size-56">
                 <Icon name="phone" className="size-22 xl:size-27" strokeWidth={1.4} />
               </span>
               <span className="flex flex-col">
                 <span className="fs-13 leading-20 text-[#555] xl:fs-15 xl:leading-24">{header.callLabel}</span>
-                <span className="fs-16 leading-24 font-medium text-[#111] xl:fs-19 xl:leading-28">{header.phone}</span>
+                <span className="fs-16 leading-24 font-medium text-[#111] xl:fs-19 xl:leading-28">{site.contact.phone}</span>
               </span>
             </a>
             <span className="hidden h-72 w-px bg-[#eeeeee] xl:mr-24 xl:ml-29 xl:block" />
-            <a href={`mailto:${header.email}`} className="hidden items-center gap-18 xl:flex">
+            <a href={`mailto:${site.contact.email}`} className="hidden items-center gap-18 xl:flex">
               <span className="flex size-56 items-center justify-center rounded-full bg-[#fbede3] text-copper">
                 <Icon name="mail" className="size-27" strokeWidth={1.4} />
               </span>
               <span className="flex flex-col">
                 <span className="fs-15 leading-24 text-[#555]">{header.emailLabel}</span>
-                <span className="fs-19 leading-28 font-medium text-[#111]">{header.email}</span>
+                <span className="fs-19 leading-28 font-medium text-[#111]">{site.contact.email}</span>
               </span>
             </a>
             <Link
               href={header.button.href}
-              className="ml-24 hidden h-46 items-center justify-center gap-12 rounded-[4px] bg-copper px-20 fs-15 font-medium text-white shadow-[0_3px_8px_rgba(213,122,47,0.3)] transition-colors hover:bg-copper-dark sm:inline-flex xl:ml-32 xl:h-62 xl:w-245 xl:gap-14 xl:px-0 xl:fs-19"
+              className="ml-24 hidden h-46 items-center justify-center gap-12 rounded-[4px] border border-copper bg-copper px-20 fs-15 font-medium text-white shadow-[0_3px_8px_rgba(213,122,47,0.3)] transition-colors hover:bg-white hover:text-copper sm:inline-flex xl:ml-32 xl:h-62 xl:w-245 xl:gap-14 xl:px-0 xl:fs-19"
             >
               {header.button.label}
               <Icon name="arrowRight" className="size-18 xl:size-24" strokeWidth={2} />
@@ -106,7 +106,7 @@ export default function Navbar() {
                 <Link
                   href={header.button.href}
                   onClick={() => setOpen(false)}
-                  className="inline-flex h-46 items-center gap-12 rounded-[4px] bg-copper px-20 fs-15 font-medium text-white transition-colors hover:bg-copper-dark"
+                  className="inline-flex h-46 items-center gap-12 rounded-[4px] border border-copper bg-copper px-20 fs-15 font-medium text-white transition-colors hover:bg-white hover:text-copper"
                 >
                   {header.button.label}
                   <Icon name="arrowRight" className="size-18" strokeWidth={2} />

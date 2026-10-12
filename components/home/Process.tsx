@@ -22,7 +22,7 @@ export default function Process() {
 
         <ol className="mt-44 grid gap-x-28 gap-y-44 sm:grid-cols-2 lg:grid-cols-4 xl:mt-34 xl:gap-x-92">
           {process.steps.map((step, index) => (
-            <li key={step.number} className="relative bg-[#fbfbfb] shadow-[0_6px_24px_rgba(20,30,50,0.05)]">
+            <li key={step.title} className="relative bg-[#fbfbfb] shadow-[0_6px_24px_rgba(20,30,50,0.05)]">
               <div className="relative aspect-[318/186]">
                 <Image
                   src={step.image}
@@ -32,7 +32,7 @@ export default function Process() {
                   className="object-cover"
                 />
                 <span className="absolute -top-14 -left-2 flex h-59 w-66 items-center justify-center bg-linear-to-br from-copper-light to-copper-dark fs-26 font-semibold text-white shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
-                  {step.number}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="absolute -bottom-39 left-22 flex h-77 w-86 items-center justify-center bg-white text-copper shadow-[0_4px_16px_rgba(0,0,0,0.12)]">
                   <Icon name={step.icon} className="size-46" strokeWidth={1.1} />

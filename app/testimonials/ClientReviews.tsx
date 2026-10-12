@@ -35,7 +35,7 @@ export default function ClientReviews() {
               <p className="mt-10 max-w-450 flex-1 fs-16 leading-25 text-[#1c2e42] xl:mt-6 xl:max-w-none xl:fs-19 xl:whitespace-pre-line">{item.quote}</p>
               <div className="mt-16 flex items-center gap-22 border-t border-[#ececec] pt-10 xl:mt-13 xl:ml-3 xl:gap-25">
                 <span className="flex size-56 shrink-0 items-center justify-center rounded-full bg-[#feead7] fs-18 font-bold text-[#1b2330] xl:size-62 xl:fs-21">
-                  {item.initials}
+                  {item.name.split(" ").map((word) => word[0]).join("")}
                 </span>
                 <span>
                   <span className="block fs-17 leading-24 font-bold text-coal xl:fs-19">{item.name}</span>

@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/common/PageBanner";
 import Projects from "@/components/home/Projects";
+import { site as data, pageTitle } from "@/data";
 
-export const metadata: Metadata = { title: "Our Projects | Constrix" };
+const { title } = data.pages.ourProjects;
+
+export const metadata: Metadata = { title: pageTitle(title) };
 
 export default function OurProjectsPage() {
   return (
     <>
-      <PageBanner title="Our Projects" />
-      <Projects rows={2} />
+      <PageBanner title={title} />
+      <Projects rows={2} showViewAll={false} pageSize={8} />
     </>
   );
 }

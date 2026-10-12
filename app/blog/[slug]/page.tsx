@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageBanner from "@/components/common/PageBanner";
-import { site as data } from "@/data";
+import { site as data, pageTitle } from "@/data";
 import Article from "./Article";
 import RecentPosts from "./RecentPosts";
 import AdviceCard from "./AdviceCard";
@@ -13,9 +13,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = data.blog.posts.find((p) => p.slug === slug);
-  const cleanTitle = post ? post.title.replace(/\n/g, " ") : "Blog Details";
+  const cleanTitle = post ? post.title.replace(/\n/g, " ") : data.pages.blogDetail.title;
   return {
-    title: `${cleanTitle} | Constrix`,
+    title: pageTitle(cleanTitle),
   };
 }
 
@@ -39,7 +39,7 @@ export default async function BlogDetailsPage({
       <PageBanner
         title={cleanTitle}
         breadcrumbs={[
-          { label: "Blog", href: "/blog" },
+          { label: data.pages.blog.title, href: "/blog" },
           { label: cleanTitle },
         ]}
       />
@@ -47,7 +47,7 @@ export default async function BlogDetailsPage({
         <div className="mx-auto flex w-full max-w-1686 flex-col gap-48 px-20 sm:px-32 lg:flex-row lg:gap-32 xl:gap-37 xl:pr-90 xl:pl-102">
           <Article post={post} />
           <aside className="w-full shrink-0 lg:w-340 xl:w-435">
-            <RecentPosts />
+            <RecentPosts currentSlug={post.slug} />
             <AdviceCard />
           </aside>
         </div>

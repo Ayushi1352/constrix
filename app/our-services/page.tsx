@@ -2,14 +2,17 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/common/PageBanner";
 import Services from "@/components/home/Services";
 import Cta from "@/components/home/Cta";
+import { site as data, pageTitle } from "@/data";
 
-export const metadata: Metadata = { title: "Our Services | Constrix" };
+const { title } = data.pages.ourServices;
+
+export const metadata: Metadata = { title: pageTitle(title) };
 
 export default function OurServicesPage() {
   return (
     <>
-      <PageBanner title="Our Services" />
-      <Services />
+      <PageBanner title={title} />
+      <Services showPagination />
       <Cta />
     </>
   );

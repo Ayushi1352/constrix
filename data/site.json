@@ -238,13 +238,19 @@
               "description": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
               "logo": "/images/logo.png",
               "logoWhite": "/images/logo-white.png",
-              "bannerImage": "/images/banner.webp"
+              "bannerImage": "/images/banner.webp",
+              "contact": {
+                "phone": "+1 000-000-0000",
+                "email": "info@xyz.com",
+                "address": [
+                  "123 Demo Street,",
+                  "Springfield, IL 62701, USA"
+                ]
+              }
             },
             "header": {
               "callLabel": "Call Us Now",
-              "phone": "+1 000-000-0000",
               "emailLabel": "Email Us",
-              "email": "info@xyz.com",
               "button": {
                 "label": "Request a Quote",
                 "href": "/get-a-quote"
@@ -269,10 +275,6 @@
                 "href": "/our-projects"
               },
               {
-                "label": "Gallery",
-                "href": "/gallery"
-              },
-              {
                 "label": "Blog",
                 "href": "/blog"
               },
@@ -287,14 +289,6 @@
       "Footer": {
         "variants": {
           "ConstrixFooter1": {
-            "site": {
-              "name": "Constrix",
-              "title": "Constrix | Construction & Infrastructure Solutions",
-              "description": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
-              "logo": "/images/logo.png",
-              "logoWhite": "/images/logo-white.png",
-              "bannerImage": "/images/banner.webp"
-            },
             "text": "At Constrix, we build more than structures —\nwe create lasting spaces for people, businesses\nand communities. With a commitment to quality,\ninnovation and on-time delivery, we turn your\nvision into reality.",
             "quickLinksTitle": "Quick Links",
             "quickLinks": [
@@ -332,7 +326,6 @@
               }
             ],
             "servicesTitle": "Our Services",
-            "supportTitle": "Support",
             "supportLinks": [
               {
                 "label": "FAQs",
@@ -340,11 +333,13 @@
               },
               {
                 "label": "Privacy Policy",
-                "href": "/privacy-policy"
+                "href": "/privacy-policy",
+                "legal": true
               },
               {
                 "label": "Terms & Conditions",
-                "href": "/terms-and-conditions"
+                "href": "/terms-and-conditions",
+                "legal": true
               },
               {
                 "label": "Career",
@@ -352,18 +347,11 @@
               },
               {
                 "label": "Sitemap",
-                "href": "/sitemap"
+                "href": "/sitemap",
+                "legal": true
               }
             ],
             "contactTitle": "Get In Touch",
-            "address": [
-              "123 Demo Street,",
-              "Springfield, IL 62701, USA"
-            ],
-            "phones": [
-              "+1 000-000-0000"
-            ],
-            "email": "info@xyz.com",
             "copyright": "© 2026 Constrix. All Rights Reserved.",
             "socials": [
               {
@@ -399,21 +387,21 @@
                 "titleTop": "Stronger",
                 "titleBottom": "Tomorrow",
                 "text": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
-                "image": "/images/hero.webp"
+                "image": "/images/hero-slide-1.webp"
               },
               {
-                "label": "Building Today For A",
-                "titleTop": "Stronger",
-                "titleBottom": "Tomorrow",
-                "text": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
-                "image": "/images/hero.webp"
+                "label": "Crafting Quality In",
+                "titleTop": "Every",
+                "titleBottom": "Project",
+                "text": "Skilled engineers, premium materials and strict quality checks\nthat keep every build safe, durable and on schedule.",
+                "image": "/images/cta.webp"
               },
               {
-                "label": "Building Today For A",
-                "titleTop": "Stronger",
-                "titleBottom": "Tomorrow",
-                "text": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
-                "image": "/images/hero.webp"
+                "label": "Your Vision, Our",
+                "titleTop": "Expert",
+                "titleBottom": "Builders",
+                "text": "From first drawing to final handover, we turn your ideas\ninto landmark spaces built to last for generations.",
+                "image": "/images/banner.webp"
               }
             ],
             "primaryButton": {
@@ -452,7 +440,36 @@
       "PageBanner": {
         "variants": {
           "ConstrixPageBanner1": {
-            "image": "/images/banner.webp"
+            "homeLabel": "Home",
+            "pages": {
+              "aboutUs": {
+                "title": "About Us"
+              },
+              "ourServices": {
+                "title": "Our Services"
+              },
+              "serviceDetail": {
+                "title": "Service Details"
+              },
+              "ourProjects": {
+                "title": "Our Projects"
+              },
+              "blog": {
+                "title": "Blog"
+              },
+              "blogDetail": {
+                "title": "Blog Details"
+              },
+              "contactUs": {
+                "title": "Contact Us"
+              },
+              "getAQuote": {
+                "title": "Get a Quote"
+              },
+              "testimonials": {
+                "title": "Testimonials"
+              }
+            }
           }
         }
       },
@@ -478,7 +495,9 @@
             "imageLeft": "/images/about-building.webp",
             "imageRight": "/images/about-worker.webp",
             "badgeValue": "25+",
-            "badgeText": "Years of Experience"
+            "badgeText": "Years of Experience",
+            "imageLeftAlt": "Building under construction",
+            "imageRightAlt": "Construction worker on site"
           }
         }
       },
@@ -497,8 +516,6 @@
                 "icon": "home",
                 "text": "Custom homes, villas, apartments\nand housing projects built with\nquality and precision.",
                 "image": "/images/service-residential.webp",
-                "imageWidth": 388,
-                "imageHeight": 163,
                 "showInGrid": true,
                 "showInMenu": true,
                 "detail": {
@@ -515,8 +532,6 @@
                 "icon": "building",
                 "text": "Offices, shopping complexes,\nshowrooms and commercial\nspaces for modern businesses.",
                 "image": "/images/service-commercial.webp",
-                "imageWidth": 388,
-                "imageHeight": 163,
                 "showInGrid": true,
                 "showInMenu": true,
                 "detail": {
@@ -533,8 +548,6 @@
                 "icon": "factory",
                 "text": "Factories, warehouses and\nindustrial facilities designed\nfor efficiency and growth.",
                 "image": "/images/service-industrial.webp",
-                "imageWidth": 388,
-                "imageHeight": 163,
                 "showInGrid": true,
                 "showInMenu": true,
                 "detail": {
@@ -551,8 +564,6 @@
                 "icon": "bridge",
                 "text": "Roads, bridges, flyovers and\ncivil infrastructure for stronger\ncommunities.",
                 "image": "/images/service-infrastructure.webp",
-                "imageWidth": 388,
-                "imageHeight": 163,
                 "showInGrid": true,
                 "showInMenu": true,
                 "detail": {
@@ -569,8 +580,6 @@
                 "icon": "tools",
                 "text": "Transforming existing spaces\nwith innovative renovation\nand remodeling solutions.",
                 "image": "/images/service-renovation.webp",
-                "imageWidth": 388,
-                "imageHeight": 139,
                 "showInGrid": true,
                 "showInMenu": true,
                 "detail": {
@@ -587,8 +596,6 @@
                 "icon": "drafting",
                 "text": "Creative architectural design,\nplanning and 3D visualization\nfor innovative spaces.",
                 "image": "/images/service-architecture.webp",
-                "imageWidth": 388,
-                "imageHeight": 139,
                 "showInGrid": true,
                 "showInMenu": false,
                 "detail": {
@@ -605,8 +612,6 @@
                 "icon": "sofa",
                 "text": "Complete interior fit-out\nsolutions for residential\nand commercial spaces.",
                 "image": "/images/service-interior.webp",
-                "imageWidth": 388,
-                "imageHeight": 139,
                 "showInGrid": true,
                 "showInMenu": false,
                 "detail": {
@@ -623,8 +628,6 @@
                 "icon": "bricks",
                 "text": "Structural and general civil\nconstruction with high engineering\nstandards.",
                 "image": "/images/service-civil.webp",
-                "imageWidth": 388,
-                "imageHeight": 139,
                 "showInGrid": true,
                 "showInMenu": false,
                 "detail": {
@@ -639,11 +642,9 @@
                 "slug": "project-management",
                 "title": "Project Management",
                 "icon": "planning",
-                "text": "End-to-end project management that keeps your build on time and within budget.",
-                "image": "/images/service-civil.webp",
-                "imageWidth": 388,
-                "imageHeight": 139,
-                "showInGrid": false,
+                "text": "End-to-end project management\nthat keeps your build on time\nand within budget.",
+                "image": "/images/service-commercial.webp",
+                "showInGrid": true,
                 "showInMenu": true,
                 "detail": {
                   "titleTop": "Managing Projects",
@@ -651,6 +652,22 @@
                   "highlight": "On-Time Delivery",
                   "text": "Our project management services keep every part of your build moving in the right direction. We coordinate planning, budgets, contractors, quality checks and timelines so your project is delivered smoothly, transparently and without surprises.",
                   "image": "/images/project-tower.webp"
+                }
+              },
+              {
+                "slug": "building-maintenance",
+                "title": "Building Maintenance",
+                "icon": "gear",
+                "text": "Scheduled upkeep, repairs and\ninspections that keep your\nproperty safe and in top shape.",
+                "image": "/images/service-renovation.webp",
+                "showInGrid": true,
+                "showInMenu": false,
+                "detail": {
+                  "titleTop": "Maintaining Buildings",
+                  "titleBottom": "For",
+                  "highlight": "Lasting Value",
+                  "text": "Our building maintenance services keep homes, offices and facilities safe, efficient and looking their best. From routine inspections and preventive upkeep to repairs and upgrades, we take care of your property so small issues never turn into costly problems.",
+                  "image": "/images/service-detail.webp"
                 }
               }
             ],
@@ -709,8 +726,13 @@
                 "button": {
                   "label": "Get a Quote",
                   "href": "/get-a-quote"
-                }
+                },
+                "imageAlt": "Modern living room interior"
               }
+            },
+            "button": {
+              "label": "View All",
+              "href": "/our-services"
             }
           }
         }
@@ -741,7 +763,8 @@
                 "title": "End-to-End Support",
                 "text": "From planning to project handover, we're with you at every step."
               }
-            ]
+            ],
+            "imageAlt": "Engineer reviewing plans on a construction site"
           }
         }
       },
@@ -761,46 +784,60 @@
             ],
             "items": [
               {
-                "title": "Luxury Villas",
+                "title": "Modern Villa Residence",
                 "category": "Residential",
                 "image": "/images/project-villa.webp"
               },
               {
-                "title": "Business Tower",
-                "category": "Commercial",
-                "image": "/images/project-tower.webp"
-              },
-              {
-                "title": "Industrial Facility",
-                "category": "Industrial",
-                "image": "/images/project-industrial.webp"
-              },
-              {
-                "title": "Highway Expansion",
-                "category": "Infrastructure",
-                "image": "/images/project-highway.webp"
-              },
-              {
-                "title": "Luxury Villas",
+                "title": "Skyline Residences",
                 "category": "Residential",
                 "image": "/images/project-villa.webp"
               },
               {
-                "title": "Business Tower",
+                "title": "Corporate Headquarters",
                 "category": "Commercial",
                 "image": "/images/project-tower.webp"
               },
               {
-                "title": "Industrial Facility",
+                "title": "Retail Plaza Complex",
+                "category": "Commercial",
+                "image": "/images/project-tower.webp"
+              },
+              {
+                "title": "Manufacturing Plant Upgrade",
                 "category": "Industrial",
                 "image": "/images/project-industrial.webp"
               },
               {
-                "title": "Highway Expansion",
+                "title": "Logistics Distribution Hub",
+                "category": "Industrial",
+                "image": "/images/project-industrial.webp"
+              },
+              {
+                "title": "Metro Corridor Expansion",
                 "category": "Infrastructure",
                 "image": "/images/project-highway.webp"
+              },
+              {
+                "title": "Bridge & Drainage Works",
+                "category": "Infrastructure",
+                "image": "/images/project-highway.webp"
+              },
+              {
+                "title": "Lakeside Family Homes",
+                "category": "Residential",
+                "image": "/images/recent-residential.webp"
+              },
+              {
+                "title": "Downtown Business Center",
+                "category": "Commercial",
+                "image": "/images/recent-commercial.webp"
               }
-            ]
+            ],
+            "button": {
+              "label": "View All",
+              "href": "/our-projects"
+            }
           }
         }
       },
@@ -813,28 +850,24 @@
             "text": "We follow a structured and transparent process to ensure every project is delivered\nwith quality, efficiency and complete client satisfaction.",
             "steps": [
               {
-                "number": "01",
                 "icon": "planning",
                 "title": "Project Planning",
                 "text": "Understanding your requirements\nand creating a detailed plan for\nsuccessful execution.",
                 "image": "/images/step-planning.webp"
               },
               {
-                "number": "02",
                 "icon": "monitor",
                 "title": "Design & Development",
                 "text": "Turning concepts into practical\ndesigns with innovation and\ntechnical expertise.",
                 "image": "/images/step-design.webp"
               },
               {
-                "number": "03",
                 "icon": "hardhat",
                 "title": "Construction & Execution",
                 "text": "Our skilled team brings the\ndesign to life with precision,\nquality and safety.",
                 "image": "/images/step-construction.webp"
               },
               {
-                "number": "04",
                 "icon": "award",
                 "title": "Completion & Handover",
                 "text": "Quality checks, final inspections\nand on-time handover for\nyour complete satisfaction.",
@@ -863,13 +896,13 @@
                 {
                   "name": "Amit Verma",
                   "role": "Property Investor",
-                  "image": "/images/client-rohit.webp",
+                  "image": "/images/about-worker.webp",
                   "quote": "From design to handover, the Constrix team made the entire process seamless. Their expertise and commitment to quality really show in the final result. I highly recommend them for anyone looking for a reliable construction partner."
                 },
                 {
                   "name": "Vikram Singh",
                   "role": "Industrial Client",
-                  "image": "/images/client-rohit.webp",
+                  "image": "/images/recent-company.webp",
                   "quote": "Constrix exceeded our expectations with their innovative solutions and high-quality construction. The communication throughout the project was excellent, and the team ensured everything was completed on schedule."
                 }
               ]
@@ -881,42 +914,36 @@
               "text": "Our clients trust us for our quality, commitment and ability to deliver projects\nthat exceed their expectations. Here's what they have to say about working with Constrix.",
               "items": [
                 {
-                  "initials": "RS",
                   "name": "Rohit Sharma",
                   "role": "Homeowner",
                   "rating": 5,
                   "quote": "Constrix delivered our dream home with\nexceptional quality and professionalism. The entire\nteam was supportive, transparent and completed\nthe project on time. We couldn't be happier with\nthe result."
                 },
                 {
-                  "initials": "PM",
                   "name": "Priya Mehta",
                   "role": "Business Owner",
                   "rating": 5,
                   "quote": "We partnered with Constrix for our commercial\nbuilding, and the experience was outstanding.\nTheir attention to detail, planning and execution\nwere top-notch. The team maintained clear\ncommunication throughout the process."
                 },
                 {
-                  "initials": "AV",
                   "name": "Amit Verma",
                   "role": "Property Investor",
                   "rating": 5,
                   "quote": "From design to handover, the Constrix team made\nthe entire process seamless. Their expertise and\ncommitment to quality really show in the final\nresult. I highly recommend them for anyone\nlooking for a reliable construction partner."
                 },
                 {
-                  "initials": "KM",
                   "name": "Karan Malhotra",
                   "role": "Restaurant Owner",
                   "rating": 5,
                   "quote": "Professional, reliable and highly skilled team.\nConstrix understood our requirements perfectly\nand delivered a space that fits our needs and\nbrand image. Their work quality and project\nmanagement are truly impressive."
                 },
                 {
-                  "initials": "NK",
                   "name": "Neha Kapoor",
                   "role": "Homeowner",
                   "rating": 5,
                   "quote": "We are extremely satisfied with the quality of work\nand the timely delivery. Constrix turns ideas into\nreality with great precision and professionalism.\nTheir team is knowledgeable, responsive and\neasy to work with."
                 },
                 {
-                  "initials": "VS",
                   "name": "Vikram Singh",
                   "role": "Industrial Client",
                   "rating": 5,
@@ -983,31 +1010,49 @@
                 "image": "/images/blog-costs.webp"
               },
               {
-                "slug": "essential-steps-for-a-successful-construction-project-2",
-                "day": "15",
-                "monthYear": "Mar 2026",
-                "category": "Construction Tips",
-                "title": "Essential Steps for a Successful\nConstruction Project",
-                "text": "A well-planned construction project saves time, reduces\ncosts and ensures better quality outcomes. Here are\nsome key steps to keep in mind...",
+                "slug": "choosing-the-right-materials-for-durable-buildings",
+                "day": "09",
+                "monthYear": "Apr 2026",
+                "category": "Material Guide",
+                "title": "Choosing the Right Materials\nfor Durable Buildings",
+                "text": "The longevity of any structure depends heavily on the\nmaterials selected. Learn how to balance quality, cost\nand sustainability for long-term performance...",
                 "image": "/images/blog-steps.webp"
               },
               {
-                "slug": "top-modern-construction-design-trends-in-2026-2",
-                "day": "22",
-                "monthYear": "Mar 2026",
-                "category": "Design Ideas",
-                "title": "Top Modern Construction\nDesign Trends in 2026",
-                "text": "Discover the latest design trends that are shaping the\nfuture of residential, commercial and industrial\nconstruction projects...",
+                "slug": "sustainable-design-practices-for-modern-buildings",
+                "day": "14",
+                "monthYear": "Apr 2026",
+                "category": "Sustainability",
+                "title": "Sustainable Design Practices\nfor Modern Buildings",
+                "text": "Sustainability is becoming a core requirement in modern\nconstruction. Explore design choices that reduce waste\nand improve efficiency...",
                 "image": "/images/blog-trends.webp"
               },
               {
-                "slug": "how-to-manage-construction-costs-effectively-2",
-                "day": "28",
-                "monthYear": "Mar 2026",
-                "category": "Industry Insights",
-                "title": "How to Manage Construction\nCosts Effectively",
-                "text": "Learn practical tips and strategies to control\nconstruction costs without compromising on quality\nand timelines...",
+                "slug": "how-to-streamline-project-planning-and-delivery",
+                "day": "21",
+                "monthYear": "Apr 2026",
+                "category": "Project Management",
+                "title": "How to Streamline Project\nPlanning and Delivery",
+                "text": "Strong planning and communication can keep projects on\ntrack. Discover practical steps to improve scheduling,\ncoordination and execution...",
                 "image": "/images/blog-costs.webp"
+              },
+              {
+                "slug": "safety-first-practices-on-construction-sites",
+                "day": "03",
+                "monthYear": "May 2026",
+                "category": "Site Safety",
+                "title": "Safety-First Practices\nfor Construction Sites",
+                "text": "A safe job site protects workers, reduces delays and\nbuilds trust with clients. Learn the most effective safety\nmeasures to implement on site...",
+                "image": "/images/blog-steps.webp"
+              },
+              {
+                "slug": "commercial-space-design-that-drives-business-growth",
+                "day": "11",
+                "monthYear": "May 2026",
+                "category": "Business Growth",
+                "title": "Commercial Space Design\nThat Drives Business Growth",
+                "text": "A well-designed commercial space improves customer\nexperience and operational efficiency. Explore design\nchoices that support long-term growth...",
+                "image": "/images/blog-trends.webp"
               }
             ],
             "detail": {
@@ -1016,22 +1061,18 @@
               "intro": "Building a home is one of the most important investments of your life. A well-planned residential\nconstruction project not only gives you a beautiful living space but also ensures long-term durability,\ncomfort, and value. From initial planning to final handover, every step plays a crucial role in achieving\na successful outcome.",
               "steps": [
                 {
-                  "number": "01",
                   "title": "Define Your Requirements",
                   "text": "Start by identifying your needs, lifestyle and budget. Consider the size of the home, number\nof rooms, design preferences and future requirements. A clear vision helps in better\nplanning and avoids changes during construction."
                 },
                 {
-                  "number": "02",
                   "title": "Choose the Right Location",
                   "text": "The location of your home affects convenience, connectivity and long-term value. Evaluate\nfactors like accessibility, nearby amenities, environment and future development in the area\nbefore finalising the site."
                 },
                 {
-                  "number": "03",
                   "title": "Work with Experienced Professionals",
                   "text": "Partnering with a trusted construction company ensures expert guidance, quality materials\nand efficient project management. Experienced professionals help you avoid common\npitfalls and ensure your project is completed on time and within budget."
                 },
                 {
-                  "number": "04",
                   "title": "Focus on Quality and Sustainability",
                   "text": "Use high-quality materials and modern construction practices to ensure durability and\nsafety. Incorporating energy-efficient solutions not only reduces long-term costs but also\ncreates a more comfortable and eco-friendly home."
                 }
@@ -1039,32 +1080,6 @@
               "conclusionTitle": "Conclusion",
               "conclusion": "A successful residential construction project is the result of careful planning, the right team, quality\nmaterials and a focus on long-term value. With the right approach, you can create a home that perfectly\nmatches your lifestyle and stands the test of time.",
               "recentTitle": "Recent Posts",
-              "recentPosts": [
-                {
-                  "title": "How to Plan a Successful\nResidential Construction\nProject",
-                  "date": "25 Sep 2026",
-                  "image": "/images/recent-residential.webp",
-                  "href": "/blog/essential-steps-for-a-successful-construction-project"
-                },
-                {
-                  "title": "Top 5 Benefits of Hiring a\nProfessional Construction\nCompany",
-                  "date": "18 Sep 2026",
-                  "image": "/images/recent-company.webp",
-                  "href": "/blog/top-modern-construction-design-trends-in-2026"
-                },
-                {
-                  "title": "Key Factors to Consider\nBefore Starting Commercial\nConstruction",
-                  "date": "12 Sep 2026",
-                  "image": "/images/recent-commercial.webp",
-                  "href": "/blog/how-to-manage-construction-costs-effectively"
-                },
-                {
-                  "title": "Modern Renovation Ideas\nfor a Better Living Space",
-                  "date": "05 Sep 2026",
-                  "image": "/images/recent-renovation.webp",
-                  "href": "/blog/essential-steps-for-a-successful-construction-project-2"
-                }
-              ],
               "help": {
                 "titleTop": "Need Expert",
                 "titleMiddle": "Advice For Your",
@@ -1087,24 +1102,17 @@
               {
                 "icon": "phoneFill",
                 "title": "Call Us",
-                "lines": [
-                  "+1 000-000-0000"
-                ]
+                "source": "phone"
               },
               {
                 "icon": "mail",
                 "title": "Email Us",
-                "lines": [
-                  "info@xyz.com"
-                ]
+                "source": "email"
               },
               {
                 "icon": "pinFill",
                 "title": "Visit Our Office",
-                "lines": [
-                  "123 Demo Street,",
-                  "Springfield, IL 62701, USA"
-                ]
+                "source": "address"
               },
               {
                 "icon": "clock",
@@ -1145,16 +1153,13 @@
               "title": "Find Us",
               "highlight": "Here",
               "text": "Visit our office or find us on the map. We're always happy to\nmeet and discuss your construction needs.",
-              "mapEmbedUrl": "https://www.google.com/maps?q=123+Demo+Street,+Springfield,+IL+62701,+USA&z=15&output=embed",
               "offices": [
                 {
                   "title": "Head Office",
-                  "lines": [
-                    "123 Demo Street,",
-                    "Springfield, IL 62701, USA"
-                  ]
+                  "source": "address"
                 }
-              ]
+              ],
+              "mapTitle": "Office location map"
             }
           }
         }
@@ -1261,46 +1266,40 @@
             "intro": "Find quick answers to common questions about our construction process, cost estimates, timelines, municipal approvals, and post-handover warranties.",
             "items": [
               {
-                "number": "1",
                 "question": "What types of construction projects does Constrix handle?",
                 "answer": "Constrix handles residential homes and villas, commercial towers and office complexes, industrial factories and warehouses, as well as civil infrastructure projects such as roads and bridges. We also offer full renovation and architectural planning services."
               },
               {
-                "number": "2",
                 "question": "How do I get a cost estimate for my project?",
                 "answer": "You can reach out through our 'Request a Quote' page or contact our team directly. Once we understand your requirements, built-up area, and location, we provide a detailed, itemized Bill of Quantities (BOQ) with transparent pricing."
               },
               {
-                "number": "3",
                 "question": "Do you assist with municipal building permits and approvals?",
                 "answer": "Yes, our team assists with preparing architectural drawings, submitting municipal sanctions, and coordinating approvals to ensure full compliance with the National Building Code (NBC) and local bylaws."
               },
               {
-                "number": "4",
                 "question": "What is the typical timeline for constructing a residential home?",
                 "answer": "A standard residential project typically takes 8 to 14 months depending on total area, design complexity, and finish selections. We provide a milestone-based project schedule prior to starting construction."
               },
               {
-                "number": "5",
                 "question": "What payment structure do you follow?",
                 "answer": "We follow a milestone-based payment schedule tied to actual progress on-site (such as foundation completion, slab casting per level, masonry, MEP works, and final finishes). You only pay as each stage is completed and verified."
               },
               {
-                "number": "6",
                 "question": "What warranty do you offer after project completion?",
                 "answer": "We provide a 10-year structural warranty on core concrete and RCC frameworks, along with a 12-month Defect Liability Period covering plumbing, electrical works, and waterproofing after handover."
               },
               {
-                "number": "7",
                 "question": "Can I make design changes after construction has started?",
                 "answer": "Yes, changes can be accommodated through a formal Variation Order. Our engineering team reviews the requested changes for structural feasibility and provides an updated estimate and timeline for your approval."
               },
               {
-                "number": "8",
                 "question": "How do you ensure material quality on-site?",
                 "answer": "We procure materials only from certified manufacturers (such as Tata Steel and UltraTech Cement) and conduct regular laboratory cube tests on concrete and steel to ensure high structural strength."
               }
-            ]
+            ],
+            "metaTitle": "Frequently Asked Questions (FAQ)",
+            "metaDescription": "Find clear answers to common questions about Constrix construction services, costs, timelines, and warranties."
           }
         }
       },
@@ -1311,56 +1310,48 @@
             "intro": "These terms apply when you access the Constrix website or engage our construction services. By using this site or approving an estimate, you agree to comply with these terms lawfully and in a manner that respects our contractual and safety standards.",
             "items": [
               {
-                "number": "1",
                 "title": "Website information",
                 "content": "We aim to keep website information useful, accurate and current, but project descriptions, service estimates and other content are provided for general information and may change without prior notice. They do not constitute a formal binding construction contract, financial guarantee, or legal advice until a formal agreement is executed."
               },
               {
-                "number": "2",
                 "title": "Scope of construction services",
                 "content": "Constrix provides residential, commercial, industrial and civil infrastructure construction solutions. Specific project deliverables, material specifications, architectural designs and timelines will be defined in a separate written contract and Bill of Quantities (BOQ) signed between Constrix and the client."
               },
               {
-                "number": "3",
                 "title": "Estimates and milestone payments",
                 "content": "All cost estimates and quotations remain valid for 30 calendar days from the date of issue. Payments are linked to verified physical construction milestones (such as foundation, slab casting, masonry, MEP installations, and final handover) as outlined in the signed agreement. Invoices must be cleared within the agreed payment window to prevent site mobilization delays."
               },
               {
-                "number": "4",
                 "title": "Client responsibilities and site access",
                 "content": "The client is responsible for providing unhindered physical access to the project site, confirming legal ownership of the property, securing necessary initial water and electricity connections, and granting prompt written approvals for architectural selections and material finishes."
               },
               {
-                "number": "5",
                 "title": "Regulatory compliance and building permits",
                 "content": "All works executed by Constrix comply with the National Building Code (NBC) and local municipal bylaws. Where liaison services are engaged, Constrix assists with filing and documentation; however, official municipal scrutiny fees, taxes and statutory charges remain the client's responsibility."
               },
               {
-                "number": "6",
                 "title": "Project timelines and delays",
                 "content": "Estimated delivery schedules are based on normal working conditions. Extensions of time may be granted in instances of Force Majeure (such as extreme natural disasters, government lockdowns, or unseasonal heavy rains) or client-requested architectural variations outside the original scope."
               },
               {
-                "number": "7",
                 "title": "Quality standards and warranty",
                 "content": "Constrix provides a 10-year structural warranty on core RCC and concrete frameworks, along with a 12-month Defect Liability Period covering plumbing, electrical works, waterproofing, and surface finishes from the formal handover date. Unauthorized structural modifications by third parties will void the warranty."
               },
               {
-                "number": "8",
                 "title": "Intellectual property",
                 "content": "Architectural drawings, structural engineering plans, 3D renderings and technical designs created by Constrix remain our intellectual property until all contractual dues are settled. Upon full payment, the client receives a license to use these plans exclusively for the constructed property."
               },
               {
-                "number": "9",
                 "title": "Limitation of liability",
                 "content": "To the maximum extent permitted by applicable law, Constrix shall not be liable for any indirect, incidental, or consequential damages resulting from third-party actions, unauthorized alterations, or delays outside our direct contractual control."
               },
               {
-                "number": "10",
                 "title": "Governing law and dispute resolution",
                 "content": "These terms and any disputes arising out of construction agreements shall be governed by the laws of India. Any unresolved disputes shall be subject to arbitration in accordance with the Arbitration and Conciliation Act, 1996, with the venue in New Delhi, India."
               }
-            ]
+            ],
+            "metaTitle": "Terms and Conditions",
+            "metaDescription": "Terms and conditions governing the use of Constrix website and construction services."
           }
         }
       },
@@ -1371,46 +1362,40 @@
             "intro": "At Constrix, we respect your privacy and are committed to safeguarding the personal information and property details you share with us. This policy outlines how we handle, store, and protect your data.",
             "items": [
               {
-                "number": "1",
                 "title": "Information we collect",
                 "content": "We collect information necessary to provide accurate construction estimates, architectural designs, and project management services. This includes your name, contact telephone number, email address, physical address, property survey documents, CAD drawings, site photographs, and transaction details provided during inquiries or contract execution."
               },
               {
-                "number": "2",
                 "title": "How we use your information",
                 "content": "Your information is used strictly to prepare Bills of Quantities (BOQ), communicate project milestones, manage on-site material deliveries, coordinate with statutory municipal authorities for plan approvals, issue warranty certifications, and respond to your service inquiries."
               },
               {
-                "number": "3",
                 "title": "Information sharing and third parties",
                 "content": "We do not sell, rent, or trade your personal details to external marketing agencies. Project drawings and specifications may be shared only with certified subcontractors, structural testing laboratories (for NABL concrete and steel testing), and municipal bodies strictly on a need-to-know basis to fulfill construction deliverables."
               },
               {
-                "number": "4",
                 "title": "Data protection and security",
                 "content": "We implement industry-standard technical and organizational security measures to protect your personal and project records from unauthorized access, modification, or disclosure. All digital transmissions through our website are secured with SSL encryption."
               },
               {
-                "number": "5",
                 "title": "Cookies and website analytics",
                 "content": "Our website uses basic session and analytics cookies to ensure smooth navigation, load pages efficiently, and understand how visitors interact with our services. You can manage or disable cookies through your browser settings at any time without restricting access to general website content."
               },
               {
-                "number": "6",
                 "title": "Your rights and data control",
-                "content": "You have the right to request access to the personal information we hold about you, request corrections to outdated contact details, or ask for the deletion of non-statutory records by writing to us at info@xyz.com."
+                "content": "You have the right to request access to the personal information we hold about you, request corrections to outdated contact details, or ask for the deletion of non-statutory records by writing to us at {email}."
               },
               {
-                "number": "7",
                 "title": "Data retention",
                 "content": "We retain client project records, engineering calculations, and warranty documents for the duration required to fulfill our 10-year structural warranty commitments and applicable statutory audit obligations. General inquiry details that do not result in a contract are removed after 24 months."
               },
               {
-                "number": "8",
                 "title": "Contact and grievance redressal",
-                "content": "If you have any questions or concerns regarding this Privacy Policy or how your data is handled, please contact our administrative desk at info@xyz.com or call +1 000-000-0000 during standard working hours."
+                "content": "If you have any questions or concerns regarding this Privacy Policy or how your data is handled, please contact our administrative desk at {email} or call {phone} during standard working hours."
               }
-            ]
+            ],
+            "metaTitle": "Privacy Policy",
+            "metaDescription": "Learn how Constrix collects, uses, and protects your personal and project information."
           }
         }
       },
@@ -1418,7 +1403,37 @@
         "variants": {
           "ConstrixSitemap1": {
             "title": "Sitemap",
-            "intro": "A quick and organized directory of all pages, specialized construction services, portfolio projects, blog posts, and legal policies on the Constrix website."
+            "intro": "A quick and organized directory of all pages, specialized construction services, portfolio projects, blog posts, and legal policies on the Constrix website.",
+            "metaTitle": "Sitemap",
+            "metaDescription": "Browse all pages, construction services, project categories, and articles on the Constrix website.",
+            "testimonialsLink": {
+              "label": "Client Testimonials",
+              "href": "/testimonials"
+            },
+            "projectLinkSuffix": "Construction Projects",
+            "projectsHref": "/our-projects",
+            "groups": {
+              "main": {
+                "title": "Main Pages",
+                "text": "Primary navigation and essential company destinations:"
+              },
+              "services": {
+                "title": "Construction Services",
+                "text": "Turnkey civil, residential, commercial, and industrial engineering solutions:"
+              },
+              "projects": {
+                "title": "Projects & Portfolio",
+                "text": "Completed and ongoing construction works by sector:"
+              },
+              "blog": {
+                "title": "Blog & Industry Articles",
+                "text": "Construction tips, design ideas, and industry insights:"
+              },
+              "support": {
+                "title": "Support & Legal Information",
+                "text": "Contractual terms, privacy commitments, and customer assistance:"
+              }
+            }
           }
         }
       }

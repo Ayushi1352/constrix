@@ -6,9 +6,9 @@ const { cta } = data;
 
 export default function Cta() {
   return (
-    <section className="relative overflow-hidden bg-[#0b1118]">
+    <section className="relative overflow-hidden bg-[#0a1c26]">
       <Image src={cta.image} alt="" fill sizes="100vw" className="object-cover object-[72%_center] xl:object-center" />
-      <div className="absolute inset-0 bg-[#0b1118]/65 lg:bg-transparent lg:bg-linear-to-r lg:from-[#0b1118]/85 lg:from-25% lg:via-[#0b1118]/45 lg:via-48% lg:to-transparent lg:to-62%" />
+      <div className="absolute inset-0 bg-[#0a1c26]/65 lg:bg-transparent lg:bg-linear-to-r lg:from-[#0a1c26]/85 lg:from-25% lg:via-[#0a1c26]/45 lg:via-48% lg:to-transparent lg:to-62%" />
 
       <div className="relative mx-auto w-full max-w-1686 px-20 py-64 sm:px-32 xl:h-604 xl:px-0 xl:py-0 xl:pt-118 xl:pl-122">
         <p className="flex items-center gap-14 fs-12 font-bold tracking-[0.3em] text-white uppercase sm:fs-14 xl:gap-20 xl:fs-17">
@@ -26,7 +26,7 @@ export default function Cta() {
         </p>
         <Link
           href={cta.button.href}
-          className="mt-28 inline-flex h-56 items-center justify-center gap-30 bg-linear-to-r from-[#e3801c] to-[#c16c1d] px-34 fs-18 font-semibold text-white transition-opacity hover:opacity-90 xl:mt-31 xl:h-67 xl:w-266 xl:gap-40 xl:px-0 xl:fs-22"
+          className="mt-28 inline-flex h-56 items-center justify-center gap-30 bg-linear-to-r from-[#e3801c] to-[#c16c1d] px-34 fs-18 font-semibold text-white transition-colors hover:bg-white hover:bg-none hover:text-copper xl:mt-31 xl:h-67 xl:w-266 xl:gap-40 xl:px-0 xl:fs-22"
         >
           {cta.button.label}
           <svg viewBox="0 0 28 20" className="h-18 w-26 xl:h-20 xl:w-28" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">

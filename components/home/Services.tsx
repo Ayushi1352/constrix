@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/common/Icon";
@@ -6,8 +9,14 @@ import { site as data } from "@/data";
 
 const { services } = data;
 const cards = services.items.filter((item) => item.showInGrid);
+// card image shape on the design canvas: the first row is taller than the rest
+const imageRatio = (service: (typeof cards)[number]) => (cards.indexOf(service) < 4 ? "388 / 163" : "388 / 139");
 
-export default function Services() {
+export default function Services({ pageSize = 8, showPagination = false }: { pageSize?: number; showPagination?: boolean }) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = showPagination ? Math.ceil(cards.length / pageSize) : 1;
+  const safePage = Math.min(currentPage, totalPages || 1);
+  const visibleCards = showPagination ? cards.slice((safePage - 1) * pageSize, safePage * pageSize) : cards.slice(0, pageSize);
   return (
     <section className="section-space relative overflow-hidden bg-[#fcf8f7]">
       {/* soft corner shapes */}
@@ -26,13 +35,13 @@ export default function Services() {
         </p>
 
         <div className="mt-28 grid gap-20 sm:grid-cols-2 xl:grid-cols-4 xl:mt-21 xl:gap-x-22 xl:gap-y-21">
-          {cards.map((service) => (
+          {visibleCards.map((service) => (
             <Link
               key={service.slug}
               href={`/our-services/${service.slug}`}
               className="group flex flex-col overflow-hidden rounded-[5px] bg-white shadow-[0_2px_14px_rgba(60,40,20,0.05)] transition-shadow hover:shadow-[0_8px_26px_rgba(60,40,20,0.14)]"
             >
-              <div className="relative overflow-hidden" style={{ aspectRatio: `${service.imageWidth} / ${service.imageHeight}` }}>
+              <div className="relative overflow-hidden" style={{ aspectRatio: imageRatio(service) }}>
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -58,6 +67,54 @@ export default function Services() {
             </Link>
           ))}
         </div>
+
+        {!showPagination && (
+          <div className="mt-28 flex justify-center xl:mt-32">
+            <Link
+              href={services.button.href}
+              className="inline-flex items-center gap-10 rounded-[4px] border border-copper bg-copper px-20 py-12 fs-15 font-medium text-white transition-colors hover:bg-white hover:text-copper xl:px-24 xl:py-15 xl:fs-17"
+            >
+              {services.button.label}
+              <Icon name="arrowRight" className="size-18 xl:size-20" strokeWidth={2} />
+            </Link>
+          </div>
+        )}
+
+        {showPagination && totalPages > 1 && (
+          <div className="mt-28 flex items-center justify-center gap-10">
+            <button
+              type="button"
+              onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+              disabled={safePage === 1}
+              className="flex size-40 items-center justify-center rounded-full border border-[#d8dfe6] bg-white text-coal transition-colors enabled:hover:border-copper enabled:hover:bg-copper enabled:hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+              aria-label="Previous services page"
+            >
+              <Icon name="chevronLeft" className="size-18" strokeWidth={2.4} />
+            </button>
+            <div className="flex items-center gap-8 fs-15 text-coal">
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                <button
+                  key={page}
+                  type="button"
+                  onClick={() => setCurrentPage(page)}
+                  className={`flex size-34 items-center justify-center rounded-full transition-colors ${safePage === page ? "bg-copper text-white" : "bg-[#f7f4f2] text-coal hover:bg-copper hover:text-white"}`}
+                  aria-label={`Go to services page ${page}`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+              disabled={safePage === totalPages}
+              className="flex size-40 items-center justify-center rounded-full border border-[#d8dfe6] bg-white text-coal transition-colors enabled:hover:border-copper enabled:hover:bg-copper enabled:hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+              aria-label="Next services page"
+            >
+              <Icon name="chevronRight" className="size-18" strokeWidth={2.4} />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ export default function Sidebar({ activeSlug }: { activeSlug: string }) {
                 className={`-mt-px flex h-54 items-center justify-between border px-20 fs-15 font-medium transition-colors xl:h-59 xl:px-21 xl:fs-17 ${
                   active
                     ? "relative border-copper bg-copper text-white"
-                    : "border-[#ececec] bg-white text-coal hover:text-copper"
+                    : "border-[#ececec] bg-white text-coal hover:relative hover:border-copper hover:bg-copper hover:text-white"
                 }`}
               >
                 {item.title}
@@ -44,7 +44,7 @@ export default function Sidebar({ activeSlug }: { activeSlug: string }) {
         <p className="mt-14 max-w-320 fs-15 leading-27 text-[#74797f] xl:mt-10 xl:max-w-none xl:fs-17 xl:leading-30 xl:whitespace-pre-line">{help.text}</p>
         <Link
           href={help.button.href}
-          className="mt-16 flex h-54 items-center justify-center gap-14 rounded-[2px] bg-[#f28a25] fs-16 font-semibold text-white transition-colors hover:bg-copper-dark xl:mt-18 xl:h-60 xl:fs-17"
+          className="mt-16 flex h-54 items-center justify-center gap-14 rounded-[2px] border border-[#f28a25] bg-[#f28a25] fs-16 font-semibold text-white transition-colors hover:bg-white hover:text-copper xl:mt-18 xl:h-60 xl:fs-17"
         >
           {help.button.label}
           <Icon name="arrowRight" className="size-20" strokeWidth={2.2} />

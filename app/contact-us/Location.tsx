@@ -1,8 +1,9 @@
 import Icon from "@/components/common/Icon";
 import { BarLabel } from "@/components/common/SectionLabel";
-import { site as data } from "@/data";
+import { site as data, contactInfo, contactLines } from "@/data";
 
 const { location } = data.contact;
+const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(contactInfo.address.join(" "))}&z=15&output=embed`;
 
 export default function Location() {
   return (
@@ -14,8 +15,8 @@ export default function Location() {
       <p className="mt-10 fs-16 leading-27 text-[#41475d] xl:mt-9 xl:fs-19 xl:leading-32 xl:whitespace-pre-line">{location.text}</p>
 
       <iframe
-        src={location.mapEmbedUrl}
-        title="Office location map"
+        src={mapEmbedUrl}
+        title={location.mapTitle}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         className="mt-22 block h-260 w-full rounded-[6px] border-0 xl:mt-26 xl:h-308"
@@ -33,7 +34,7 @@ export default function Location() {
             <div className="min-w-0">
               <h3 className="fs-18 leading-26 font-semibold text-[#111418] xl:fs-20">{office.title}</h3>
               <p className="mt-4 fs-15 leading-25 text-[#555b64] xl:mt-6 xl:fs-19 xl:leading-31">
-                {office.lines.map((line) => (
+                {contactLines(office).map((line) => (
                   <span key={line} className="block">
                     {line}
                   </span>

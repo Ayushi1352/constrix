@@ -30,10 +30,10 @@ export default function Article({ post }: { post?: Post }) {
       </p>
 
       <ol className="mt-28 space-y-28 xl:mt-37 xl:space-y-43">
-        {blogDetail.steps.map((step) => (
-          <li key={step.number} className="flex items-start gap-18 xl:gap-33">
+        {blogDetail.steps.map((step, index) => (
+          <li key={step.title} className="flex items-start gap-18 xl:gap-33">
             <span className="flex h-56 w-58 shrink-0 items-center justify-center rounded-[4px] bg-copper fs-22 font-semibold text-white shadow-[0_4px_10px_rgba(200,122,46,0.3)] xl:h-73 xl:w-75 xl:fs-27">
-              {step.number}
+              {String(index + 1).padStart(2, "0")}
             </span>
             <div className="min-w-0 xl:-mt-4">
               <h3 className="font-rajdhani fs-23 leading-30 font-bold text-coal xl:fs-31 xl:leading-34">

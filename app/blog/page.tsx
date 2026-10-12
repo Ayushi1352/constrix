@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/common/PageBanner";
 import Blog from "@/components/home/Blog";
+import { site as data, pageTitle } from "@/data";
 
-export const metadata: Metadata = { title: "Blog | Constrix" };
+const { title } = data.pages.blog;
+
+export const metadata: Metadata = { title: pageTitle(title) };
 
 export default function BlogPage() {
   return (
     <>
-      <PageBanner title="Blog" />
-      <Blog />
+      <PageBanner title={title} />
+      <Blog showViewAll={false} pageSize={6} />
     </>
   );
 }
