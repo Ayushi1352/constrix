@@ -8,8 +8,7 @@ const { help } = data.blogDetail;
 export default function AdviceCard() {
   return (
     <div className="relative mt-32 overflow-hidden rounded-[3px] bg-nav px-24 pt-36 pb-36 shadow-[0_4px_14px_rgba(0,0,0,0.2)] xl:mt-54 xl:ml-10 xl:w-425 xl:px-32 xl:pt-49 xl:pb-40">
-      <Image src={help.image} alt="" fill sizes="435px" className="object-cover object-right opacity-25" />
-      <div className="absolute inset-0 bg-nav/80" />
+      <Image src={help.image} alt="" fill sizes="435px" className="object-cover object-right" />
       <div className="relative">
         <h3 className="font-rajdhani fs-32 leading-36 font-bold text-white uppercase xl:fs-42 xl:leading-40">
           {help.titleTop}

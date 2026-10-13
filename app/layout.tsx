@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree, Montserrat, Poppins, Rajdhani, Roboto } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/home/Navbar";
+import Footer from "@/components/home/Footer";
 import { site } from "@/data";
 import "./globals.css";
 

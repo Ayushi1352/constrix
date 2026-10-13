@@ -32,10 +32,6 @@ export default function Hero() {
           className={`object-cover object-[78%_center] transition-opacity duration-700 xl:object-center ${index === current ? "opacity-100" : "opacity-0"}`}
         />
       ))}
-      {/* left fade that keeps the text readable */}
-      <div className="absolute inset-0 bg-[#0a1c26]/70 lg:bg-transparent lg:bg-linear-to-r lg:from-[#0a1c26] lg:from-20% lg:via-[#0a1c26]/75 lg:via-42% lg:to-transparent lg:to-58%" />
-      <div className="absolute inset-x-0 bottom-0 h-200 bg-linear-to-t from-[#061219] via-[#061219]/70 to-transparent" />
-
       <div className="relative mx-auto h-full w-full px-16 pt-40 pb-28 sm:px-24 sm:pt-56 lg:px-48 xl:px-80 xl:pt-90 xl:pb-36">
         <p className="flex items-center gap-14 fs-12 font-light tracking-[0.32em] text-white uppercase sm:fs-14 xl:gap-17 xl:fs-18">
           <span className="h-2 w-34 shrink-0 bg-[#e8923c] xl:w-52" />

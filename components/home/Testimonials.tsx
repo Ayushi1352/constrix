@@ -27,12 +27,8 @@ export default function Testimonials() {
               sizes="(min-width: 1024px) 28vw, 66vw"
               className="object-cover"
             />
-            <span className="absolute bottom-[4%] left-[2%] rotate-180 font-montserrat text-[9.4cqw] leading-none font-extrabold tracking-[0.02em] whitespace-nowrap text-white/40 uppercase [writing-mode:vertical-rl]">
-              {content.sideText}
-            </span>
           </div>
-          <span className="absolute top-[18.2%] left-[70%] h-[58.6%] w-[30%] border-2 border-[#ee8a45]" />
-          <div className="absolute top-[20.4%] left-[55.1%] h-[64.5%] w-[43.2%] overflow-hidden border-[0.75cqw] border-white bg-white shadow-[0_6px_20px_rgba(0,0,0,0.12)]">
+          <div className="absolute top-[20.4%] left-[55.1%] h-[64.5%] w-[43.2%] overflow-hidden">
             <Image
               key={item.name}
               src={item.image}

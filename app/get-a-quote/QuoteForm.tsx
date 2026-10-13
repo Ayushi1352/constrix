@@ -14,8 +14,7 @@ export default function QuoteForm() {
 
   return (
     <div className="relative overflow-hidden rounded-[4px] bg-panel px-20 py-36 sm:px-32 lg:w-[52%] xl:w-820 xl:shrink-0 xl:px-0 xl:pt-41 xl:pr-39 xl:pb-31 xl:pl-52">
-      <Image src={form.image} alt="" fill sizes="820px" className="object-cover object-right opacity-20" />
-      <div className="absolute inset-0 bg-panel/85" />
+      <Image src={form.image} alt="" fill sizes="820px" className="object-cover object-right" />
 
       <div className="relative">
         <BarLabel className="xl:fs-19!">{form.label}</BarLabel>

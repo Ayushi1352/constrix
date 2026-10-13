@@ -238,7 +238,7 @@
               "description": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
               "logo": "/images/logo.png",
               "logoWhite": "/images/logo-white.png",
-              "bannerImage": "/images/page-banner.webp",
+              "bannerImage": "/images/banner.webp",
               "contact": {
                 "phone": "+1 000-000-0000",
                 "email": "info@xyz.com",
@@ -387,7 +387,7 @@
                 "titleTop": "Stronger",
                 "titleBottom": "Tomorrow",
                 "text": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
-                "image": "/images/hero-slide-1.webp"
+                "image": "/images/hero.webp"
               },
               {
                 "label": "Crafting Quality In",
@@ -811,7 +811,7 @@
               {
                 "title": "Skyline Residences",
                 "category": "Residential",
-                "image": "/images/project-villa.webp"
+                "image": "/images/service-residential.webp"
               },
               {
                 "title": "Corporate Headquarters",
@@ -821,7 +821,7 @@
               {
                 "title": "Retail Plaza Complex",
                 "category": "Commercial",
-                "image": "/images/project-tower.webp"
+                "image": "/images/service-commercial.webp"
               },
               {
                 "title": "Manufacturing Plant Upgrade",
@@ -831,7 +831,7 @@
               {
                 "title": "Logistics Distribution Hub",
                 "category": "Industrial",
-                "image": "/images/project-industrial.webp"
+                "image": "/images/service-industrial.webp"
               },
               {
                 "title": "Metro Corridor Expansion",
@@ -841,17 +841,17 @@
               {
                 "title": "Bridge & Drainage Works",
                 "category": "Infrastructure",
-                "image": "/images/project-highway.webp"
+                "image": "/images/service-infrastructure.webp"
               },
               {
                 "title": "Lakeside Family Homes",
                 "category": "Residential",
-                "image": "/images/recent-residential.webp"
+                "image": "/images/project-lakeside.webp"
               },
               {
                 "title": "Downtown Business Center",
                 "category": "Commercial",
-                "image": "/images/recent-commercial.webp"
+                "image": "/images/project-downtown.webp"
               }
             ],
             "button": {
@@ -1036,7 +1036,7 @@
                 "category": "Material Guide",
                 "title": "Choosing the Right Materials\nfor Durable Buildings",
                 "text": "The longevity of any structure depends heavily on the\nmaterials selected. Learn how to balance quality, cost\nand sustainability for long-term performance...",
-                "image": "/images/blog-steps.webp"
+                "image": "/images/service-civil.webp"
               },
               {
                 "slug": "sustainable-design-practices-for-modern-buildings",
@@ -1045,7 +1045,7 @@
                 "category": "Sustainability",
                 "title": "Sustainable Design Practices\nfor Modern Buildings",
                 "text": "Sustainability is becoming a core requirement in modern\nconstruction. Explore design choices that reduce waste\nand improve efficiency...",
-                "image": "/images/blog-trends.webp"
+                "image": "/images/blog-sustainable.webp"
               },
               {
                 "slug": "how-to-streamline-project-planning-and-delivery",
@@ -1054,7 +1054,7 @@
                 "category": "Project Management",
                 "title": "How to Streamline Project\nPlanning and Delivery",
                 "text": "Strong planning and communication can keep projects on\ntrack. Discover practical steps to improve scheduling,\ncoordination and execution...",
-                "image": "/images/blog-costs.webp"
+                "image": "/images/step-planning.webp"
               },
               {
                 "slug": "safety-first-practices-on-construction-sites",
@@ -1063,7 +1063,7 @@
                 "category": "Site Safety",
                 "title": "Safety-First Practices\nfor Construction Sites",
                 "text": "A safe job site protects workers, reduces delays and\nbuilds trust with clients. Learn the most effective safety\nmeasures to implement on site...",
-                "image": "/images/blog-steps.webp"
+                "image": "/images/blog-safety.webp"
               },
               {
                 "slug": "commercial-space-design-that-drives-business-growth",
@@ -1072,7 +1072,7 @@
                 "category": "Business Growth",
                 "title": "Commercial Space Design\nThat Drives Business Growth",
                 "text": "A well-designed commercial space improves customer\nexperience and operational efficiency. Explore design\nchoices that support long-term growth...",
-                "image": "/images/blog-trends.webp"
+                "image": "/images/service-interior.webp"
               }
             ],
             "detail": {

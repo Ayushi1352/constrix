@@ -112,9 +112,8 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
                   alt={project.title}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
-                <span className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#040d14] to-transparent" />
               </button>
               <div className="px-20 pt-12 pb-18 xl:px-22 xl:pt-13 xl:pb-17">
                 <h3 className="fs-17 leading-26 font-semibold text-white xl:fs-18 xl:leading-28 xl:font-bold">{project.title}</h3>

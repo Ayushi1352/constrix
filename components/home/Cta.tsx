@@ -8,8 +8,6 @@ export default function Cta() {
   return (
     <section className="relative overflow-hidden bg-[#0a1c26]">
       <Image src={cta.image} alt="" fill sizes="100vw" className="object-cover object-[72%_center] xl:object-center" />
-      <div className="absolute inset-0 bg-[#0a1c26]/65 lg:bg-transparent lg:bg-linear-to-r lg:from-[#0a1c26]/85 lg:from-25% lg:via-[#0a1c26]/45 lg:via-48% lg:to-transparent lg:to-62%" />
-
       <div className="relative mx-auto w-full max-w-1686 px-20 py-64 sm:px-32 xl:h-604 xl:px-0 xl:py-0 xl:pt-118 xl:pl-140">
         <p className="flex items-center gap-14 fs-12 font-bold tracking-[0.3em] text-white uppercase sm:fs-14 xl:gap-20 xl:fs-17 xl:tracking-[0.34em]">
           <span className="h-2 w-40 shrink-0 bg-[#e8923c] xl:w-62" />
