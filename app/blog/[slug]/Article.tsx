@@ -6,40 +6,39 @@ const { blogDetail } = data;
 type Post = (typeof data.blog.posts)[number];
 
 export default function Article({ post }: { post?: Post }) {
-  const title = post ? post.title.replace(/\n/g, " ") : blogDetail.introTitle;
-  const image = post?.image || blogDetail.image;
+  const image = blogDetail.image || post?.image;
 
   return (
-    <article className="min-w-0 flex-1 xl:pt-5">
-      <div className="relative aspect-[1022/454] overflow-hidden rounded-[6px] shadow-[0_2px_10px_rgba(0,0,0,0.12)]">
+    <article className="min-w-0 flex-1">
+      <div className="relative aspect-[1022/470] overflow-hidden rounded-[6px] shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
         <Image
           src={image}
-          alt={title}
+          alt={blogDetail.introTitle}
           fill
           priority
-          sizes="(min-width: 1024px) 62vw, 100vw"
+          sizes="(min-width: 1024px) 65vw, 100vw"
           className="object-cover"
         />
       </div>
 
-      <h2 className="mt-24 font-rajdhani fs-28 leading-36 font-bold text-coal xl:mt-28 xl:fs-38 xl:leading-42">
-        {title}
+      <h2 className="mt-24 font-poppins text-[26px] sm:text-[30px] font-bold text-coal xl:mt-28">
+        {blogDetail.introTitle}
       </h2>
-      <p className="mt-6 fs-16 leading-27 text-[#61717f] xl:mt-5 xl:fs-20 xl:leading-30 xl:tracking-[-0.015em] xl:whitespace-pre-line">
-        {post?.text ? post.text.replace(/\n/g, " ") : blogDetail.intro}
+      <p className="mt-8 font-figtree text-[15px] sm:text-[16px] leading-[28px] text-[#61717f]">
+        {blogDetail.intro}
       </p>
 
-      <ol className="mt-28 space-y-28 xl:mt-37 xl:space-y-43">
+      <ol className="mt-28 space-y-24 sm:mt-32 sm:space-y-28">
         {blogDetail.steps.map((step, index) => (
-          <li key={step.title} className="flex items-start gap-18 xl:gap-33">
-            <span className="flex h-56 w-58 shrink-0 items-center justify-center rounded-[4px] bg-flame fs-22 font-semibold text-white shadow-[0_4px_10px_rgba(200,122,46,0.3)] xl:h-73 xl:w-75 xl:fs-27">
+          <li key={step.title} className="flex items-start gap-16 sm:gap-20">
+            <span className="flex size-54 sm:size-60 shrink-0 items-center justify-center rounded-[4px] bg-flame text-[20px] font-bold text-white shadow-sm">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <div className="min-w-0 xl:-mt-4">
-              <h3 className="font-rajdhani fs-23 leading-30 font-bold text-coal xl:fs-31 xl:leading-34">
+            <div className="min-w-0 pt-2">
+              <h3 className="font-poppins text-[19px] sm:text-[21px] font-bold text-coal leading-snug">
                 {step.title}
               </h3>
-              <p className="mt-6 fs-16 leading-27 text-[#61717f] xl:mt-5 xl:fs-19 xl:leading-31 xl:whitespace-pre-line">
+              <p className="mt-4 font-figtree text-[15px] sm:text-[15.5px] leading-[26px] text-[#61717f]">
                 {step.text}
               </p>
             </div>
@@ -47,10 +46,10 @@ export default function Article({ post }: { post?: Post }) {
         ))}
       </ol>
 
-      <h2 className="mt-32 font-rajdhani fs-28 leading-36 font-bold text-coal xl:mt-30 xl:fs-38 xl:leading-42">
+      <h2 className="mt-32 font-poppins text-[26px] sm:text-[30px] font-bold text-coal sm:mt-36">
         {blogDetail.conclusionTitle}
       </h2>
-      <p className="mt-6 fs-16 leading-27 text-[#61717f] xl:mt-10 xl:fs-20 xl:leading-30 xl:tracking-[-0.015em] xl:whitespace-pre-line">
+      <p className="mt-8 font-figtree text-[15px] sm:text-[16px] leading-[28px] text-[#61717f]">
         {blogDetail.conclusion}
       </p>
     </article>

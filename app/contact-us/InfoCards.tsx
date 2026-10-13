@@ -3,7 +3,7 @@ import { site as data, contactLines } from "@/data";
 
 export default function InfoCards() {
   return (
-    <ul className="mx-auto grid w-full gap-16 px-16 sm:grid-cols-2 sm:px-24 lg:grid-cols-4 lg:px-48 xl:gap-26 xl:px-80">
+    <ul className="mx-auto grid w-full gap-16 px-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lg:px-48 xl:gap-26 xl:px-80">
       {data.contact.cards.map((card) => (
         <li
           key={card.title}

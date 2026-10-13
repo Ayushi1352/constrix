@@ -7,24 +7,28 @@ const { help } = data.blogDetail;
 
 export default function AdviceCard() {
   return (
-    <div className="relative mt-32 overflow-hidden rounded-[3px] bg-nav px-24 pt-36 pb-36 shadow-[0_4px_14px_rgba(0,0,0,0.2)] xl:mt-54 xl:ml-10 xl:w-425 xl:px-32 xl:pt-49 xl:pb-40">
-      <Image src={help.image} alt="" fill sizes="435px" className="object-cover object-right" />
+    <div className="relative mt-24 sm:mt-28 w-full overflow-hidden rounded-[4px] bg-[#0a1c26] px-24 py-36 text-center shadow-[0_4px_14px_rgba(0,0,0,0.2)] xl:mt-32 xl:px-28 xl:py-40">
+      <Image src={help.image} alt="" fill sizes="420px" className="object-cover opacity-20" />
       <div className="relative">
-        <h3 className="font-rajdhani fs-32 leading-36 font-bold text-white uppercase xl:fs-42 xl:leading-40">
+        <h3 className="font-rajdhani text-[28px] sm:text-[32px] font-bold text-white uppercase leading-tight xl:text-[34px]">
           {help.titleTop}
           <br />
           {help.titleMiddle}
           <br />
-          <span className="text-flame">{help.highlight}</span>
+          <span className="text-[#fb7d1b]">{help.highlight}</span>
         </h3>
-        <p className="mt-14 max-w-360 fs-16 leading-27 text-white xl:mt-18 xl:max-w-none xl:fs-20 xl:leading-30 xl:whitespace-pre-line">{help.text}</p>
-        <Link
-          href={help.button.href}
-          className="mt-20 inline-flex h-56 items-center justify-center gap-20 rounded-[2px] border border-flame bg-flame px-30 fs-17 font-semibold text-white transition-colors hover:bg-white hover:text-flame xl:mt-22 xl:h-65 xl:w-217 xl:px-0 xl:fs-18"
-        >
-          {help.button.label}
-          <Icon name="arrowRight" className="size-20" strokeWidth={2.4} />
-        </Link>
+        <p className="mt-12 text-[14px] sm:text-[15px] text-white/90 leading-22">
+          {help.text}
+        </p>
+        <div className="mt-20 flex justify-center">
+          <Link
+            href={help.button.href}
+            className="inline-flex h-46 sm:h-50 items-center justify-center gap-10 rounded-[3px] border border-[#fb7d1b] bg-[#fb7d1b] px-24 text-[15px] font-semibold text-white transition-colors hover:bg-white hover:text-flame"
+          >
+            {help.button.label}
+            <Icon name="arrowRight" className="size-18" strokeWidth={2.4} />
+          </Link>
+        </div>
       </div>
     </div>
   );

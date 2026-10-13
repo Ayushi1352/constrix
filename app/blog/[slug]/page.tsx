@@ -32,21 +32,16 @@ export default async function BlogDetailsPage({
   const post = data.blog.posts.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const cleanTitle = post.title.replace(/\n/g, " ");
-
   return (
     <>
       <PageBanner
-        title={cleanTitle}
-        breadcrumbs={[
-          { label: data.pages.blog.title, href: "/blog" },
-          { label: cleanTitle },
-        ]}
+        title={data.pages.blogDetail.title}
+        breadcrumbs={[{ label: data.pages.blogDetail.title }]}
       />
-      <section className="section-space bg-white xl:pt-67 xl:pb-128">
-        <div className="mx-auto flex w-full flex-col gap-48 px-16 sm:px-24 lg:flex-row lg:gap-32 lg:px-48 xl:justify-between xl:gap-48 xl:px-80">
+      <section className="section-space bg-white xl:pt-60 xl:pb-100">
+        <div className="mx-auto flex w-full max-w-1686 flex-col gap-40 px-24 sm:px-36 lg:flex-row lg:gap-36 lg:px-64 xl:justify-between xl:gap-48 xl:px-105">
           <Article post={post} />
-          <aside className="w-full shrink-0 lg:w-340 xl:w-435">
+          <aside className="w-full shrink-0 lg:w-340 xl:w-420">
             <RecentPosts currentSlug={post.slug} />
             <AdviceCard />
           </aside>

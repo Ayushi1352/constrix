@@ -45,29 +45,29 @@ export default function SitemapPage() {
         <div className="mx-auto w-full max-w-1000 px-16 sm:px-24 md:px-32">
           
           {/* Top Intro callout with vertical bar */}
-          <div className="border-l-3 border-copper py-4 pl-16 sm:pl-20">
-            <p className="font-figtree fs-15 leading-26 text-[#2c3340] sm:fs-17 sm:leading-28">
+          <div className="border-l-4 border-copper py-6 pl-18 sm:pl-24">
+            <p className="font-figtree text-[17px] leading-[28px] text-[#2c3340] sm:text-[18px] sm:leading-[30px] lg:text-[20px] lg:leading-[34px]">
               {sitemap.intro}
             </p>
           </div>
 
           {/* Simple Clean Numbered Sitemap Sections */}
-          <div className="mt-40 space-y-36 sm:mt-48 sm:space-y-40">
+          <div className="mt-40 space-y-36 sm:mt-48 sm:space-y-44">
             
             {/* 1. Main Pages */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
+              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
                 <span className="text-copper">1.</span> {sitemap.groups.main.title}
               </h2>
-              <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
+              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
                 {sitemap.groups.main.text}
               </p>
-              <ul className="mt-14 grid gap-10 sm:grid-cols-2">
+              <ul className="mt-16 grid gap-12 sm:grid-cols-2">
                 {mainPages.map((page) => (
                   <li key={page.href + page.label}>
                     <Link
                       href={page.href}
-                      className="font-figtree fs-15 font-medium text-coal transition-colors hover:text-copper sm:fs-16"
+                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
                     >
                       • {page.label}
                     </Link>
@@ -78,18 +78,18 @@ export default function SitemapPage() {
 
             {/* 2. Construction Services */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
+              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
                 <span className="text-copper">2.</span> {sitemap.groups.services.title}
               </h2>
-              <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
+              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
                 {sitemap.groups.services.text}
               </p>
-              <ul className="mt-14 grid gap-10 sm:grid-cols-2">
+              <ul className="mt-16 grid gap-12 sm:grid-cols-2">
                 {serviceLinks.map((svc) => (
                   <li key={svc.href}>
                     <Link
                       href={svc.href}
-                      className="font-figtree fs-15 font-medium text-coal transition-colors hover:text-copper sm:fs-16"
+                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
                     >
                       • {svc.label}
                     </Link>
@@ -100,18 +100,18 @@ export default function SitemapPage() {
 
             {/* 3. Project Categories */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
+              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
                 <span className="text-copper">3.</span> {sitemap.groups.projects.title}
               </h2>
-              <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
+              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
                 {sitemap.groups.projects.text}
               </p>
-              <ul className="mt-14 grid gap-10 sm:grid-cols-2">
+              <ul className="mt-16 grid gap-12 sm:grid-cols-2">
                 {projectCategories.map((cat, i) => (
                   <li key={i}>
                     <Link
                       href={cat.href}
-                      className="font-figtree fs-15 font-medium text-coal transition-colors hover:text-copper sm:fs-16"
+                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
                     >
                       • {cat.label}
                     </Link>
@@ -122,18 +122,18 @@ export default function SitemapPage() {
 
             {/* 4. Blog & Articles */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
+              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
                 <span className="text-copper">4.</span> {sitemap.groups.blog.title}
               </h2>
-              <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
+              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
                 {sitemap.groups.blog.text}
               </p>
-              <ul className="mt-14 space-y-10">
+              <ul className="mt-16 space-y-12">
                 {blogPosts.map((post, i) => (
                   <li key={i}>
                     <Link
                       href={post.href}
-                      className="font-figtree fs-15 font-medium text-coal transition-colors hover:text-copper sm:fs-16"
+                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
                     >
                       • {post.label}
                     </Link>
@@ -144,18 +144,18 @@ export default function SitemapPage() {
 
             {/* 5. Legal & Support */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins fs-18 font-bold text-coal sm:fs-20 lg:fs-22">
+              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
                 <span className="text-copper">5.</span> {sitemap.groups.support.title}
               </h2>
-              <p className="mt-10 font-figtree fs-14 text-[#5e6870] sm:fs-15">
+              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
                 {sitemap.groups.support.text}
               </p>
-              <ul className="mt-14 grid gap-10 sm:grid-cols-2">
+              <ul className="mt-16 grid gap-12 sm:grid-cols-2">
                 {supportPages.map((page) => (
                   <li key={page.href}>
                     <Link
                       href={page.href}
-                      className="font-figtree fs-15 font-medium text-coal transition-colors hover:text-copper sm:fs-16"
+                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
                     >
                       • {page.label}
                     </Link>

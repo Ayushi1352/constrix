@@ -6,22 +6,24 @@ const { serviceDetail } = data;
 
 export default function Features({ title }: { title: string }) {
   return (
-    <div className="mt-48 xl:mt-79">
+    <div className="mt-40 xl:mt-54">
       <BarLabel>{serviceDetail.featuresLabel}</BarLabel>
-      <h2 className="mt-12 font-rajdhani fs-36 leading-40 font-bold text-coal sm:fs-46 sm:leading-50 xl:mt-20 xl:fs-64 xl:leading-59">
+      <h2 className="mt-10 font-rajdhani text-[30px] leading-34 font-bold text-coal sm:text-[38px] sm:leading-42 xl:mt-14 xl:text-[46px] xl:leading-48">
         {serviceDetail.featuresTitleTop}
         <br />
-        {serviceDetail.featuresTitleBottom} <span className="text-[#f47d14]">{title}</span>
+        {serviceDetail.featuresTitleBottom} <span className="text-[#fb7d1b]">{title}</span>
       </h2>
-      <ul className="mt-32 grid gap-x-24 gap-y-32 sm:grid-cols-2 xl:mt-39 xl:grid-cols-[37rem_1fr] xl:gap-x-0 xl:gap-y-48">
+      <ul className="mt-28 grid grid-cols-1 gap-x-24 gap-y-24 sm:grid-cols-2 sm:gap-x-32 sm:gap-y-28 xl:mt-36 xl:gap-x-40 xl:gap-y-32">
         {serviceDetail.features.map((feature) => (
-          <li key={feature.title} className="flex items-start gap-20 xl:gap-31">
-            <span className="flex size-76 shrink-0 items-center justify-center rounded-[3px] bg-panel text-[#f58220] shadow-[0_6px_14px_rgba(0,0,0,0.12)] xl:size-97">
-              <Icon name={feature.icon} className="size-38 xl:size-48" strokeWidth={1.7} />
+          <li key={feature.title} className="flex items-start gap-16 xl:gap-20">
+            <span className="flex size-58 sm:size-64 xl:size-68 shrink-0 items-center justify-center rounded-[4px] bg-[#0a1c26] text-[#fb7d1b] shadow-sm">
+              <Icon name={feature.icon} className="size-28 sm:size-32" strokeWidth={1.8} />
             </span>
-            <span className="pt-2 xl:pt-0">
-              <span className="block fs-19 leading-28 font-semibold text-[#111418] xl:fs-23 xl:leading-30">{feature.title}</span>
-              <span className="mt-4 block max-w-360 fs-16 leading-27 text-[#74797f] xl:mt-5 xl:max-w-none xl:fs-20 xl:leading-34 xl:whitespace-pre-line">
+            <span className="pt-1">
+              <span className="block text-[17px] font-bold text-[#111418] sm:text-[18px] xl:text-[19px] leading-snug">
+                {feature.title}
+              </span>
+              <span className="mt-4 block font-figtree text-[13.5px] leading-22 text-[#74797f] sm:text-[14px] xl:text-[14.5px] xl:leading-23">
                 {feature.text}
               </span>
             </span>

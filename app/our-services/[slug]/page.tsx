@@ -35,14 +35,11 @@ export default async function ServiceDetailsPage({
   return (
     <>
       <PageBanner
-        title={service.title}
-        breadcrumbs={[
-          { label: data.pages.ourServices.title, href: "/our-services" },
-          { label: service.title },
-        ]}
+        title={data.pages.serviceDetail.title}
+        breadcrumbs={[{ label: data.pages.serviceDetail.title }]}
       />
-      <section className="section-space bg-white xl:pt-55 xl:pb-84">
-        <div className="mx-auto flex w-full flex-col gap-48 px-16 sm:px-24 lg:flex-row lg:gap-32 lg:px-48 xl:justify-between xl:gap-48 xl:px-80">
+      <section className="section-space bg-white xl:pt-60 xl:pb-90">
+        <div className="mx-auto flex w-full max-w-1686 flex-col gap-40 px-24 sm:px-36 lg:flex-row lg:gap-36 lg:px-64 xl:justify-between xl:gap-48 xl:px-105">
           <div className="min-w-0 flex-1">
             <Overview service={service} />
             <Features title={service.title} />

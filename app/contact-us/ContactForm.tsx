@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/common/Icon";
 import { Field, SelectField, inputClass } from "@/components/common/Field";
 import { BarLabel } from "@/components/common/SectionLabel";
@@ -10,6 +10,31 @@ const { form } = data.contact;
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    event.currentTarget.reset();
+    setSent(true);
+
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
+      setSent(false);
+    }, 5000);
+  };
+
+  const handleFormChange = () => {
+    if (sent) {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      setSent(false);
+    }
+  };
 
   return (
     <div className="rounded-[4px] bg-panel px-20 py-36 sm:px-32 lg:w-[56%] xl:w-920 xl:shrink-0 xl:px-0 xl:pt-48 xl:pr-43 xl:pb-35 xl:pl-48">
@@ -21,11 +46,8 @@ export default function ContactForm() {
 
       <form
         className="mt-24 grid gap-x-20 gap-y-20 sm:grid-cols-2 xl:mt-37 xl:gap-x-31 xl:gap-y-25"
-        onSubmit={(event) => {
-          event.preventDefault();
-          event.currentTarget.reset();
-          setSent(true);
-        }}
+        onSubmit={handleSubmit}
+        onChange={handleFormChange}
       >
         <Field label={form.nameLabel}>
           <input type="text" name="name" required placeholder={form.namePlaceholder} className={`${inputClass} h-54 xl:h-68`} />

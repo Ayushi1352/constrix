@@ -449,7 +449,7 @@
                 "title": "Our Services"
               },
               "serviceDetail": {
-                "title": "Service Details"
+                "title": "Services Details"
               },
               "ourProjects": {
                 "title": "Our Projects"
@@ -458,7 +458,7 @@
                 "title": "Blog"
               },
               "blogDetail": {
-                "title": "Blog Details"
+                "title": "Blogs Detail"
               },
               "contactUs": {
                 "title": "Contact Us"
@@ -1133,14 +1133,6 @@
                 "icon": "pinFill",
                 "title": "Visit Our Office",
                 "source": "address"
-              },
-              {
-                "icon": "clock",
-                "title": "Working Hours",
-                "lines": [
-                  "Mon - Sat: 9:00 AM - 6:00 PM",
-                  "Sunday: Closed"
-                ]
               }
             ],
             "form": {
@@ -1219,7 +1211,6 @@
               "title": "Project",
               "highlight": "Details",
               "text": "Fill out the form below and our team will get in touch with you soon.",
-              "image": "/images/cta.webp",
               "nameLabel": "Full Name",
               "namePlaceholder": "Enter your name",
               "emailLabel": "Email Address",
