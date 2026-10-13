@@ -6,7 +6,7 @@ const { blogDetail } = data;
 type Post = (typeof data.blog.posts)[number];
 
 export default function Article({ post }: { post?: Post }) {
-  const image = blogDetail.image || post?.image;
+  const image = blogDetail.image || post?.image || "/images/blog-detail.webp";
 
   return (
     <article className="min-w-0 flex-1">
