@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PageBanner from "@/components/common/PageBanner";
@@ -23,7 +24,7 @@ export function generateStaticParams() {
   return data.services.items.map((service) => ({ slug: service.slug }));
 }
 
-export default async function ServiceDetailsPage({
+async function ServiceContent({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -34,10 +35,6 @@ export default async function ServiceDetailsPage({
 
   return (
     <>
-      <PageBanner
-        title={data.pages.serviceDetail.title}
-        breadcrumbs={[{ label: data.pages.serviceDetail.title }]}
-      />
       <section className="section-space bg-white xl:pt-60 xl:pb-90">
         <div className="mx-auto flex w-full max-w-1686 flex-col gap-40 px-24 sm:px-36 lg:flex-row lg:gap-36 lg:px-64 xl:justify-between xl:gap-48 xl:px-105">
           <div className="min-w-0 flex-1">
@@ -48,6 +45,24 @@ export default async function ServiceDetailsPage({
         </div>
       </section>
       <ModernBand />
+    </>
+  );
+}
+
+export default function ServiceDetailsPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  return (
+    <>
+      <PageBanner
+        title={data.pages.serviceDetail.title}
+        breadcrumbs={[{ label: data.pages.serviceDetail.title }]}
+      />
+      <Suspense fallback={<div className="min-h-500 bg-white" />}>
+        <ServiceContent params={params} />
+      </Suspense>
     </>
   );
 }
