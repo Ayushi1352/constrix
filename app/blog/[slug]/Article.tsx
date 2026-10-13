@@ -10,7 +10,7 @@ export default function Article({ post }: { post?: Post }) {
   const image = post?.image || blogDetail.image;
 
   return (
-    <article className="min-w-0 flex-1 xl:pt-7">
+    <article className="min-w-0 flex-1 xl:pt-5">
       <div className="relative aspect-[1022/454] overflow-hidden rounded-[6px] shadow-[0_2px_10px_rgba(0,0,0,0.12)]">
         <Image
           src={image}
@@ -32,7 +32,7 @@ export default function Article({ post }: { post?: Post }) {
       <ol className="mt-28 space-y-28 xl:mt-37 xl:space-y-43">
         {blogDetail.steps.map((step, index) => (
           <li key={step.title} className="flex items-start gap-18 xl:gap-33">
-            <span className="flex h-56 w-58 shrink-0 items-center justify-center rounded-[4px] bg-copper fs-22 font-semibold text-white shadow-[0_4px_10px_rgba(200,122,46,0.3)] xl:h-73 xl:w-75 xl:fs-27">
+            <span className="flex h-56 w-58 shrink-0 items-center justify-center rounded-[4px] bg-flame fs-22 font-semibold text-white shadow-[0_4px_10px_rgba(200,122,46,0.3)] xl:h-73 xl:w-75 xl:fs-27">
               {String(index + 1).padStart(2, "0")}
             </span>
             <div className="min-w-0 xl:-mt-4">

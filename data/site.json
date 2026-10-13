@@ -238,7 +238,7 @@
               "description": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
               "logo": "/images/logo.png",
               "logoWhite": "/images/logo-white.png",
-              "bannerImage": "/images/banner.webp",
+              "bannerImage": "/images/page-banner.webp",
               "contact": {
                 "phone": "+1 000-000-0000",
                 "email": "info@xyz.com",
@@ -518,6 +518,8 @@
                 "image": "/images/service-residential.webp",
                 "showInGrid": true,
                 "showInMenu": true,
+                "showInNav": true,
+                "showInFooter": true,
                 "detail": {
                   "titleTop": "Building Homes",
                   "titleBottom": "For",
@@ -534,6 +536,8 @@
                 "image": "/images/service-commercial.webp",
                 "showInGrid": true,
                 "showInMenu": true,
+                "showInNav": true,
+                "showInFooter": true,
                 "detail": {
                   "titleTop": "Building Spaces",
                   "titleBottom": "For",
@@ -550,6 +554,8 @@
                 "image": "/images/service-industrial.webp",
                 "showInGrid": true,
                 "showInMenu": true,
+                "showInNav": true,
+                "showInFooter": true,
                 "detail": {
                   "titleTop": "Building Facilities",
                   "titleBottom": "For",
@@ -566,6 +572,8 @@
                 "image": "/images/service-infrastructure.webp",
                 "showInGrid": true,
                 "showInMenu": true,
+                "showInNav": true,
+                "showInFooter": true,
                 "detail": {
                   "titleTop": "Building Infrastructure",
                   "titleBottom": "For",
@@ -582,6 +590,8 @@
                 "image": "/images/service-renovation.webp",
                 "showInGrid": true,
                 "showInMenu": true,
+                "showInNav": true,
+                "showInFooter": true,
                 "detail": {
                   "titleTop": "Transforming Spaces",
                   "titleBottom": "For",
@@ -598,6 +608,8 @@
                 "image": "/images/service-architecture.webp",
                 "showInGrid": true,
                 "showInMenu": false,
+                "showInNav": true,
+                "showInFooter": true,
                 "detail": {
                   "titleTop": "Designing Spaces",
                   "titleBottom": "For",
@@ -614,6 +626,8 @@
                 "image": "/images/service-interior.webp",
                 "showInGrid": true,
                 "showInMenu": false,
+                "showInNav": true,
+                "showInFooter": true,
                 "detail": {
                   "titleTop": "Crafting Interiors",
                   "titleBottom": "For",
@@ -630,6 +644,8 @@
                 "image": "/images/service-civil.webp",
                 "showInGrid": true,
                 "showInMenu": false,
+                "showInNav": true,
+                "showInFooter": true,
                 "detail": {
                   "titleTop": "Engineering Structures",
                   "titleBottom": "For",
@@ -646,6 +662,8 @@
                 "image": "/images/service-commercial.webp",
                 "showInGrid": true,
                 "showInMenu": true,
+                "showInNav": false,
+                "showInFooter": false,
                 "detail": {
                   "titleTop": "Managing Projects",
                   "titleBottom": "For",
@@ -662,6 +680,8 @@
                 "image": "/images/service-renovation.webp",
                 "showInGrid": true,
                 "showInMenu": false,
+                "showInNav": false,
+                "showInFooter": false,
                 "detail": {
                   "titleTop": "Maintaining Buildings",
                   "titleBottom": "For",

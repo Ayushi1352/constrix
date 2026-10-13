@@ -3,13 +3,13 @@ import { site as data, contactLines } from "@/data";
 
 export default function InfoCards() {
   return (
-    <ul className="mx-auto grid w-full max-w-1686 gap-16 px-16 sm:grid-cols-2 sm:px-24 lg:grid-cols-4 xl:gap-26 xl:pr-47 xl:pl-46">
+    <ul className="mx-auto grid w-full gap-16 px-16 sm:grid-cols-2 sm:px-24 lg:grid-cols-4 lg:px-48 xl:gap-26 xl:px-80">
       {data.contact.cards.map((card) => (
         <li
           key={card.title}
           className="flex items-start gap-20 rounded-[4px] border border-[#f2f2f2] bg-[#f9f9f9] p-20 lg:flex-col xl:h-164 xl:flex-row xl:gap-27 xl:py-27 xl:pr-8 xl:pl-26"
         >
-          <span className="flex size-68 shrink-0 items-center justify-center rounded-[4px] bg-panel text-copper shadow-[0_4px_10px_rgba(0,0,0,0.15)] xl:size-84">
+          <span className="flex size-68 shrink-0 items-center justify-center rounded-[4px] bg-panel text-flame shadow-[0_4px_10px_rgba(0,0,0,0.15)] xl:size-84">
             <Icon name={card.icon} className="size-36 xl:size-44" strokeWidth={1.8} />
           </span>
           <div className="min-w-0 xl:pt-4">

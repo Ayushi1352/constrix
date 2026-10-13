@@ -8,7 +8,7 @@ import Icon from "@/components/common/Icon";
 import { site as data } from "@/data";
 
 const { site, header, nav, services } = data;
-const serviceLinks = services.items.filter((item) => item.showInGrid);
+const serviceLinks = services.items.filter((item) => item.showInNav);
 
 function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <>
       <header className="sticky top-0 z-50 bg-white lg:static">
-        <div className="mx-auto flex h-72 w-full max-w-1686 items-center justify-between gap-16 px-16 sm:px-24 lg:h-100 xl:h-140 xl:pr-56 xl:pl-111">
+        <div className="mx-auto flex h-72 w-full items-center justify-between gap-4 px-16 sm:px-24 lg:h-100 lg:px-48 xl:h-150 xl:px-80">
           <Link href="/" className="shrink-0" onClick={() => setOpen(false)}>
             <Image
               src={site.logo}
@@ -30,11 +30,11 @@ export default function Navbar() {
               height={341}
               priority
               sizes="(min-width: 1280px) 30vw, 260px"
-              className="h-auto w-180 sm:w-220 lg:w-280 xl:w-420"
+              className="h-auto w-180 sm:w-220 lg:w-280 xl:w-483"
             />
           </Link>
 
-          <div className="flex items-center">
+          <div className="flex items-center gap-20 xl:mt-10 xl:gap-28">
             <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} className="hidden items-center gap-14 lg:flex">
               <span className="flex size-48 items-center justify-center rounded-full bg-[#fbede3] text-copper xl:size-56">
                 <Icon name="phone" className="size-22 xl:size-27" strokeWidth={1.4} />
@@ -56,7 +56,7 @@ export default function Navbar() {
             </a>
             <Link
               href={header.button.href}
-              className="ml-24 hidden h-46 items-center justify-center gap-12 rounded-[4px] border border-copper bg-copper px-20 fs-15 font-medium text-white shadow-[0_3px_8px_rgba(213,122,47,0.3)] transition-colors hover:bg-white hover:text-copper sm:inline-flex xl:ml-32 xl:h-62 xl:w-245 xl:gap-14 xl:px-0 xl:fs-19"
+              className="ml-2 hidden h-46 items-center justify-center gap-8 rounded-[4px] border border-copper bg-copper px-10 fs-15 font-medium text-white shadow-[0_3px_8px_rgba(213,122,47,0.3)] transition-colors hover:bg-white hover:text-copper sm:inline-flex xl:ml-3 xl:h-62 xl:w-245 xl:gap-14 xl:px-0 xl:fs-19"
             >
               {header.button.label}
               <Icon name="arrowRight" className="size-18 xl:size-24" strokeWidth={2} />
@@ -117,7 +117,7 @@ export default function Navbar() {
         )}
       </header>
 
-      <nav className="sticky top-0 z-40 hidden bg-nav lg:block">
+      <nav className="sticky top-0 z-40 hidden bg-[#192a31] lg:block">
         <ul className="mx-auto flex h-60 w-full max-w-1686 items-center justify-center gap-34 xl:h-84 xl:gap-59">
           {nav.map((item) => {
             const active = isActive(pathname, item.href);

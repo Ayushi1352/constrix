@@ -21,7 +21,7 @@ export default function Features({ title }: { title: string }) {
             </span>
             <span className="pt-2 xl:pt-0">
               <span className="block fs-19 leading-28 font-semibold text-[#111418] xl:fs-23 xl:leading-30">{feature.title}</span>
-              <span className="mt-4 block max-w-360 fs-16 leading-27 text-[#74797f] xl:mt-5 xl:max-w-none xl:fs-19 xl:leading-34 xl:whitespace-pre-line">
+              <span className="mt-4 block max-w-360 fs-16 leading-27 text-[#74797f] xl:mt-5 xl:max-w-none xl:fs-20 xl:leading-34 xl:whitespace-pre-line">
                 {feature.text}
               </span>
             </span>

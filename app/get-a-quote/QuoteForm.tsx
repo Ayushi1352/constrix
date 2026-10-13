@@ -18,14 +18,14 @@ export default function QuoteForm() {
       <div className="absolute inset-0 bg-panel/85" />
 
       <div className="relative">
-        <BarLabel className="xl:fs-19">{form.label}</BarLabel>
-        <h2 className="mt-8 font-rajdhani fs-40 leading-44 font-bold text-white uppercase sm:fs-50 sm:leading-54 xl:mt-11 xl:fs-56 xl:leading-64">
-          {form.title} <span className="text-copper">{form.highlight}</span>
+        <BarLabel className="xl:fs-19!">{form.label}</BarLabel>
+        <h2 className="mt-8 font-rajdhani fs-40 leading-44 font-bold text-white uppercase sm:fs-50 sm:leading-54 xl:mt-18 xl:fs-56 xl:leading-64">
+          {form.title} <span className="text-flame">{form.highlight}</span>
         </h2>
-        <p className="mt-10 fs-15 leading-25 text-white xl:mt-13 xl:fs-18 xl:leading-28">{form.text}</p>
+        <p className="mt-10 fs-15 leading-25 text-white xl:mt-9 xl:fs-20 xl:leading-28">{form.text}</p>
 
         <form
-          className="mt-22 grid gap-x-20 gap-y-18 sm:grid-cols-2 xl:mt-32 xl:gap-x-30 xl:gap-y-24"
+          className="mt-22 grid gap-x-20 gap-y-18 sm:grid-cols-2 xl:mt-33 xl:gap-x-30 xl:gap-y-24"
           onSubmit={(event) => {
             event.preventDefault();
             event.currentTarget.reset();
@@ -57,7 +57,7 @@ export default function QuoteForm() {
           </Field>
           <button
             type="submit"
-            className="flex h-60 items-center justify-center gap-20 rounded-[4px] border border-copper bg-copper fs-18 font-semibold text-white transition-colors hover:bg-white hover:text-copper sm:col-span-2 xl:-mt-3 xl:h-71 xl:gap-24 xl:fs-20"
+            className="flex h-60 items-center justify-center gap-20 rounded-[4px] border border-flame bg-flame fs-18 font-semibold text-white transition-colors hover:bg-white hover:text-flame sm:col-span-2 xl:-mt-3 xl:h-71 xl:gap-24 xl:fs-20"
           >
             {form.button}
             <Icon name="arrowRight" className="size-22" strokeWidth={2.2} />

@@ -9,11 +9,11 @@
 @theme {
   --spacing: 0.0625rem;
 
-  --color-copper: #c87a2e;
+  --color-copper: #d47930;
   --color-copper-light: #eb9a43;
   --color-copper-dark: #a95e1e;
-  --color-flame: #c87a2e;
-  --color-tangerine: #d48032;
+  --color-flame: #fb7d1b;
+  --color-tangerine: #fb7d1b;
   --color-nav: #0a1c26;
   --color-ink: #0a1c26;
   --color-coal: #0a1c26;
@@ -45,11 +45,11 @@ html {
 @media (min-width: 1280px) {
   html {
     /*
-      Header (140) + nav (84) + home banner (672) = 896 design pixels. The
+      Header (150) + nav (84) + home banner (672) = 906 design pixels. The
       height term keeps all three inside one screen, so the banner's feature
       row is never cut off on short or zoomed-in screens.
     */
-    font-size: max(10px, min(16px, calc(100vw / 105.375), calc(100svh / 56.25)));
+    font-size: max(10px, min(16px, calc(100vw / 105.375), calc(100svh / 56.9)));
   }
 }
 
@@ -67,36 +67,44 @@ select {
   cursor: pointer;
 }
 
-.section-space {
-  padding-block: 3rem;
+/* In the components layer, so a section can still set its own xl:pt-* / xl:pb-*. */
+@layer components {
+  .section-space {
+    padding-block: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-space {
+      padding-block: 4rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-space {
+      padding-block: 5rem;
+    }
+  }
 }
 
-@media (min-width: 640px) {
-  .section-space {
-    padding-block: 4rem;
+@layer components {
+  .section-space-bottom {
+    padding-bottom: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-space-bottom {
+      padding-bottom: 4rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-space-bottom {
+      padding-bottom: 5rem;
+    }
   }
 }
 
 @media (min-width: 1024px) {
-  .section-space {
-    padding-block: 5rem;
-  }
-}
-
-.section-space-bottom {
-  padding-bottom: 3rem;
-}
-
-@media (min-width: 640px) {
-  .section-space-bottom {
-    padding-bottom: 4rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-space-bottom {
-    padding-bottom: 5rem;
-  }
 
   /* min-height, so the feature row is never clipped on short screens */
   .home-hero {

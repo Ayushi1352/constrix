@@ -7,12 +7,12 @@ const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(contactI
 
 export default function Location() {
   return (
-    <div className="min-w-0 flex-1 bg-cream py-8 xl:pt-48 xl:pr-45 xl:pl-42">
-      <BarLabel>{location.label}</BarLabel>
-      <h2 className="mt-8 font-rajdhani fs-40 leading-44 font-bold text-coal uppercase sm:fs-50 sm:leading-54 xl:mt-10 xl:fs-66 xl:leading-70">
+    <div className="min-w-0 flex-1 bg-cream py-8 xl:pt-50 xl:pr-45 xl:pl-42">
+      <BarLabel className="xl:fs-20!">{location.label}</BarLabel>
+      <h2 className="mt-8 font-rajdhani fs-40 leading-44 font-bold text-coal uppercase sm:fs-50 sm:leading-54 xl:mt-17 xl:fs-56 xl:leading-60">
         {location.title} <span className="text-[#ff7c0b]">{location.highlight}</span>
       </h2>
-      <p className="mt-10 fs-16 leading-27 text-[#41475d] xl:mt-9 xl:fs-19 xl:leading-32 xl:whitespace-pre-line">{location.text}</p>
+      <p className="mt-10 fs-16 leading-27 text-[#41475d] xl:mt-14 xl:fs-20 xl:leading-33 xl:whitespace-pre-line">{location.text}</p>
 
       <iframe
         src={mapEmbedUrl}

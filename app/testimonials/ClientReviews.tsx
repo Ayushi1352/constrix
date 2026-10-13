@@ -5,28 +5,29 @@ const { testimonialsPage: content } = data;
 
 export default function ClientReviews() {
   return (
-    <section className="section-space bg-[#faf9f7]">
-      <div className="mx-auto w-full max-w-1686 px-16 sm:px-24 xl:pr-45 xl:pl-48">
-        <p className="flex items-center justify-center gap-14 font-figtree fs-15 leading-24 font-bold tracking-[0.06em] text-copper uppercase xl:gap-25 xl:fs-21">
-          <span className="h-18 w-3 bg-copper xl:h-24 xl:w-4" />
+    <section className="section-space bg-[#faf9f7] xl:pb-134">
+      <div className="mx-auto w-full px-16 sm:px-24 lg:px-48 xl:px-80">
+        <p className="flex items-center justify-center gap-14 font-figtree fs-15 leading-24 font-bold tracking-[0.06em] text-flame uppercase xl:gap-25 xl:fs-22">
+          <span className="h-18 w-3 bg-flame xl:h-24 xl:w-4" />
           {content.label}
         </p>
-        <h2 className="mt-6 text-center font-rajdhani fs-40 leading-44 font-bold text-coal uppercase sm:fs-56 sm:leading-60 xl:mt-18 xl:fs-78 xl:leading-74">
-          {content.title} <span className="text-copper">{content.highlight}</span>
+        <h2 className="mt-6 text-center font-rajdhani fs-40 leading-44 font-bold text-coal uppercase sm:fs-56 sm:leading-60 xl:mt-18 xl:fs-80 xl:leading-74">
+          {content.title} <span className="text-flame">{content.highlight}</span>
         </h2>
-        <p className="mx-auto mt-12 max-w-900 text-center font-figtree fs-16 leading-25 text-[#2c3340] xl:mt-3 xl:max-w-none xl:fs-20 xl:leading-26 xl:whitespace-pre-line">
+        <p className="mx-auto mt-12 max-w-900 text-center font-figtree fs-16 leading-25 text-[#2c3340] xl:mt-3 xl:max-w-none xl:fs-22 xl:leading-26 xl:whitespace-pre-line">
           {content.text}
         </p>
 
-        <div className="mt-32 grid gap-20 md:grid-cols-2 lg:grid-cols-3 xl:mt-34 xl:gap-x-27 xl:gap-y-21">
+        <div className="mt-32 grid gap-20 md:grid-cols-2 lg:grid-cols-3 xl:mt-30 xl:gap-x-27 xl:gap-y-21">
           {content.items.map((item) => (
             <article
               key={item.name}
+
               className="flex flex-col rounded-[4px] border border-[#efefef] bg-white px-22 pt-21 pb-18 font-figtree xl:px-26 xl:pb-15"
             >
               <div className="flex items-start justify-between">
-                <Icon name="quote" className="-mt-6 -ml-4 size-42 text-copper xl:-mt-8 xl:size-46" />
-                <span className="mt-4 flex gap-3 text-copper">
+                <Icon name="quote" className="-mt-6 -ml-4 size-42 text-flame xl:-mt-8 xl:size-46" />
+                <span className="mt-4 flex gap-3 text-flame">
                   {Array.from({ length: item.rating }).map((_, index) => (
                     <Icon key={index} name="starFill" className="size-18 xl:size-21" />
                   ))}

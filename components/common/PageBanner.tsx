@@ -24,9 +24,9 @@ export default function PageBanner({ title, breadcrumbs }: PageBannerProps) {
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="scale-105 object-cover object-[center_30%] blur-[3px]"
       />
-      <div className="absolute inset-0 bg-[#0a1c26]/65" />
+      <div className="absolute inset-0 bg-[#0f1c24]/75" />
       <div className="relative px-16 text-center xl:pt-12">
         <h1 className="font-roboto fs-34 leading-44 font-medium text-white sm:fs-44 sm:leading-56 xl:fs-56 xl:leading-70">
           {title}

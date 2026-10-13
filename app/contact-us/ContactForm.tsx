@@ -14,13 +14,13 @@ export default function ContactForm() {
   return (
     <div className="rounded-[4px] bg-panel px-20 py-36 sm:px-32 lg:w-[56%] xl:w-920 xl:shrink-0 xl:px-0 xl:pt-48 xl:pr-43 xl:pb-35 xl:pl-48">
       <BarLabel>{form.label}</BarLabel>
-      <h2 className="mt-8 font-rajdhani fs-44 leading-48 font-bold text-white uppercase sm:fs-56 sm:leading-60 xl:mt-13 xl:fs-76 xl:leading-74">
-        {form.title} <span className="text-copper">{form.highlight}</span>
+      <h2 className="mt-8 font-rajdhani fs-44 leading-48 font-bold text-white uppercase sm:fs-56 sm:leading-60 xl:mt-15 xl:fs-76 xl:leading-74">
+        {form.title} <span className="text-flame">{form.highlight}</span>
       </h2>
-      <p className="mt-10 fs-16 leading-26 text-white xl:mt-14 xl:fs-20 xl:leading-30">{form.text}</p>
+      <p className="mt-10 fs-16 leading-26 text-white xl:mt-14 xl:fs-21 xl:leading-30">{form.text}</p>
 
       <form
-        className="mt-24 grid gap-x-20 gap-y-20 sm:grid-cols-2 xl:mt-37 xl:gap-x-31 xl:gap-y-28"
+        className="mt-24 grid gap-x-20 gap-y-20 sm:grid-cols-2 xl:mt-37 xl:gap-x-31 xl:gap-y-25"
         onSubmit={(event) => {
           event.preventDefault();
           event.currentTarget.reset();
@@ -49,7 +49,7 @@ export default function ContactForm() {
         </Field>
         <button
           type="submit"
-          className="flex h-60 items-center justify-center gap-20 rounded-[4px] border border-copper bg-copper fs-18 font-semibold text-white transition-colors hover:bg-white hover:text-copper sm:col-span-2 xl:-mt-8 xl:h-76 xl:gap-24 xl:fs-21"
+          className="flex h-60 items-center justify-center gap-20 rounded-[4px] border border-flame bg-flame fs-18 font-semibold text-white transition-colors hover:bg-white hover:text-flame sm:col-span-2 xl:-mt-5 xl:h-76 xl:gap-24 xl:fs-22"
         >
           {form.button}
           <Icon name="arrowRight" className="size-22" strokeWidth={2.2} />

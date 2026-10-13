@@ -3,15 +3,15 @@ import { site as data } from "@/data";
 
 export default function Benefits() {
   return (
-    <div className="section-space-bottom bg-white">
+    <div className="section-space-bottom bg-white xl:pb-69">
       <section className="bg-[#fcf7f4] py-44 xl:h-287 xl:py-0">
-        <ul className="mx-auto grid w-full max-w-1686 gap-x-24 gap-y-36 px-20 sm:grid-cols-2 sm:px-32 lg:grid-cols-4 xl:grid-cols-[25.9375rem_27.5rem_25.3125rem_1fr] xl:gap-0 xl:px-0 xl:pt-54 xl:pl-88">
+        <ul className="mx-auto grid w-full gap-x-24 gap-y-36 px-16 sm:grid-cols-2 sm:px-24 lg:grid-cols-4 lg:px-48 xl:grid-cols-[25.9375rem_27.5rem_25.3125rem_1fr] xl:gap-0 xl:pt-54 xl:px-80">
           {data.quote.benefits.map((benefit, index) => (
             <li key={benefit.title} className="relative">
               {index > 0 && (
-                <span className="absolute top-12 -left-92 hidden h-160 w-[1.5px] bg-copper/40 xl:block" />
+                <span className="absolute top-12 -left-92 hidden h-160 w-[1.5px] bg-flame/40 xl:block" />
               )}
-              <Icon name={benefit.icon} className="size-48 text-copper xl:size-58" strokeWidth={2} />
+              <Icon name={benefit.icon} className="size-48 text-flame xl:size-58" strokeWidth={2} />
               <h3 className="mt-14 fs-20 leading-30 font-semibold text-[#111418] xl:mt-12 xl:fs-23 xl:leading-34">
                 {benefit.title}
               </h3>

@@ -58,14 +58,14 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
 
   return (
     <section
-      className="section-space relative overflow-hidden bg-[#03090f] bg-[radial-gradient(120%_90%_at_0%_0%,#1b2f40_0%,#0a1620_38%,#03090f_70%)]"
+      className={`section-space relative overflow-hidden bg-[#03090f] bg-[radial-gradient(120%_90%_at_0%_0%,#1b2f40_0%,#0a1620_38%,#03090f_70%)] ${rows === 2 ? "xl:pt-99 xl:pb-45" : "xl:pt-41 xl:pb-57"}`}
     >
-      <span className="text-outline pointer-events-none absolute top-30 left-1/2 hidden -translate-x-1/2 fs-190 leading-none font-extrabold tracking-[0.02em] uppercase select-none xl:block">
+      <span className="text-outline pointer-events-none absolute top-30 left-1/2 hidden -translate-x-1/2 fs-190 xl:top-6 leading-none font-extrabold tracking-[0.02em] uppercase select-none xl:block">
         {projects.watermark}
       </span>
 
-      <div className="relative mx-auto w-full max-w-1686 px-16 sm:px-24 xl:px-78">
-        <LineLabel tone="light">{projects.label}</LineLabel>
+      <div className="relative mx-auto w-full px-16 sm:px-24 lg:px-48 xl:px-80">
+        <LineLabel tone="light" className="font-normal!">{projects.label}</LineLabel>
         <h2 className="mt-12 text-center fs-28 leading-36 font-extrabold tracking-[-0.03em] text-white sm:fs-40 sm:leading-48 xl:mt-8 xl:fs-56 xl:leading-70">
           {projects.title}{" "}
           <span className="bg-linear-to-r from-copper-light to-copper bg-clip-text text-transparent">
@@ -80,10 +80,10 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
               <button
                 type="button"
                 onClick={() => handleFilterChange(tab)}
-                className={`h-38 rounded-[3px] px-18 fs-14 transition-colors xl:h-42 xl:px-34 xl:fs-17 ${
+                className={`h-38 rounded-[3px] px-18 fs-14 transition-colors xl:h-42 xl:px-35 xl:fs-16 ${
                   filter === tab
-                    ? "bg-linear-to-b from-copper-light to-copper font-semibold text-white"
-                    : "font-medium text-white hover:bg-copper"
+                    ? "bg-linear-to-b from-copper-light to-copper font-medium text-white"
+                    : "font-normal text-white hover:bg-copper"
                 }`}
               >
                 {tab}
@@ -94,7 +94,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
 
         <div
           ref={track}
-          className={`mt-24 grid gap-x-19 gap-y-24 xl:mt-25 xl:gap-y-47 ${rows === 2 ? "sm:grid-cols-2 lg:grid-cols-4" : "no-scrollbar snap-x snap-mandatory grid-flow-col grid-rows-1 auto-cols-[100%] overflow-x-auto sm:auto-cols-[calc((100%-1.1875rem)/2)] lg:auto-cols-[calc((100%-3.5625rem)/4)]"}`}
+          className={`mt-24 grid gap-x-19 gap-y-24 xl:mt-25 xl:gap-y-57 ${rows === 2 ? "sm:grid-cols-2 lg:grid-cols-4" : "no-scrollbar snap-x snap-mandatory grid-flow-col grid-rows-1 auto-cols-[100%] overflow-x-auto sm:auto-cols-[calc((100%-1.1875rem)/2)] lg:auto-cols-[calc((100%-3.5625rem)/4)]"}`}
         >
           {pageItems.map((project, index) => (
             <article
@@ -117,7 +117,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
                 <span className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#040d14] to-transparent" />
               </button>
               <div className="px-20 pt-12 pb-18 xl:px-22 xl:pt-13 xl:pb-17">
-                <h3 className="fs-17 leading-26 font-semibold text-white xl:fs-19 xl:leading-28">{project.title}</h3>
+                <h3 className="fs-17 leading-26 font-semibold text-white xl:fs-18 xl:leading-28 xl:font-bold">{project.title}</h3>
                 <p className="fs-14 leading-24 text-[#cfd4d8] xl:fs-16 xl:leading-27">{project.category}</p>
               </div>
             </article>

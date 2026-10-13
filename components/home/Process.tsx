@@ -7,20 +7,20 @@ const { process } = data;
 
 export default function Process() {
   return (
-    <section className="section-space bg-white">
-      <div className="mx-auto w-full max-w-1686 px-20 sm:px-32 xl:pr-67 xl:pl-71">
-        <LineLabel>{process.label}</LineLabel>
-        <h2 className="mt-10 text-center fs-30 leading-38 font-extrabold tracking-[-0.03em] text-coal sm:fs-42 sm:leading-50 xl:mt-1 xl:fs-63 xl:leading-70">
+    <section className="section-space bg-white xl:pt-63 xl:pb-59">
+      <div className="mx-auto w-full px-16 sm:px-24 lg:px-48 xl:px-80">
+        <LineLabel className="font-semibold!">{process.label}</LineLabel>
+        <h2 className="mt-10 text-center fs-30 leading-38 font-extrabold tracking-[-0.03em] text-[#030f28] sm:fs-42 sm:leading-50 xl:mt-3 xl:fs-63 xl:leading-70">
           {process.title}{" "}
           <span className="bg-linear-to-r from-copper-light to-copper-dark bg-clip-text text-transparent">
             {process.highlight}
           </span>
         </h2>
-        <p className="mx-auto mt-10 max-w-610 text-center fs-14 leading-23 text-[#40424f] xl:mt-7 xl:max-w-none xl:fs-15 xl:leading-24 xl:whitespace-pre-line">
+        <p className="mx-auto mt-10 max-w-610 text-center fs-14 leading-23 text-[#40424f] xl:mt-5 xl:max-w-none xl:fs-14 xl:leading-24 xl:whitespace-pre-line">
           {process.text}
         </p>
 
-        <ol className="mt-44 grid gap-x-28 gap-y-44 sm:grid-cols-2 lg:grid-cols-4 xl:mt-34 xl:gap-x-92">
+        <ol className="mt-44 grid gap-x-28 gap-y-44 sm:grid-cols-2 lg:grid-cols-4 xl:mt-38 xl:gap-x-92">
           {process.steps.map((step, index) => (
             <li key={step.title} className="relative bg-[#fbfbfb] shadow-[0_6px_24px_rgba(20,30,50,0.05)]">
               <div className="relative aspect-[318/186]">
@@ -39,7 +39,7 @@ export default function Process() {
                 </span>
               </div>
               <div className="pt-49 pr-16 pb-22 pl-27 xl:pr-0 xl:pb-17">
-                <h3 className="fs-20 leading-28 font-semibold text-coal xl:fs-22 xl:leading-30 xl:whitespace-nowrap">
+                <h3 className="fs-20 leading-28 font-semibold text-coal xl:fs-20 xl:leading-30 xl:font-bold xl:whitespace-nowrap">
                   {step.title}
                 </h3>
                 <p className="mt-6 fs-15 leading-21 text-[#595e71] xl:fs-16 xl:whitespace-pre-line">{step.text}</p>

@@ -18,12 +18,12 @@ export default function ModernBand() {
           <h2 className="mt-14 font-rajdhani fs-40 leading-44 font-bold text-white uppercase sm:fs-48 sm:leading-52 xl:mt-30 xl:fs-66 xl:leading-61">
             {band.titleTop}
             <br />
-            <span className="text-copper">{band.highlight}</span>
+            <span className="text-flame">{band.highlight}</span>
           </h2>
           <p className="mt-18 max-w-420 fs-17 leading-30 text-white xl:mt-22 xl:max-w-none xl:fs-22 xl:leading-37 xl:whitespace-pre-line">{band.text}</p>
           <Link
             href={band.button.href}
-            className="mt-28 inline-flex h-58 items-center justify-center gap-18 rounded-[2px] border border-copper bg-copper px-30 fs-18 font-semibold text-white transition-colors hover:bg-white hover:text-copper xl:mt-47 xl:h-75 xl:w-240 xl:gap-22 xl:px-0 xl:fs-22"
+            className="mt-28 inline-flex h-58 items-center justify-center gap-18 rounded-[2px] border border-flame bg-flame px-30 fs-18 font-semibold text-white transition-colors hover:bg-white hover:text-flame xl:mt-47 xl:h-75 xl:w-240 xl:gap-22 xl:px-0 xl:fs-22"
           >
             {band.button.label}
             <Icon name="arrowRight" className="size-22 xl:size-26" strokeWidth={2.2} />

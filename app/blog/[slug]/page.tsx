@@ -43,8 +43,8 @@ export default async function BlogDetailsPage({
           { label: cleanTitle },
         ]}
       />
-      <section className="section-space bg-white">
-        <div className="mx-auto flex w-full max-w-1686 flex-col gap-48 px-20 sm:px-32 lg:flex-row lg:gap-32 xl:gap-37 xl:pr-90 xl:pl-102">
+      <section className="section-space bg-white xl:pt-67 xl:pb-128">
+        <div className="mx-auto flex w-full flex-col gap-48 px-16 sm:px-24 lg:flex-row lg:gap-32 lg:px-48 xl:justify-between xl:gap-48 xl:px-80">
           <Article post={post} />
           <aside className="w-full shrink-0 lg:w-340 xl:w-435">
             <RecentPosts currentSlug={post.slug} />

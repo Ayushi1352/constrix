@@ -15,8 +15,8 @@ export default function Testimonials() {
   const go = (step: number) => setCurrent((value) => (value + step + total) % total);
 
   return (
-    <section className="section-space overflow-hidden bg-white">
-      <div className="mx-auto flex w-full max-w-1686 flex-col gap-40 px-20 sm:px-32 lg:flex-row lg:items-center lg:gap-40 xl:items-start xl:gap-39 xl:pr-60 xl:pl-96">
+    <section className="section-space overflow-hidden bg-white xl:pt-59 xl:pb-111">
+      <div className="mx-auto flex w-full flex-col gap-40 px-16 sm:px-24 lg:flex-row lg:items-center lg:gap-40 lg:px-48 xl:items-start xl:justify-between xl:gap-0 xl:px-80">
         {/* photo collage; positions are % of the 671x504 design box */}
         <div className="@container relative mx-auto aspect-[671/504] w-full max-w-560 shrink-0 lg:w-[46%] xl:mx-0 xl:w-671 xl:max-w-none">
           <div className="absolute top-0 left-0 h-full w-[66.2%] overflow-hidden">
@@ -44,19 +44,19 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="min-w-0 flex-1 xl:pt-16">
-          <LineLabel align="left" className="xl:[&>span:first-child]:w-56">
+        <div className="min-w-0 flex-1 xl:pt-14">
+          <LineLabel align="left" className="font-bold! xl:[&>span:first-child]:w-56">
             {content.label}
             <span className="ml-14 inline-block h-2 w-30 bg-copper align-middle xl:ml-18 xl:w-68" />
           </LineLabel>
-          <h2 className="mt-8 fs-30 leading-38 font-extrabold tracking-[-0.03em] text-coal sm:fs-42 sm:leading-52 xl:mt-1 xl:fs-67 xl:leading-72">
+          <h2 className="mt-8 fs-30 leading-38 font-extrabold tracking-[-0.03em] text-[#030c26] sm:fs-42 sm:leading-52 xl:mt-6 xl:fs-67 xl:leading-72">
             {content.title}{" "}
             <span className="bg-linear-to-r from-copper-light to-copper-dark bg-clip-text text-transparent">
               {content.highlight}
             </span>
           </h2>
 
-          <div className="mt-28 flex items-center gap-20 xl:mt-42 xl:ml-9">
+          <div className="mt-28 flex items-center gap-20 xl:mt-46 xl:ml-9">
             <span className="flex size-52 shrink-0 items-center justify-center rounded-full border-2 border-copper text-copper xl:size-62">
               <Icon name="quote" className="size-28 xl:size-36" />
             </span>
@@ -65,7 +65,7 @@ export default function Testimonials() {
               <p className="fs-14 leading-22 text-[#6b707e] xl:fs-16 xl:leading-28">{item.role}</p>
             </div>
           </div>
-          <blockquote className="mt-20 max-w-680 font-figtree fs-16 leading-26 text-[#6b707e] xl:mt-22 xl:ml-8 xl:min-h-140 xl:max-w-none xl:fs-19 xl:leading-28 xl:tracking-[0.02em] xl:whitespace-pre-line">
+          <blockquote className="mt-20 max-w-680 font-figtree fs-16 leading-26 text-[#6b707e] xl:mt-20 xl:ml-8 xl:min-h-140 xl:max-w-none xl:fs-20 xl:leading-28 xl:tracking-[0.01em] xl:whitespace-pre-line">
             &ldquo;{item.quote}&rdquo;
           </blockquote>
 

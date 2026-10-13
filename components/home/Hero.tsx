@@ -36,12 +36,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#0a1c26]/70 lg:bg-transparent lg:bg-linear-to-r lg:from-[#0a1c26] lg:from-20% lg:via-[#0a1c26]/75 lg:via-42% lg:to-transparent lg:to-58%" />
       <div className="absolute inset-x-0 bottom-0 h-200 bg-linear-to-t from-[#061219] via-[#061219]/70 to-transparent" />
 
-      <div className="relative mx-auto h-full w-full max-w-1686 px-20 pt-40 pb-28 sm:px-32 sm:pt-56 xl:px-0 xl:pt-90 xl:pb-36 xl:pl-111">
+      <div className="relative mx-auto h-full w-full px-16 pt-40 pb-28 sm:px-24 sm:pt-56 lg:px-48 xl:px-80 xl:pt-90 xl:pb-36">
         <p className="flex items-center gap-14 fs-12 font-light tracking-[0.32em] text-white uppercase sm:fs-14 xl:gap-17 xl:fs-18">
           <span className="h-2 w-34 shrink-0 bg-[#e8923c] xl:w-52" />
           {slide.label}
         </p>
-        <h1 className="mt-14 font-montserrat fs-46 leading-[0.91] font-extrabold tracking-[-0.03em] uppercase sm:fs-72 lg:fs-88 xl:mt-12 xl:fs-102">
+        <h1 className="mt-14 font-montserrat fs-46 leading-[0.91] font-extrabold tracking-[-0.03em] uppercase sm:fs-72 lg:fs-88 xl:mt-12 xl:fs-112 xl:leading-[0.82]">
           <span className="block text-white">{slide.titleTop}</span>
           <span className="block bg-linear-to-b from-[#f7993f] to-[#cf7a2c] bg-clip-text text-transparent">
             {slide.titleBottom}
@@ -71,7 +71,7 @@ export default function Hero() {
           {features.map((feature, index) => (
             <li
               key={feature.title}
-              className={`flex items-center gap-14 xl:h-48 xl:gap-26 ${index > 0 ? "xl:w-260 xl:border-l xl:border-white/25 xl:pl-42" : "xl:w-230 xl:pl-7"}`}
+              className={`flex items-center gap-14 xl:h-48 xl:gap-26 ${index > 0 ? "xl:w-260 xl:border-l xl:border-white/25 xl:pl-42" : "xl:w-230"}`}
             >
               <Icon name={feature.icon} className="size-34 shrink-0 text-[#e8923c] xl:size-44" strokeWidth={1.3} />
               <span className="fs-14 leading-20 sm:fs-16 sm:leading-24 xl:fs-17">

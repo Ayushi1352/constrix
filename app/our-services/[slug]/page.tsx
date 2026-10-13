@@ -41,8 +41,8 @@ export default async function ServiceDetailsPage({
           { label: service.title },
         ]}
       />
-      <section className="section-space bg-white">
-        <div className="mx-auto flex w-full max-w-1686 flex-col gap-48 px-20 sm:px-32 lg:flex-row lg:gap-32 xl:gap-42 xl:pr-72 xl:pl-88">
+      <section className="section-space bg-white xl:pt-55 xl:pb-84">
+        <div className="mx-auto flex w-full flex-col gap-48 px-16 sm:px-24 lg:flex-row lg:gap-32 lg:px-48 xl:justify-between xl:gap-48 xl:px-80">
           <div className="min-w-0 flex-1">
             <Overview service={service} />
             <Features title={service.title} />
