@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/common/PageBanner";
-import Blog from "@/components/home/Blog";
+import PageBanner from "@/components/PageBanner";
+import Blog from "@/components/Blog";
 import { site as data, pageTitle } from "@/data";
 
 const { title } = data.pages.blog;

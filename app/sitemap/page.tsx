@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageBanner from "@/components/common/PageBanner";
+import PageBanner from "@/components/PageBanner";
 import { site as data, pageTitle } from "@/data";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function SitemapPage() {
 
   const serviceLinks = services.items.map((svc) => ({
     label: svc.title,
-    href: `/our-services/${svc.slug}`,
+    href: svc.href,
   }));
 
   const projectCategories = projects.categories.map((cat) => ({
@@ -29,7 +29,7 @@ export default function SitemapPage() {
 
   const blogPosts = blog.posts.map((post) => ({
     label: post.title.replace(/\n/g, " "),
-    href: `/blog/${post.slug}`,
+    href: post.href,
   }));
 
   const supportPages = footer.supportLinks.map((item) => ({
@@ -41,12 +41,12 @@ export default function SitemapPage() {
     <>
       <PageBanner title={sitemap.title} />
 
-      <main className="section-space bg-white">
+      <main className="py-48 sm:py-64 lg:py-80 bg-white">
         <div className="mx-auto w-full max-w-1000 px-16 sm:px-24 md:px-32">
           
           {/* Top Intro callout with vertical bar */}
           <div className="border-l-4 border-copper py-6 pl-18 sm:pl-24">
-            <p className="font-figtree text-[17px] leading-[28px] text-[#2c3340] sm:text-[18px] sm:leading-[30px] lg:text-[20px] lg:leading-[34px]">
+            <p className="font-text text-[1.0625rem] leading-[1.75rem] text-[#2c3340] sm:text-[1.125rem] sm:leading-[1.875rem] lg:text-[1.25rem] lg:leading-[2.125rem]">
               {sitemap.intro}
             </p>
           </div>
@@ -56,10 +56,10 @@ export default function SitemapPage() {
             
             {/* 1. Main Pages */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
+              <h2 className="font-main text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:text-[1.5rem] sm:leading-[2rem] lg:text-[1.625rem] lg:leading-[2.125rem]">
                 <span className="text-copper">1.</span> {sitemap.groups.main.title}
               </h2>
-              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
+              <p className="mt-10 font-text text-[0.9375rem] text-slate sm:text-[1rem] lg:text-[1.0625rem] leading-[1.625rem]">
                 {sitemap.groups.main.text}
               </p>
               <ul className="mt-16 grid gap-12 sm:grid-cols-2">
@@ -67,7 +67,7 @@ export default function SitemapPage() {
                   <li key={page.href + page.label}>
                     <Link
                       href={page.href}
-                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
+                      className="font-text text-[1.03125rem] font-medium text-coal transition-colors hover:text-copper sm:text-[1.09375rem] lg:text-[1.15625rem] leading-[1.75rem]"
                     >
                       • {page.label}
                     </Link>
@@ -78,10 +78,10 @@ export default function SitemapPage() {
 
             {/* 2. Construction Services */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
+              <h2 className="font-main text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:text-[1.5rem] sm:leading-[2rem] lg:text-[1.625rem] lg:leading-[2.125rem]">
                 <span className="text-copper">2.</span> {sitemap.groups.services.title}
               </h2>
-              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
+              <p className="mt-10 font-text text-[0.9375rem] text-slate sm:text-[1rem] lg:text-[1.0625rem] leading-[1.625rem]">
                 {sitemap.groups.services.text}
               </p>
               <ul className="mt-16 grid gap-12 sm:grid-cols-2">
@@ -89,7 +89,7 @@ export default function SitemapPage() {
                   <li key={svc.href}>
                     <Link
                       href={svc.href}
-                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
+                      className="font-text text-[1.03125rem] font-medium text-coal transition-colors hover:text-copper sm:text-[1.09375rem] lg:text-[1.15625rem] leading-[1.75rem]"
                     >
                       • {svc.label}
                     </Link>
@@ -100,10 +100,10 @@ export default function SitemapPage() {
 
             {/* 3. Project Categories */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
+              <h2 className="font-main text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:text-[1.5rem] sm:leading-[2rem] lg:text-[1.625rem] lg:leading-[2.125rem]">
                 <span className="text-copper">3.</span> {sitemap.groups.projects.title}
               </h2>
-              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
+              <p className="mt-10 font-text text-[0.9375rem] text-slate sm:text-[1rem] lg:text-[1.0625rem] leading-[1.625rem]">
                 {sitemap.groups.projects.text}
               </p>
               <ul className="mt-16 grid gap-12 sm:grid-cols-2">
@@ -111,7 +111,7 @@ export default function SitemapPage() {
                   <li key={i}>
                     <Link
                       href={cat.href}
-                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
+                      className="font-text text-[1.03125rem] font-medium text-coal transition-colors hover:text-copper sm:text-[1.09375rem] lg:text-[1.15625rem] leading-[1.75rem]"
                     >
                       • {cat.label}
                     </Link>
@@ -122,10 +122,10 @@ export default function SitemapPage() {
 
             {/* 4. Blog & Articles */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
+              <h2 className="font-main text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:text-[1.5rem] sm:leading-[2rem] lg:text-[1.625rem] lg:leading-[2.125rem]">
                 <span className="text-copper">4.</span> {sitemap.groups.blog.title}
               </h2>
-              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
+              <p className="mt-10 font-text text-[0.9375rem] text-slate sm:text-[1rem] lg:text-[1.0625rem] leading-[1.625rem]">
                 {sitemap.groups.blog.text}
               </p>
               <ul className="mt-16 space-y-12">
@@ -133,7 +133,7 @@ export default function SitemapPage() {
                   <li key={i}>
                     <Link
                       href={post.href}
-                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
+                      className="font-text text-[1.03125rem] font-medium text-coal transition-colors hover:text-copper sm:text-[1.09375rem] lg:text-[1.15625rem] leading-[1.75rem]"
                     >
                       • {post.label}
                     </Link>
@@ -144,10 +144,10 @@ export default function SitemapPage() {
 
             {/* 5. Legal & Support */}
             <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
-              <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
+              <h2 className="font-main text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:text-[1.5rem] sm:leading-[2rem] lg:text-[1.625rem] lg:leading-[2.125rem]">
                 <span className="text-copper">5.</span> {sitemap.groups.support.title}
               </h2>
-              <p className="mt-10 font-figtree text-[15px] text-[#5e6870] sm:text-[16px] lg:text-[17px] leading-[26px]">
+              <p className="mt-10 font-text text-[0.9375rem] text-slate sm:text-[1rem] lg:text-[1.0625rem] leading-[1.625rem]">
                 {sitemap.groups.support.text}
               </p>
               <ul className="mt-16 grid gap-12 sm:grid-cols-2">
@@ -155,7 +155,7 @@ export default function SitemapPage() {
                   <li key={page.href}>
                     <Link
                       href={page.href}
-                      className="font-figtree text-[16.5px] font-medium text-coal transition-colors hover:text-copper sm:text-[17.5px] lg:text-[18.5px] leading-[28px]"
+                      className="font-text text-[1.03125rem] font-medium text-coal transition-colors hover:text-copper sm:text-[1.09375rem] lg:text-[1.15625rem] leading-[1.75rem]"
                     >
                       • {page.label}
                     </Link>

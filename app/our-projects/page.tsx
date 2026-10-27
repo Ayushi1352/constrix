@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/common/PageBanner";
-import Projects from "@/components/home/Projects";
+import PageBanner from "@/components/PageBanner";
+import Projects from "@/components/Projects";
 import { site as data, pageTitle } from "@/data";
 
 const { title } = data.pages.ourProjects;

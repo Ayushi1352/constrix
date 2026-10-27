@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/common/PageBanner";
+import PageBanner from "@/components/PageBanner";
 import { site as data, pageTitle } from "@/data";
-import ClientReviews from "./ClientReviews";
+import ClientReviews from "@/components/ClientReviews";
 
 const { title } = data.pages.testimonials;
 

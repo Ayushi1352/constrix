@@ -1,5 +1,87 @@
 {
   "Constrix": {
+    "theme": {
+      "colors": {
+        "copper": "#d47930",
+        "copper-light": "#eb9a43",
+        "copper-dark": "#a95e1e",
+        "flame": "#fb7d1b",
+        "tangerine": "#fb7d1b",
+        "nav": "#0a1c26",
+        "ink": "#0a1c26",
+        "coal": "#0a1c26",
+        "night": "#061219",
+        "panel": "#08161f",
+        "cream": "#fcf8f4",
+        "peach": "#fceddd",
+        "mist": "#f9fbfc",
+        "slate": "#5e6870",
+        "page": "#f5f5f5"
+      },
+      "fonts": {
+        "main": {
+          "family": "Poppins",
+          "fallback": "sans-serif",
+          "weights": [
+            300,
+            400,
+            500,
+            600,
+            700,
+            800
+          ],
+          "italic": false
+        },
+        "alt": {
+          "family": "Montserrat",
+          "fallback": "sans-serif",
+          "weights": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900
+          ],
+          "italic": false
+        },
+        "display": {
+          "family": "Rajdhani",
+          "fallback": "sans-serif",
+          "weights": [
+            600,
+            700
+          ],
+          "italic": false
+        },
+        "ui": {
+          "family": "Roboto",
+          "fallback": "sans-serif",
+          "weights": [
+            400,
+            500
+          ],
+          "italic": false
+        },
+        "text": {
+          "family": "Figtree",
+          "fallback": "sans-serif",
+          "weights": [
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900
+          ],
+          "italic": false
+        }
+      }
+    },
     "templateComponents": {
       "template-1": {
         "shared": {
@@ -84,7 +166,6 @@
             ]
           },
           "service-detail": {
-            "expand": "items",
             "components": [
               {
                 "key": "PageBanner",
@@ -121,7 +202,6 @@
             ]
           },
           "blog-detail": {
-            "expand": "items",
             "components": [
               {
                 "key": "PageBanner",
@@ -282,7 +362,32 @@
                 "label": "Contact Us",
                 "href": "/contact-us"
               }
-            ]
+            ],
+            "labels": {
+              "openMenu": "Open menu",
+              "closeMenu": "Close menu",
+              "breadcrumb": "Breadcrumb",
+              "goToSlide": "Go to slide {n}",
+              "previousSlide": "Previous slide",
+              "nextSlide": "Next slide",
+              "goToBlogPage": "Go to blog page {n}",
+              "previousBlogPage": "Previous blog page",
+              "nextBlogPage": "Next blog page",
+              "goToServicesPage": "Go to services page {n}",
+              "previousServicesPage": "Previous services page",
+              "nextServicesPage": "Next services page",
+              "goToPage": "Go to page {n}",
+              "previousPage": "Previous page",
+              "nextPage": "Next page",
+              "previousProjects": "Previous projects",
+              "nextProjects": "Next projects",
+              "viewProjectImage": "View {title} image",
+              "closeImage": "Close image",
+              "previousImage": "Previous image",
+              "nextImage": "Next image",
+              "previousTestimonial": "Previous testimonial",
+              "nextTestimonial": "Next testimonial"
+            }
           }
         }
       },
@@ -411,29 +516,7 @@
             "secondaryButton": {
               "label": "View Projects",
               "href": "/our-projects"
-            },
-            "features": [
-              {
-                "icon": "home",
-                "title": "Residential",
-                "text": "Construction"
-              },
-              {
-                "icon": "building",
-                "title": "Commercial",
-                "text": "Construction"
-              },
-              {
-                "icon": "factory",
-                "title": "Industrial",
-                "text": "Construction"
-              },
-              {
-                "icon": "bridge",
-                "title": "Infrastructure",
-                "text": "Development"
-              }
-            ]
+            }
           }
         }
       },
@@ -511,8 +594,8 @@
             "text": "From residential buildings to large-scale infrastructure, we deliver end-to-end\nconstruction solutions with quality, innovation and reliability.",
             "items": [
               {
-                "slug": "residential-construction",
                 "title": "Residential Construction",
+                "href": "/our-services/service-details",
                 "icon": "home",
                 "text": "Custom homes, villas, apartments\nand housing projects built with\nquality and precision.",
                 "image": "/images/service-residential.webp",
@@ -529,8 +612,8 @@
                 }
               },
               {
-                "slug": "commercial-construction",
                 "title": "Commercial Construction",
+                "href": "/our-services/service-details",
                 "icon": "building",
                 "text": "Offices, shopping complexes,\nshowrooms and commercial\nspaces for modern businesses.",
                 "image": "/images/service-commercial.webp",
@@ -547,8 +630,8 @@
                 }
               },
               {
-                "slug": "industrial-construction",
                 "title": "Industrial Construction",
+                "href": "/our-services/service-details",
                 "icon": "factory",
                 "text": "Factories, warehouses and\nindustrial facilities designed\nfor efficiency and growth.",
                 "image": "/images/service-industrial.webp",
@@ -565,8 +648,8 @@
                 }
               },
               {
-                "slug": "infrastructure-development",
                 "title": "Infrastructure Development",
+                "href": "/our-services/service-details",
                 "icon": "bridge",
                 "text": "Roads, bridges, flyovers and\ncivil infrastructure for stronger\ncommunities.",
                 "image": "/images/service-infrastructure.webp",
@@ -583,8 +666,8 @@
                 }
               },
               {
-                "slug": "renovation-remodeling",
                 "title": "Renovation & Remodeling",
+                "href": "/our-services/service-details",
                 "icon": "tools",
                 "text": "Transforming existing spaces\nwith innovative renovation\nand remodeling solutions.",
                 "image": "/images/service-renovation.webp",
@@ -601,8 +684,8 @@
                 }
               },
               {
-                "slug": "architecture-design",
                 "title": "Architecture & Design",
+                "href": "/our-services/service-details",
                 "icon": "drafting",
                 "text": "Creative architectural design,\nplanning and 3D visualization\nfor innovative spaces.",
                 "image": "/images/service-architecture.webp",
@@ -619,8 +702,8 @@
                 }
               },
               {
-                "slug": "interior-fit-out",
                 "title": "Interior Fit-Out",
+                "href": "/our-services/service-details",
                 "icon": "sofa",
                 "text": "Complete interior fit-out\nsolutions for residential\nand commercial spaces.",
                 "image": "/images/service-interior.webp",
@@ -637,8 +720,8 @@
                 }
               },
               {
-                "slug": "civil-engineering-works",
                 "title": "Civil Engineering Works",
+                "href": "/our-services/service-details",
                 "icon": "bricks",
                 "text": "Structural and general civil\nconstruction with high engineering\nstandards.",
                 "image": "/images/service-civil.webp",
@@ -655,8 +738,8 @@
                 }
               },
               {
-                "slug": "project-management",
                 "title": "Project Management",
+                "href": "/our-services/service-details",
                 "icon": "planning",
                 "text": "End-to-end project management\nthat keeps your build on time\nand within budget.",
                 "image": "/images/service-commercial.webp",
@@ -673,8 +756,8 @@
                 }
               },
               {
-                "slug": "building-maintenance",
                 "title": "Building Maintenance",
+                "href": "/our-services/service-details",
                 "icon": "gear",
                 "text": "Scheduled upkeep, repairs and\ninspections that keep your\nproperty safe and in top shape.",
                 "image": "/images/service-renovation.webp",
@@ -904,7 +987,6 @@
               "label": "Testimonials",
               "title": "What Our",
               "highlight": "Clients Say",
-              "sideText": "Testimonials",
               "backgroundImage": "/images/testimonial-site.webp",
               "items": [
                 {
@@ -1003,74 +1085,74 @@
             "readMore": "Read More",
             "posts": [
               {
-                "slug": "essential-steps-for-a-successful-construction-project",
                 "day": "15",
                 "monthYear": "Mar 2026",
                 "category": "Construction Tips",
                 "title": "Essential Steps for a Successful\nConstruction Project",
+                "href": "/blog/blog-details",
                 "text": "A well-planned construction project saves time, reduces\ncosts and ensures better quality outcomes. Here are\nsome key steps to keep in mind...",
                 "image": "/images/blog-steps.webp"
               },
               {
-                "slug": "top-modern-construction-design-trends-in-2026",
                 "day": "22",
                 "monthYear": "Mar 2026",
                 "category": "Design Ideas",
                 "title": "Top Modern Construction\nDesign Trends in 2026",
+                "href": "/blog/blog-details",
                 "text": "Discover the latest design trends that are shaping the\nfuture of residential, commercial and industrial\nconstruction projects...",
                 "image": "/images/blog-trends.webp"
               },
               {
-                "slug": "how-to-manage-construction-costs-effectively",
                 "day": "28",
                 "monthYear": "Mar 2026",
                 "category": "Industry Insights",
                 "title": "How to Manage Construction\nCosts Effectively",
+                "href": "/blog/blog-details",
                 "text": "Learn practical tips and strategies to control\nconstruction costs without compromising on quality\nand timelines...",
                 "image": "/images/blog-costs.webp"
               },
               {
-                "slug": "choosing-the-right-materials-for-durable-buildings",
                 "day": "09",
                 "monthYear": "Apr 2026",
                 "category": "Material Guide",
                 "title": "Choosing the Right Materials\nfor Durable Buildings",
+                "href": "/blog/blog-details",
                 "text": "The longevity of any structure depends heavily on the\nmaterials selected. Learn how to balance quality, cost\nand sustainability for long-term performance...",
                 "image": "/images/service-civil.webp"
               },
               {
-                "slug": "sustainable-design-practices-for-modern-buildings",
                 "day": "14",
                 "monthYear": "Apr 2026",
                 "category": "Sustainability",
                 "title": "Sustainable Design Practices\nfor Modern Buildings",
+                "href": "/blog/blog-details",
                 "text": "Sustainability is becoming a core requirement in modern\nconstruction. Explore design choices that reduce waste\nand improve efficiency...",
                 "image": "/images/blog-sustainable.webp"
               },
               {
-                "slug": "how-to-streamline-project-planning-and-delivery",
                 "day": "21",
                 "monthYear": "Apr 2026",
                 "category": "Project Management",
                 "title": "How to Streamline Project\nPlanning and Delivery",
+                "href": "/blog/blog-details",
                 "text": "Strong planning and communication can keep projects on\ntrack. Discover practical steps to improve scheduling,\ncoordination and execution...",
                 "image": "/images/step-planning.webp"
               },
               {
-                "slug": "safety-first-practices-on-construction-sites",
                 "day": "03",
                 "monthYear": "May 2026",
                 "category": "Site Safety",
                 "title": "Safety-First Practices\nfor Construction Sites",
+                "href": "/blog/blog-details",
                 "text": "A safe job site protects workers, reduces delays and\nbuilds trust with clients. Learn the most effective safety\nmeasures to implement on site...",
                 "image": "/images/blog-safety.webp"
               },
               {
-                "slug": "commercial-space-design-that-drives-business-growth",
                 "day": "11",
                 "monthYear": "May 2026",
                 "category": "Business Growth",
                 "title": "Commercial Space Design\nThat Drives Business Growth",
+                "href": "/blog/blog-details",
                 "text": "A well-designed commercial space improves customer\nexperience and operational efficiency. Explore design\nchoices that support long-term growth...",
                 "image": "/images/service-interior.webp"
               }

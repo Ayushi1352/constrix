@@ -2,13 +2,15 @@
 
 /*
   The design is drawn on a 1686px wide canvas. Every spacing utility is one
-  "design pixel" (w-388 = 388px in the design) and fs-* sets font sizes the
-  same way. From 1280px up the root font size follows the viewport, so the
-  desktop layout keeps the design's exact proportions on every screen.
+  "design pixel" (w-388 = 388px in the design) and font sizes are written as
+  text-[N/16 rem]. From 1280px up the root font size follows the viewport
+  (set on <html> in app/layout.tsx), so the desktop layout keeps the design's
+  exact proportions on every screen.
 */
 @theme {
   --spacing: 0.0625rem;
 
+  /* Brand colours. These are only defaults: site.json (theme.colors) overrides them in app/layout.tsx. */
   --color-copper: #d47930;
   --color-copper-light: #eb9a43;
   --color-copper-dark: #a95e1e;
@@ -23,110 +25,13 @@
   --color-peach: #fceddd;
   --color-mist: #f9fbfc;
   --color-slate: #5e6870;
-}
+  /* Shown on both sides of the page when the screen is wider than 1920px (or the browser is zoomed out). */
+  --color-page: #f5f5f5;
 
-@theme inline {
-  --font-poppins: var(--ff-poppins), sans-serif;
-  --font-montserrat: var(--ff-montserrat), sans-serif;
-  --font-rajdhani: var(--ff-rajdhani), sans-serif;
-  --font-roboto: var(--ff-roboto), sans-serif;
-  --font-figtree: var(--ff-figtree), sans-serif;
-}
-
-@utility fs-* {
-  font-size: calc(--value(integer) * 0.0625rem);
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
-
-@media (min-width: 1280px) {
-  html {
-    /*
-      Header (150) + nav (84) + home banner (672) = 906 design pixels. The
-      height term keeps all three inside one screen, so the banner's feature
-      row is never cut off on short or zoomed-in screens.
-    */
-    font-size: max(10px, min(16px, calc(100vw / 105.375), calc(100svh / 56.9)));
-  }
-}
-
-body {
-  background: #ffffff;
-  color: #0a1c26;
-  font-family: var(--ff-poppins), sans-serif;
-  overflow-x: clip;
-}
-
-a[href],
-button:not(:disabled),
-[role="button"],
-select {
-  cursor: pointer;
-}
-
-/* In the components layer, so a section can still set its own xl:pt-* / xl:pb-*. */
-@layer components {
-  .section-space {
-    padding-block: 3rem;
-  }
-
-  @media (min-width: 640px) {
-    .section-space {
-      padding-block: 4rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-space {
-      padding-block: 5rem;
-    }
-  }
-}
-
-@layer components {
-  .section-space-bottom {
-    padding-bottom: 3rem;
-  }
-
-  @media (min-width: 640px) {
-    .section-space-bottom {
-      padding-bottom: 4rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-space-bottom {
-      padding-bottom: 5rem;
-    }
-  }
-}
-
-@media (min-width: 1024px) {
-
-  /* min-height, so the feature row is never clipped on short screens */
-  .home-hero {
-    min-height: calc(100svh - 160px);
-  }
-
-  /* 672 design pixels: the banner's height on the 1686px canvas */
-  @media (min-width: 1280px) {
-    .home-hero {
-      min-height: 42rem;
-    }
-  }
-}
-
-.no-scrollbar {
-  scrollbar-width: none;
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.text-outline {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+  /* Fonts from site.json (theme.fonts) via app/fonts.generated.ts; the second part is the fallback. */
+  --font-main: var(--font-main-face, sans-serif);
+  --font-alt: var(--font-alt-face, sans-serif);
+  --font-display: var(--font-display-face, sans-serif);
+  --font-ui: var(--font-ui-face, sans-serif);
+  --font-text: var(--font-text-face, sans-serif);
 }

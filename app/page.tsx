@@ -1,11 +1,11 @@
-import Hero from "@/components/home/Hero";
-import Services from "@/components/home/Services";
-import About from "@/components/home/About";
-import Projects from "@/components/home/Projects";
-import Process from "@/components/home/Process";
-import Testimonials from "@/components/home/Testimonials";
-import Cta from "@/components/home/Cta";
-import Blog from "@/components/home/Blog";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import About from "@/components/About";
+import Projects from "@/components/Projects";
+import Process from "@/components/Process";
+import Testimonials from "@/components/Testimonials";
+import Cta from "@/components/Cta";
+import Blog from "@/components/Blog";
 
 export default function Home() {
   return (

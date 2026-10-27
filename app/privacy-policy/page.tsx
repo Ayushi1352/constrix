@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/common/PageBanner";
+import PageBanner from "@/components/PageBanner";
 import { site as data, fillContact, pageTitle } from "@/data";
 
 export const metadata: Metadata = {
@@ -14,12 +14,12 @@ export default function PrivacyPolicyPage() {
     <>
       <PageBanner title={privacy.title} />
 
-      <main className="section-space bg-white">
+      <main className="py-48 sm:py-64 lg:py-80 bg-white">
         <div className="mx-auto w-full max-w-1000 px-16 sm:px-24 md:px-32">
           
           {/* Top Intro callout with vertical bar */}
           <div className="border-l-4 border-copper py-6 pl-18 sm:pl-24">
-            <p className="font-figtree text-[17px] leading-[28px] text-[#2c3340] sm:text-[18px] sm:leading-[30px] lg:text-[20px] lg:leading-[34px]">
+            <p className="font-text text-[1.0625rem] leading-[1.75rem] text-[#2c3340] sm:text-[1.125rem] sm:leading-[1.875rem] lg:text-[1.25rem] lg:leading-[2.125rem]">
               {privacy.intro}
             </p>
           </div>
@@ -31,10 +31,10 @@ export default function PrivacyPolicyPage() {
                 key={item.title}
                 className="border-t border-[#f0f0f0] pt-32 sm:pt-36"
               >
-                <h2 className="font-poppins text-[22px] leading-[30px] font-bold text-coal sm:text-[24px] sm:leading-[32px] lg:text-[26px] lg:leading-[34px]">
+                <h2 className="font-main text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:text-[1.5rem] sm:leading-[2rem] lg:text-[1.625rem] lg:leading-[2.125rem]">
                   <span className="text-copper">{index + 1}.</span> {item.title}
                 </h2>
-                <p className="mt-14 font-figtree text-[17px] leading-[28px] text-[#4a5568] sm:mt-16 sm:text-[18px] sm:leading-[30px] lg:text-[19px] lg:leading-[34px]">
+                <p className="mt-14 font-text text-[1.0625rem] leading-[1.75rem] text-[#4a5568] sm:mt-16 sm:text-[1.125rem] sm:leading-[1.875rem] lg:text-[1.1875rem] lg:leading-[2.125rem]">
                   {fillContact(item.content)}
                 </p>
               </section>

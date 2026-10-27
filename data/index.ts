@@ -73,10 +73,12 @@ export type ConstrixTestimonialItem =
 const sec = siteData.Constrix.sections;
 
 const site = {
+  theme: siteData.Constrix.theme,
   header: sec.Header.variants.ConstrixHeader1.header,
   nav: sec.Header.variants.ConstrixHeader1.nav,
   site: sec.Header.variants.ConstrixHeader1.site,
   navbar: sec.Header.variants.ConstrixHeader1,
+  labels: sec.Header.variants.ConstrixHeader1.labels,
   hero: sec.Banner.variants.ConstrixBanner1,
   banner: sec.Banner.variants.ConstrixBanner1,
   pageBanner: sec.PageBanner.variants.ConstrixPageBanner1,
@@ -157,6 +159,10 @@ export function contactLines(item: { source?: string; lines?: string[] }): strin
   const value = contactInfo[item.source as keyof typeof contactInfo];
   return Array.isArray(value) ? value : [value];
 }
+
+// Screen-reader labels from site.json (Header > labels); fills {n}, {title} and other placeholders.
+export const fillLabel = (text: string, values: Record<string, string | number>) =>
+  text.replace(/{(w+)}/g, (match, key: string) => (key in values ? String(values[key]) : match));
 
 // Fills {phone} / {email} placeholders inside long text such as the privacy policy.
 export const fillContact = (text: string) =>
