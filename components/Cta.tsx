@@ -15,7 +15,7 @@ export default function Cta() {
           <span className="h-2 w-40 shrink-0 bg-[#e8923c] xl:w-62" />
           {cta.label}
         </p>
-        <h2 className="mt-14 text-[2.125rem] leading-40 font-extrabold tracking-[-0.03em] sm:text-[3.25rem] sm:leading-58 xl:mt-12 xl:text-[4.75rem] xl:leading-72">
+        <h2 className="mt-14 text-[2.125rem] leading-44 font-extrabold tracking-[-0.03em] sm:text-[3.25rem] sm:leading-64 xl:mt-12 xl:text-[4.75rem] xl:leading-88">
           <span className="block text-white">{cta.titleTop}</span>
           <span className="block bg-linear-to-r from-[#c56b19] via-[#e99029] to-[#f7b750] bg-clip-text pb-8 text-transparent">
             {cta.highlight}

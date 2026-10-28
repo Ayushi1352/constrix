@@ -40,7 +40,7 @@ export default function Hero() {
           <span className="h-2 w-34 shrink-0 bg-[#e8923c] xl:w-52" />
           {slide.label}
         </p>
-        <h1 className="mt-14 font-alt text-[2.875rem] sm:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.375rem] leading-[0.91] font-extrabold tracking-[-0.03em] uppercase xl:mt-12 xl:leading-[0.82]">
+        <h1 className="mt-14 font-alt text-[2.875rem] sm:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.375rem] leading-[1.05] font-extrabold tracking-[-0.03em] uppercase xl:mt-12 xl:leading-[1.02]">
           <span className="block text-white">{slide.titleTop}</span>
           <span className="block bg-linear-to-b from-[#f7993f] to-[#cf7a2c] bg-clip-text text-transparent">
             {slide.titleBottom}

@@ -15,7 +15,7 @@ export default function ModernBand() {
         </div>
         <div className="flex flex-1 flex-col justify-center px-24 py-40 sm:px-36 lg:px-48 xl:px-70 xl:py-50">
           <BarLabel className="xl:text-[1.4375rem]!">{band.label}</BarLabel>
-          <h2 className="mt-12 font-display text-[2.5rem] sm:text-[3rem] xl:text-[4.125rem] leading-38 font-bold text-white uppercase sm:leading-48 xl:leading-50">
+          <h2 className="mt-12 font-display text-[2.5rem] sm:text-[3rem] xl:text-[4.125rem] leading-48 font-bold text-white uppercase sm:leading-58 xl:leading-74">
             {band.titleTop}
             <br />
             <span className="text-flame">{band.highlight}</span>

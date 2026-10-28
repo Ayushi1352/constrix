@@ -25,7 +25,7 @@ export default function Services({ pageSize = 8, showPagination = false }: { pag
 
       <div className="relative mx-auto w-full px-16 sm:px-24 lg:px-48 xl:px-80">
         <LineLabel className="font-semibold! xl:tracking-[0.22em]!">{services.label}</LineLabel>
-        <h2 className="mt-12 text-center text-[1.75rem] leading-34 font-extrabold tracking-[-0.02em] text-coal sm:text-[2.375rem] sm:leading-44 xl:mt-3 xl:text-[2.875rem] xl:leading-44">
+        <h2 className="mt-12 text-center text-[1.75rem] leading-38 font-extrabold tracking-[-0.02em] text-coal sm:text-[2.375rem] sm:leading-50 xl:mt-3 xl:text-[2.875rem] xl:leading-58">
           {services.titleTop}
           <br />
           {services.titleBottom} <span className="text-[#fb7f1a]">{services.highlight}</span>
