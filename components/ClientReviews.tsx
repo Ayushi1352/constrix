@@ -7,14 +7,14 @@ export default function ClientReviews() {
   return (
     <section className="py-48 sm:py-64 lg:py-80 bg-[#faf9f7] xl:pb-134">
       <div className="mx-auto w-full px-16 sm:px-24 lg:px-48 xl:px-80">
-        <p className="flex items-center justify-center gap-14 font-text text-[0.9375rem] leading-24 font-bold tracking-[0.06em] text-flame uppercase xl:gap-25 xl:text-[1.375rem]">
+        <p className="flex items-center justify-center gap-14 font-text text-[0.9375rem] xl:text-[1.3125rem] leading-24 font-bold tracking-[0.06em] text-flame uppercase xl:gap-25">
           <span className="h-18 w-3 bg-flame xl:h-24 xl:w-4" />
           {content.label}
         </p>
-        <h2 className="mt-6 text-center font-display text-[2.5rem] leading-44 font-bold text-coal uppercase sm:text-[3.5rem] sm:leading-60 xl:mt-18 xl:text-[5rem] xl:leading-74">
+        <h2 className="mt-6 text-center font-display text-[2.5rem] sm:text-[3.5rem] xl:text-[4.875rem] leading-44 font-bold text-coal uppercase sm:leading-60 xl:mt-18 xl:leading-74">
           {content.title} <span className="text-flame">{content.highlight}</span>
         </h2>
-        <p className="mx-auto mt-12 max-w-900 text-center font-text text-[1rem] leading-25 text-[#2c3340] xl:mt-3 xl:max-w-none xl:text-[1.375rem] xl:leading-26 xl:whitespace-pre-line">
+        <p className="mx-auto mt-12 max-w-900 text-center font-text text-[1rem] xl:text-[1.25rem] leading-25 text-[#2c3340] xl:mt-3 xl:max-w-none xl:leading-26 xl:whitespace-pre-line">
           {content.text}
         </p>
 

@@ -16,7 +16,7 @@ export default function Process() {
             {process.highlight}
           </span>
         </h2>
-        <p className="mx-auto mt-10 max-w-610 text-center text-[0.875rem] leading-23 text-[#40424f] xl:mt-5 xl:max-w-none xl:text-[0.875rem] xl:leading-24 xl:whitespace-pre-line">
+        <p className="mx-auto mt-10 max-w-610 text-center text-[0.9375rem] xl:text-[1.0625rem] leading-24 text-[#40424f] xl:mt-5 xl:max-w-none xl:leading-26 xl:whitespace-pre-line">
           {process.text}
         </p>
 
@@ -39,10 +39,10 @@ export default function Process() {
                 </span>
               </div>
               <div className="pt-49 pr-16 pb-22 pl-27 xl:pr-0 xl:pb-17">
-                <h3 className="text-[1.25rem] leading-28 font-semibold text-coal xl:text-[1.25rem] xl:leading-30 xl:font-bold xl:whitespace-nowrap">
+                <h3 className="text-[1.25rem] xl:text-[1.375rem] leading-28 font-semibold text-coal xl:leading-30 xl:font-bold xl:whitespace-nowrap">
                   {step.title}
                 </h3>
-                <p className="mt-6 text-[0.9375rem] leading-21 text-[#595e71] xl:text-[1rem] xl:whitespace-pre-line">{step.text}</p>
+                <p className="mt-6 text-[0.9375rem] leading-24 text-[#595e71] xl:text-[1.0625rem] xl:leading-26">{step.text}</p>
               </div>
               {index < process.steps.length - 1 && (
                 <span className="absolute top-103 left-full hidden w-92 items-center justify-center text-[#f26a1d] xl:flex">

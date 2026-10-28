@@ -24,10 +24,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      // Root font size: 16px, and from 1280px it follows the viewport so the 1686px design scales as a whole.
-      // Header (150) + nav (84) + home banner (672) = 906 design pixels; the height term keeps all three on one screen.
+      // Root font size: 16px, and from 1280px it follows the viewport width so the 1686px design scales as a whole.
+      // Width only: the screen height (short screens, browser zoom) must not shrink the design's font sizes.
       // Tailwind v4 leaves buttons on the default cursor, so everything clickable gets the pointer.
-      className={`${fontVariables} scroll-smooth text-[16px] antialiased xl:text-[length:max(10px,min(16px,calc(100vw/105.375),calc(100svh/56.9)))] [&_:where(a[href],button:not(:disabled),select,[role=button])]:cursor-pointer`}
+      className={`${fontVariables} scroll-smooth text-[16px] antialiased xl:text-[length:min(16px,calc(100vw/105.375))] [&_:where(a[href],button:not(:disabled),select,[role=button])]:cursor-pointer`}
     >
       <head>
         <style dangerouslySetInnerHTML={{ __html: themeCss }} />

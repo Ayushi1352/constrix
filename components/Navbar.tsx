@@ -7,8 +7,7 @@ import { usePathname } from "next/navigation";
 import Icon from "@/components/Icon";
 import { site as data } from "@/data";
 
-const { site, header, nav, services } = data;
-const serviceLinks = services.items.filter((item) => item.showInNav);
+const { site, header, nav } = data;
 
 function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -30,7 +29,7 @@ export default function Navbar() {
               height={341}
               priority
               sizes="(min-width: 1280px) 30vw, 260px"
-              className="h-auto w-180 sm:w-220 lg:w-280 xl:w-483"
+              className="h-auto w-180 sm:w-220 lg:w-240 xl:w-483"
             />
           </Link>
 
@@ -44,14 +43,14 @@ export default function Navbar() {
                 <span className="text-[1rem] leading-24 font-medium text-[#111] xl:text-[1.1875rem] xl:leading-28">{site.contact.phone}</span>
               </span>
             </a>
-            <span className="hidden h-72 w-px bg-[#eeeeee] xl:mr-24 xl:ml-29 xl:block" />
-            <a href={`mailto:${site.contact.email}`} className="hidden items-center gap-18 xl:flex">
-              <span className="flex size-56 items-center justify-center rounded-full bg-[#fbede3] text-copper">
-                <Icon name="mail" className="size-27" strokeWidth={1.4} />
+            <span className="hidden h-56 w-px bg-[#eeeeee] lg:block xl:mr-24 xl:ml-29 xl:h-72" />
+            <a href={`mailto:${site.contact.email}`} className="hidden items-center gap-14 lg:flex xl:gap-18">
+              <span className="flex size-48 items-center justify-center rounded-full bg-[#fbede3] text-copper xl:size-56">
+                <Icon name="mail" className="size-22 xl:size-27" strokeWidth={1.4} />
               </span>
               <span className="flex flex-col">
-                <span className="text-[0.9375rem] leading-24 text-[#555]">{header.emailLabel}</span>
-                <span className="text-[1.1875rem] leading-28 font-medium text-[#111]">{site.contact.email}</span>
+                <span className="text-[0.8125rem] leading-20 text-[#555] xl:text-[0.9375rem] xl:leading-24">{header.emailLabel}</span>
+                <span className="text-[1rem] leading-24 font-medium text-[#111] xl:text-[1.1875rem] xl:leading-28">{site.contact.email}</span>
               </span>
             </a>
             <Link
@@ -85,21 +84,6 @@ export default function Navbar() {
                   >
                     {item.label}
                   </Link>
-                  {item.dropdown && (
-                    <ul className="pb-10 pl-16">
-                      {serviceLinks.map((service) => (
-                        <li key={service.title}>
-                          <Link
-                            href={service.href}
-                            onClick={() => setOpen(false)}
-                            className="block py-7 text-[0.875rem] text-white/75"
-                          >
-                            {service.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </li>
               ))}
               <li className="py-14 sm:hidden">
@@ -128,25 +112,10 @@ export default function Navbar() {
                   className={`relative flex items-center gap-10 text-[1rem] transition-colors hover:text-copper-light xl:text-[1.3125rem] ${active ? "text-copper-light" : "text-white"}`}
                 >
                   {item.label}
-                  {item.dropdown && <Icon name="chevronDown" className="size-16 xl:size-20" strokeWidth={2.2} />}
                   {active && (
                     <span className="absolute -inset-x-2 -bottom-9 h-2 bg-copper xl:-bottom-13 xl:h-3" />
                   )}
                 </Link>
-                {item.dropdown && (
-                  <ul className="invisible absolute top-full left-0 w-260 bg-white py-8 opacity-0 shadow-[0_12px_30px_rgba(0,0,0,0.15)] transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 xl:w-300">
-                    {serviceLinks.map((service) => (
-                      <li key={service.title}>
-                        <Link
-                          href={service.href}
-                          className="block px-20 py-10 text-[0.9375rem] text-coal transition-colors hover:bg-cream hover:text-copper xl:text-[1.0625rem]"
-                        >
-                          {service.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </li>
             );
           })}

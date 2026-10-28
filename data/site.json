@@ -347,8 +347,7 @@
               },
               {
                 "label": "Our Services",
-                "href": "/our-services",
-                "dropdown": true
+                "href": "/our-services"
               },
               {
                 "label": "Our Projects",
@@ -1215,6 +1214,14 @@
                 "icon": "pinFill",
                 "title": "Visit Our Office",
                 "source": "address"
+              },
+              {
+                "icon": "clock",
+                "title": "Working Hours",
+                "lines": [
+                  "Mon - Sat: 9:00 AM - 6:00 PM",
+                  "Sunday: Closed"
+                ]
               }
             ],
             "form": {
@@ -1251,6 +1258,13 @@
                 {
                   "title": "Head Office",
                   "source": "address"
+                },
+                {
+                  "title": "Branch Office",
+                  "lines": [
+                    "456 Industrial Area, Phase 2,",
+                    "Austin, TX 73301, USA"
+                  ]
                 }
               ],
               "mapTitle": "Office location map"

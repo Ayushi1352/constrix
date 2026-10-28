@@ -8,7 +8,7 @@ export default function ServiceFeatures({ title }: { title: string }) {
   return (
     <div className="mt-40 xl:mt-54">
       <BarLabel>{serviceDetail.featuresLabel}</BarLabel>
-      <h2 className="mt-10 font-display text-[1.875rem] leading-34 font-bold text-coal sm:text-[2.375rem] sm:leading-42 xl:mt-14 xl:text-[2.875rem] xl:leading-48">
+      <h2 className="mt-10 font-display text-[2.375rem] sm:text-[3rem] xl:text-[3.5rem] leading-42 font-bold text-coal sm:leading-52 xl:mt-14 xl:leading-60">
         {serviceDetail.featuresTitleTop}
         <br />
         {serviceDetail.featuresTitleBottom} <span className="text-flame">{title}</span>
@@ -20,10 +20,10 @@ export default function ServiceFeatures({ title }: { title: string }) {
               <Icon name={feature.icon} className="size-28 sm:size-32" strokeWidth={1.8} />
             </span>
             <span className="pt-1">
-              <span className="block text-[1.0625rem] font-bold text-[#111418] sm:text-[1.125rem] xl:text-[1.1875rem] leading-snug">
+              <span className="block text-[1.1875rem] xl:text-[1.4375rem] font-bold text-[#111418] leading-snug">
                 {feature.title}
               </span>
-              <span className="mt-4 block font-text text-[0.84375rem] leading-22 text-[#74797f] sm:text-[0.875rem] xl:text-[0.90625rem] xl:leading-23">
+              <span className="mt-4 block font-text text-[1rem] xl:text-[1.1875rem] leading-22 text-[#74797f] xl:leading-23">
                 {feature.text}
               </span>
             </span>

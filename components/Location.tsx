@@ -8,11 +8,11 @@ const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(contactI
 export default function Location() {
   return (
     <div className="min-w-0 flex-1 bg-cream py-8 xl:pt-50 xl:pr-45 xl:pl-42">
-      <BarLabel className="xl:text-[1.25rem]!">{location.label}</BarLabel>
-      <h2 className="mt-8 font-display text-[2.5rem] leading-44 font-bold text-coal uppercase sm:text-[3.125rem] sm:leading-54 xl:mt-17 xl:text-[3.5rem] xl:leading-60">
+      <BarLabel>{location.label}</BarLabel>
+      <h2 className="mt-8 font-display text-[2.5rem] sm:text-[3.125rem] xl:text-[4.125rem] leading-44 font-bold text-coal uppercase sm:leading-54 xl:mt-17 xl:leading-60">
         {location.title} <span className="text-[#ff7c0b]">{location.highlight}</span>
       </h2>
-      <p className="mt-10 text-[1rem] leading-27 text-[#41475d] xl:mt-14 xl:text-[1.25rem] xl:leading-33 xl:whitespace-pre-line">{location.text}</p>
+      <p className="mt-10 text-[1rem] xl:text-[1.1875rem] leading-27 text-[#41475d] xl:mt-14 xl:leading-33 xl:whitespace-pre-line">{location.text}</p>
 
       <iframe
         src={mapEmbedUrl}

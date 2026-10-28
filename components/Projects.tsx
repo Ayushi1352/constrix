@@ -80,7 +80,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
               <button
                 type="button"
                 onClick={() => handleFilterChange(tab)}
-                className={`h-38 rounded-[3px] px-18 text-[0.875rem] transition-colors xl:h-42 xl:px-35 xl:text-[1rem] ${
+                className={`h-38 rounded-[3px] px-18 text-[0.875rem] xl:text-[1.0625rem] transition-colors xl:h-42 xl:px-35 ${
                   filter === tab
                     ? "bg-linear-to-b from-copper-light to-copper font-medium text-white"
                     : "font-normal text-white hover:bg-copper"
@@ -116,7 +116,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
                 />
               </button>
               <div className="px-20 pt-12 pb-18 xl:px-22 xl:pt-13 xl:pb-17">
-                <h3 className="text-[1.0625rem] leading-26 font-semibold text-white xl:text-[1.125rem] xl:leading-28 xl:font-bold">{project.title}</h3>
+                <h3 className="text-[1.0625rem] xl:text-[1.1875rem] leading-26 font-semibold text-white xl:leading-28 xl:font-bold">{project.title}</h3>
                 <p className="text-[0.875rem] leading-24 text-[#cfd4d8] xl:text-[1rem] xl:leading-27">{project.category}</p>
               </div>
             </article>

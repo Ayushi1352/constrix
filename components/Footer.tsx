@@ -12,14 +12,14 @@ const legalLinks = footer.supportLinks.filter((link) => link.legal);
 function LinkColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <div>
-      <h3 className="text-[0.75rem] font-extrabold tracking-[0.08em] text-white uppercase sm:text-[0.8125rem] lg:text-[1rem] xl:text-[1.125rem] xl:tracking-[0.1em]">{title}</h3>
+      <h3 className="text-[0.875rem] xl:text-[1rem] font-extrabold tracking-[0.08em] text-white uppercase xl:tracking-[0.1em]">{title}</h3>
       <span className="mt-8 block h-3 w-36 bg-copper sm:w-38 lg:w-40 xl:mt-11 xl:w-42" />
       <ul className="mt-12 space-y-8 sm:mt-14 lg:mt-18 lg:space-y-12 xl:mt-20 xl:space-y-14">
         {links.map((link) => (
           <li key={link.label}>
             <Link
               href={link.href}
-              className="flex items-center gap-8 text-[0.75rem] leading-18 text-[#e6e6e6] transition-colors hover:text-copper sm:text-[0.8125rem] sm:leading-20 lg:text-[1rem] lg:leading-23 xl:text-[1.0625rem] xl:leading-24 xl:gap-10"
+              className="flex items-center gap-8 text-[0.875rem] xl:text-[0.9375rem] leading-18 text-[#e6e6e6] transition-colors hover:text-copper sm:leading-20 lg:leading-23 xl:leading-24 xl:gap-10"
             >
               <Icon name="chevronRight" className="-ml-2 size-12 shrink-0 text-copper sm:size-13 lg:size-15 xl:-ml-3 xl:size-16" strokeWidth={2.6} />
               {link.label}
@@ -55,7 +55,7 @@ export default function Footer() {
                 className="h-auto w-240 lg:w-340 xl:w-418"
               />
             </Link>
-            <p className="mt-18 max-w-520 text-[0.875rem] leading-23 text-[#e6e6e6] lg:text-[1rem] lg:leading-25 xl:mt-14 xl:max-w-430 xl:text-[1.0625rem] xl:leading-27 xl:whitespace-pre-line">
+            <p className="mt-18 max-w-520 text-[0.875rem] xl:text-[0.9375rem] leading-23 text-[#e6e6e6] lg:leading-25 xl:mt-14 xl:max-w-430 xl:leading-27 xl:whitespace-pre-line">
               {footer.text}
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
 
           <div className="col-span-2 min-w-0 md:col-span-1 xl:border-l xl:border-white/8 lg:pt-10 xl:pt-10 xl:pl-50">
-            <h3 className="text-[0.875rem] font-extrabold tracking-[0.1em] text-white uppercase md:text-[0.8125rem] md:tracking-[0.08em] lg:text-[1rem] lg:tracking-[0.09em] xl:text-[1.125rem] xl:tracking-[0.1em]">
+            <h3 className="text-[0.875rem] xl:text-[1rem] font-extrabold tracking-[0.1em] text-white uppercase md:tracking-[0.08em] lg:tracking-[0.09em] xl:tracking-[0.1em]">
               {footer.contactTitle}
             </h3>
             <span className="mt-8 block h-3 w-42 bg-copper md:w-38 lg:w-42 xl:mt-11" />
@@ -78,7 +78,7 @@ export default function Footer() {
                   <span className="flex size-44 shrink-0 items-center justify-center border-2 border-copper text-copper-light md:size-38 lg:size-44 xl:size-48">
                     <Icon name={contact.icon} className="size-22 md:size-18 lg:size-22 xl:size-25" />
                   </span>
-                  <span className="min-w-0 text-[0.875rem] leading-21 break-words md:text-[0.8125rem] md:leading-20 lg:text-[1rem] lg:leading-23 xl:leading-25">
+                  <span className="min-w-0 text-[0.875rem] xl:text-[0.9375rem] leading-21 break-words md:leading-20 lg:leading-23 xl:leading-25">
                     {contact.lines.map((line) => (
                       <a
                         key={line}
@@ -102,12 +102,12 @@ export default function Footer() {
         <div className="relative border-t border-white/15">
           <span className="absolute -top-px left-0 h-2 w-140 bg-copper" />
           <div className="flex flex-col items-center justify-between gap-18 px-16 py-20 sm:flex-row sm:px-24 lg:px-48 xl:h-92 xl:py-0 xl:px-80">
-            <p className="text-[0.8125rem] text-[#cfcfcf] lg:text-[0.9375rem] xl:text-[1rem]">{footer.copyright}</p>
+            <p className="text-[0.8125rem] xl:text-[0.875rem] text-[#cfcfcf]">{footer.copyright}</p>
             <div className="flex flex-wrap items-center justify-center gap-y-14 sm:justify-end">
               <ul className="flex flex-wrap items-center justify-center">
                 {legalLinks.map((link) => (
                   <li key={link.href} className="border-r border-white/20 px-14 last:border-r-0 first:pl-0">
-                    <Link href={link.href} className="text-[0.75rem] text-[#cfcfcf] transition-colors hover:text-white lg:text-[0.875rem] xl:text-[0.9375rem]">
+                    <Link href={link.href} className="text-[0.75rem] xl:text-[0.8125rem] text-[#cfcfcf] transition-colors hover:text-white">
                       {link.label}
                     </Link>
                   </li>

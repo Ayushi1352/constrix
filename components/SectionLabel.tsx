@@ -26,7 +26,7 @@ export function LineLabel({
 export function BarLabel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <p
-      className={`flex items-center gap-12 font-main text-[0.9375rem] leading-24 font-semibold text-tangerine uppercase xl:gap-18 xl:text-[1.4375rem] ${className}`}
+      className={`flex items-center gap-12 font-main text-[0.9375rem] xl:text-[1.3125rem] leading-24 font-semibold text-tangerine uppercase xl:gap-18 ${className}`}
     >
       <span className="h-18 w-3 shrink-0 bg-tangerine xl:h-25" />
       {children}

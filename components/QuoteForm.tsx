@@ -42,7 +42,7 @@ export default function QuoteForm() {
       <h2 className="mt-8 font-display text-[2.5rem] leading-44 font-bold text-white uppercase sm:text-[3.125rem] sm:leading-54 xl:mt-18 xl:text-[3.5rem] xl:leading-64">
         {form.title} <span className="text-flame">{form.highlight}</span>
       </h2>
-      <p className="mt-10 text-[0.9375rem] leading-25 text-white xl:mt-9 xl:text-[1.25rem] xl:leading-28">{form.text}</p>
+      <p className="mt-10 text-[0.9375rem] xl:text-[1.125rem] leading-25 text-white xl:mt-9 xl:leading-28">{form.text}</p>
 
       <form
         className="mt-22 grid gap-x-20 gap-y-18 sm:grid-cols-2 xl:mt-33 xl:gap-x-30 xl:gap-y-24"

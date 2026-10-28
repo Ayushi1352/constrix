@@ -10,20 +10,20 @@ export default function About({ detailed = false }: { detailed?: boolean }) {
   return (
     <section className={`py-48 sm:py-64 lg:py-80 overflow-hidden bg-white ${detailed ? "xl:pt-100 xl:pb-85" : "xl:pt-73 xl:pb-112"}`}>
       <div className="mx-auto flex w-full flex-col gap-44 px-16 sm:px-24 lg:flex-row lg:items-center lg:gap-40 lg:px-80 xl:items-start xl:px-150">
-        <div className="relative lg:w-1/2 xl:w-750 xl:pt-51">
-          <span className="pointer-events-none absolute top-0 left-20 hidden font-alt text-[7rem] leading-none font-extrabold whitespace-nowrap text-[#f6f6f6] uppercase select-none xl:top-52 xl:left-20 xl:block xl:text-[6.75rem]">
+        <div className="relative lg:w-1/2 xl:w-750 xl:pt-16">
+          <span className="pointer-events-none absolute top-0 left-20 hidden font-alt text-[7rem] leading-none font-extrabold whitespace-nowrap text-[#f6f6f6] uppercase select-none xl:top-17 xl:left-20 xl:block">
             {about.label}
           </span>
           <div className="relative">
-            <p className="flex items-center gap-14 font-alt text-[0.8125rem] font-medium tracking-[0.25em] text-[#222] uppercase xl:gap-16 xl:text-[1rem] xl:tracking-[0.2em]">
+            <p className="flex items-center gap-14 font-alt text-[0.8125rem] xl:text-[1.0625rem] font-medium tracking-[0.25em] text-[#222] uppercase xl:gap-16 xl:tracking-[0.2em]">
               <span className="h-2 w-40 bg-[#e8923c] xl:w-62" />
               {about.label}
             </p>
-            <div className="mt-18 flex gap-34 xl:mt-37">
+            <div className="mt-18 flex gap-34 xl:mt-24">
               <span className="h-2 w-42 bg-[#e8923c]" />
               <span className="h-2 w-42 bg-[#e8923c]" />
             </div>
-            <h2 className="mt-14 font-alt text-[2.375rem] leading-44 font-extrabold tracking-[-0.03em] text-[#051328] sm:text-[3.25rem] sm:leading-58 xl:mt-20 xl:text-[4.5625rem] xl:leading-73">
+            <h2 className="mt-14 font-alt text-[2.375rem] leading-44 font-extrabold tracking-[-0.03em] text-[#051328] sm:text-[3.25rem] sm:leading-58 xl:mt-16 xl:text-[3.875rem] xl:leading-64">
               {about.titleTop}
               <br />
               {about.titleBottom}{" "}
@@ -31,27 +31,27 @@ export default function About({ detailed = false }: { detailed?: boolean }) {
                 {about.highlight}
               </span>
             </h2>
-            <p className="mt-18 max-w-680 font-alt text-[0.9375rem] leading-25 text-[#1c2536] xl:mt-15 xl:max-w-none xl:text-[1.1875rem] xl:leading-26 xl:whitespace-pre-line">
+            <p className="mt-18 max-w-680 font-alt text-[0.9375rem] leading-25 text-[#1c2536] xl:mt-14 xl:max-w-none xl:text-[1.0625rem] xl:leading-25 xl:whitespace-pre-line">
               {about.text}
             </p>
-            <ul className="mt-22 space-y-12 xl:mt-26 xl:space-y-10">
+            <ul className="mt-22 space-y-12 xl:mt-22 xl:space-y-8">
               {about.points.map((point) => (
-                <li key={point} className="flex items-center gap-14 font-alt text-[0.9375rem] leading-24 text-[#1c2536] xl:gap-17 xl:text-[1.1875rem] xl:leading-32">
-                  <span className="flex size-26 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-[#e39a55] to-[#b9621f] text-white xl:size-32">
-                    <Icon name="check" className="size-14 xl:size-18" strokeWidth={3} />
+                <li key={point} className="flex items-center gap-14 font-alt text-[0.9375rem] leading-24 text-[#1c2536] xl:gap-15 xl:text-[1.0625rem] xl:leading-30">
+                  <span className="flex size-26 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-[#e39a55] to-[#b9621f] text-white xl:size-30">
+                    <Icon name="check" className="size-14 xl:size-16" strokeWidth={3} />
                   </span>
                   {point}
                 </li>
               ))}
             </ul>
             {detailed ? (
-              <p className="mt-22 max-w-680 font-alt text-[0.9375rem] leading-25 text-[#1c2536] xl:mt-36 xl:max-w-none xl:text-[1.1875rem] xl:leading-26 xl:whitespace-pre-line">
+              <p className="mt-22 max-w-680 font-alt text-[0.9375rem] leading-25 text-[#1c2536] xl:mt-24 xl:max-w-none xl:text-[1.0625rem] xl:leading-25 xl:whitespace-pre-line">
                 {about.moreText}
               </p>
             ) : (
               <Link
                 href={about.button.href}
-                className="group mt-30 inline-flex h-52 items-stretch font-alt text-[0.9375rem] font-medium text-white xl:mt-39 xl:h-61 xl:w-254 xl:text-[1.125rem]"
+                className="group mt-30 inline-flex h-52 items-stretch font-alt text-[0.9375rem] font-medium text-white xl:mt-30 xl:h-56 xl:text-[1.0625rem] whitespace-nowrap"
               >
                 <span className="flex flex-1 items-center gap-18 bg-[#111a2c] px-24 transition-colors group-hover:bg-copper xl:gap-20 xl:px-27">
                   {about.button.label}

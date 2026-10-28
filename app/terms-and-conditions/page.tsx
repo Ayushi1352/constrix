@@ -19,7 +19,7 @@ export default function TermsPage() {
           
           {/* Top Intro callout with vertical bar */}
           <div className="border-l-4 border-copper py-6 pl-18 sm:pl-24">
-            <p className="font-text text-[1.0625rem] leading-[1.75rem] text-[#2c3340] sm:text-[1.125rem] sm:leading-[1.875rem] lg:text-[1.25rem] lg:leading-[2.125rem]">
+            <p className="text-[0.9375rem] leading-[1.75rem] text-[#2c3340] xl:text-[1.0625rem] xl:leading-[1.875rem]">
               {terms.intro}
             </p>
           </div>
@@ -31,10 +31,10 @@ export default function TermsPage() {
                 key={item.title}
                 className="border-t border-[#f0f0f0] pt-32 sm:pt-36"
               >
-                <h2 className="font-main text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:text-[1.5rem] sm:leading-[2rem] lg:text-[1.625rem] lg:leading-[2.125rem]">
+                <h2 className="font-main text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:leading-[2rem] lg:leading-[2.125rem]">
                   <span className="text-copper">{index + 1}.</span> {item.title}
                 </h2>
-                <p className="mt-14 font-text text-[1.0625rem] leading-[1.75rem] text-[#4a5568] sm:mt-16 sm:text-[1.125rem] sm:leading-[1.875rem] lg:text-[1.1875rem] lg:leading-[2.125rem]">
+                <p className="mt-14 text-[0.9375rem] leading-[1.75rem] text-[#4a5568] sm:mt-16 xl:text-[1.0625rem] xl:leading-[1.875rem]">
                   {item.content}
                 </p>
               </section>

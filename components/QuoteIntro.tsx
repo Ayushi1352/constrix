@@ -23,7 +23,7 @@ export default function QuoteIntro() {
             </span>
             <span>
               <span className="block text-[1.1875rem] leading-28 font-semibold text-[#111418] xl:text-[1.4375rem] xl:leading-34">{feature.title}</span>
-              <span className="block text-[1rem] leading-26 text-[#474c56] xl:mt-3 xl:text-[1.25rem] xl:leading-34">{feature.text}</span>
+              <span className="block text-[1rem] xl:text-[1.1875rem] leading-26 text-[#474c56] xl:mt-3 xl:leading-34">{feature.text}</span>
             </span>
           </li>
         ))}

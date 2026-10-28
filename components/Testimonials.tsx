@@ -40,47 +40,47 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="min-w-0 flex-1 xl:pt-14">
+        <div className="min-w-0 flex-1 xl:pt-0">
           <LineLabel align="left" className="font-bold! xl:[&>span:first-child]:w-56">
             {content.label}
             <span className="ml-14 inline-block h-2 w-30 bg-copper align-middle xl:ml-18 xl:w-68" />
           </LineLabel>
-          <h2 className="mt-8 text-[1.875rem] leading-38 font-extrabold tracking-[-0.03em] text-[#030c26] sm:text-[2.625rem] sm:leading-52 xl:mt-6 xl:text-[4.1875rem] xl:leading-72">
+          <h2 className="mt-8 text-[1.875rem] leading-38 font-extrabold tracking-[-0.03em] text-[#030c26] sm:text-[2.625rem] sm:leading-52 xl:mt-6 xl:text-[3.5rem] xl:leading-64">
             {content.title}{" "}
             <span className="bg-linear-to-r from-copper-light to-copper-dark bg-clip-text text-transparent">
               {content.highlight}
             </span>
           </h2>
 
-          <div className="mt-28 flex items-center gap-20 xl:mt-46 xl:ml-9">
-            <span className="flex size-52 shrink-0 items-center justify-center rounded-full border-2 border-copper text-copper xl:size-62">
-              <Icon name="quote" className="size-28 xl:size-36" />
+          <div className="mt-28 flex items-center gap-20 xl:mt-28 xl:ml-9">
+            <span className="flex size-52 shrink-0 items-center justify-center rounded-full border-2 border-copper text-copper xl:size-56">
+              <Icon name="quote" className="size-28 xl:size-32" />
             </span>
             <div>
-              <p className="text-[1.25rem] leading-28 font-semibold text-coal xl:text-[1.5rem] xl:leading-32">{item.name}</p>
-              <p className="text-[0.875rem] leading-22 text-[#6b707e] xl:text-[1rem] xl:leading-28">{item.role}</p>
+              <p className="text-[1.25rem] leading-28 font-semibold text-coal xl:text-[1.375rem] xl:leading-30">{item.name}</p>
+              <p className="text-[0.875rem] leading-22 text-[#6b707e] xl:text-[0.9375rem] xl:leading-24">{item.role}</p>
             </div>
           </div>
-          <blockquote className="mt-20 max-w-680 font-text text-[1rem] leading-26 text-[#6b707e] xl:mt-20 xl:ml-8 xl:min-h-140 xl:max-w-none xl:text-[1.25rem] xl:leading-28 xl:tracking-[0.01em] xl:whitespace-pre-line">
+          <blockquote className="mt-20 max-w-680 text-[0.9375rem] xl:text-[1.0625rem] leading-24 text-[#6b707e] xl:mt-16 xl:ml-8 xl:min-h-130 xl:max-w-none xl:leading-26">
             &ldquo;{item.quote}&rdquo;
           </blockquote>
 
-          <div className="mt-28 flex xl:mt-57 xl:ml-8">
+          <div className="mt-28 flex xl:mt-32 xl:ml-8">
             <button
               type="button"
               aria-label={data.labels.previousTestimonial}
               onClick={() => go(-1)}
-              className="flex h-48 w-60 items-center justify-center border-[1.5px] border-copper text-copper transition-colors hover:bg-copper hover:text-white xl:h-55 xl:w-70"
+              className="flex h-48 w-60 items-center justify-center border-[1.5px] border-copper text-copper transition-colors hover:bg-copper hover:text-white xl:h-50 xl:w-64"
             >
-              <Icon name="arrowLeft" className="size-24 xl:size-30" strokeWidth={1.6} />
+              <Icon name="arrowLeft" className="size-24 xl:size-26" strokeWidth={1.6} />
             </button>
             <button
               type="button"
               aria-label={data.labels.nextTestimonial}
               onClick={() => go(1)}
-              className="-ml-[1.5px] flex h-48 w-60 items-center justify-center border-[1.5px] border-copper text-copper transition-colors hover:bg-copper hover:text-white xl:h-55 xl:w-70"
+              className="-ml-[1.5px] flex h-48 w-60 items-center justify-center border-[1.5px] border-copper text-copper transition-colors hover:bg-copper hover:text-white xl:h-50 xl:w-64"
             >
-              <Icon name="arrowRight" className="size-24 xl:size-30" strokeWidth={1.6} />
+              <Icon name="arrowRight" className="size-24 xl:size-26" strokeWidth={1.6} />
             </button>
           </div>
         </div>

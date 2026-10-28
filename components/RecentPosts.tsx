@@ -11,7 +11,7 @@ export default function RecentPosts({ currentTitle }: { currentTitle: string }) 
 
   return (
     <div className="w-full rounded-[4px] border border-[#f0f0f0] bg-mist p-20 xl:p-24">
-      <h3 className="font-main text-[1.25rem] font-bold text-coal sm:text-[1.375rem]">
+      <h3 className="font-main text-[1.5625rem] xl:text-[1.875rem] font-bold text-coal">
         {blogDetail.recentTitle}
       </h3>
       <ul className="mt-18 space-y-18">
@@ -22,10 +22,10 @@ export default function RecentPosts({ currentTitle }: { currentTitle: string }) 
                 <Image src={post.image} alt={post.title} fill sizes="100px" className="object-cover" />
               </span>
               <span className="min-w-0 pt-1">
-                <span className="block text-[0.90625rem] font-bold text-[#111418] leading-[1.25rem] transition-colors group-hover:text-flame">
+                <span className="block text-[0.9375rem] xl:text-[1rem] font-bold text-[#111418] leading-[1.25rem] transition-colors group-hover:text-flame">
                   {post.title.replace(/\n/g, " ")}
                 </span>
-                <span className="mt-6 flex items-center gap-6 text-[0.78125rem] text-[#6d727a]">
+                <span className="mt-6 flex items-center gap-6 text-[0.75rem] xl:text-[0.8125rem] text-[#6d727a]">
                   <Icon name="calendar" className="size-14 text-flame" strokeWidth={2.2} />
                   {post.day} {post.monthYear}
                 </span>

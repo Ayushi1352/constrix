@@ -30,7 +30,7 @@ export default function Services({ pageSize = 8, showPagination = false }: { pag
           <br />
           {services.titleBottom} <span className="text-[#fb7f1a]">{services.highlight}</span>
         </h2>
-        <p className="mx-auto mt-14 max-w-640 text-center text-[0.875rem] leading-22 text-[#3c4347] xl:mt-12 xl:max-w-none xl:text-[1rem] xl:whitespace-pre-line">
+        <p className="mx-auto mt-14 max-w-640 text-center text-[0.9375rem] leading-24 text-[#3c4347] xl:mt-12 xl:max-w-none xl:text-[1.0625rem] xl:leading-26 xl:whitespace-pre-line">
           {services.text}
         </p>
 
@@ -52,17 +52,17 @@ export default function Services({ pageSize = 8, showPagination = false }: { pag
               </div>
               <div className={`relative flex-1 px-19 pb-18 ${cards.indexOf(service) < 4 ? "xl:pb-11" : "xl:pb-22"}`}>
                 <div className="flex items-start gap-15">
-                  <span className="relative -mt-11 flex size-56 shrink-0 items-center justify-center rounded-[5px] bg-copper text-white shadow-[0_4px_10px_rgba(200,122,46,0.35)] xl:size-64">
+                  <span className="relative mt-16 flex size-56 shrink-0 items-center justify-center rounded-[5px] bg-copper text-white shadow-[0_4px_10px_rgba(200,122,46,0.35)] xl:size-64">
                     <Icon name={service.icon} className="size-30 xl:size-36" strokeWidth={1.3} />
                   </span>
-                  <h3 className="mt-10 max-w-170 flex-1 pr-44 xl:pr-0 text-[1.0625rem] leading-22 font-semibold text-coal xl:text-[1.125rem] xl:font-bold">
+                  <h3 className="mt-37 max-w-170 flex-1 pr-44 xl:pr-0 text-[1.0625rem] xl:text-[1.1875rem] leading-22 font-semibold text-coal xl:font-bold">
                     {service.title}
                   </h3>
-                  <span className="absolute top-21 right-18 flex size-38 shrink-0 items-center justify-center rounded-full bg-peach text-copper transition-colors group-hover:bg-copper group-hover:text-white xl:size-42">
+                  <span className="absolute top-48 right-18 flex size-38 shrink-0 items-center justify-center rounded-full bg-peach text-copper transition-colors group-hover:bg-copper group-hover:text-white xl:size-42">
                     <Icon name="arrowRight" className="size-18" strokeWidth={2} />
                   </span>
                 </div>
-                <p className="mt-6 max-w-290 text-[0.9375rem] leading-21 text-slate xl:mt-4 xl:ml-2 xl:max-w-none xl:text-[0.9375rem] xl:whitespace-pre-line">{service.text}</p>
+                <p className="mt-6 max-w-290 text-[0.9375rem] xl:text-[1.0625rem] leading-24 xl:leading-26 text-slate xl:mt-4 xl:ml-2 xl:max-w-none">{service.text}</p>
               </div>
             </Link>
           ))}

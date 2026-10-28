@@ -34,7 +34,7 @@ export default function Blog({ limit, showViewAll = true, pageSize = 6 }: { limi
         <h2 className="mt-8 text-center text-[2rem] leading-40 font-extrabold tracking-[-0.03em] text-[#030f28] sm:text-[2.625rem] sm:leading-50 xl:mt-1 xl:text-[3.3125rem] xl:leading-64">
           {blog.title} <span className="text-[#f07117]">{blog.highlight}</span>
         </h2>
-        <p className="mx-auto mt-8 max-w-590 text-center text-[0.875rem] leading-20 text-[#5c6170] xl:mt-4 xl:max-w-none xl:whitespace-pre-line">{blog.text}</p>
+        <p className="mx-auto mt-8 max-w-590 text-center text-[0.9375rem] leading-24 text-[#5c6170] xl:text-[1.0625rem] xl:leading-26 xl:mt-4 xl:max-w-none xl:whitespace-pre-line">{blog.text}</p>
         {showViewAll && (
           <div className="mt-20 flex justify-center xl:absolute xl:top-54 xl:right-55 xl:mt-0">
             <Link
@@ -73,7 +73,7 @@ export default function Blog({ limit, showViewAll = true, pageSize = 6 }: { limi
                     {post.title}
                   </Link>
                 </h3>
-                <p className="mt-10 max-w-440 text-[0.9375rem] leading-20 text-[#707588] xl:mt-6 xl:max-w-none xl:whitespace-pre-line">{post.text}</p>
+                <p className="mt-10 max-w-440 text-[0.9375rem] leading-24 text-[#707588] xl:text-[1.0625rem] xl:leading-26 xl:mt-6 xl:max-w-none">{post.text}</p>
                 <Link
                   href={post.href}
                   className="mt-auto inline-flex items-center gap-14 self-start border-b border-copper pt-18 pb-1 text-[0.875rem] font-semibold text-coal transition-colors hover:text-copper xl:text-[0.9375rem]"

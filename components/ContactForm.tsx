@@ -42,7 +42,7 @@ export default function ContactForm() {
       <h2 className="mt-8 font-display text-[2.75rem] leading-48 font-bold text-white uppercase sm:text-[3.5rem] sm:leading-60 xl:mt-15 xl:text-[4.75rem] xl:leading-74">
         {form.title} <span className="text-flame">{form.highlight}</span>
       </h2>
-      <p className="mt-10 text-[1rem] leading-26 text-white xl:mt-14 xl:text-[1.3125rem] xl:leading-30">{form.text}</p>
+      <p className="mt-10 text-[1rem] xl:text-[1.25rem] leading-26 text-white xl:mt-14 xl:leading-30">{form.text}</p>
 
       <form
         className="mt-24 grid gap-x-20 gap-y-20 sm:grid-cols-2 xl:mt-37 xl:gap-x-31 xl:gap-y-25"
@@ -71,7 +71,7 @@ export default function ContactForm() {
         </Field>
         <button
           type="submit"
-          className="flex h-60 items-center justify-center gap-20 rounded-[4px] border border-flame bg-flame text-[1.125rem] font-semibold text-white transition-colors hover:bg-white hover:text-flame sm:col-span-2 xl:-mt-5 xl:h-76 xl:gap-24 xl:text-[1.375rem]"
+          className="flex h-60 items-center justify-center gap-20 rounded-[4px] border border-flame bg-flame text-[1.125rem] xl:text-[1.3125rem] font-semibold text-white transition-colors hover:bg-white hover:text-flame sm:col-span-2 xl:-mt-5 xl:h-76 xl:gap-24"
         >
           {form.button}
           <Icon name="arrowRight" className="size-22" strokeWidth={2.2} />
