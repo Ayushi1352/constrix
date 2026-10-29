@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Icon from "@/components/Icon";
-import { site as data, fillLabel } from "@/data";
+import { site as data } from "@/data";
 
-const { slides, primaryButton, secondaryButton } = data.hero;
+const { slides } = data.hero;
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
@@ -46,37 +45,6 @@ export default function Hero() {
             {slide.titleBottom}
           </span>
         </h1>
-        <p className="mt-18 max-w-540 text-[0.9375rem] leading-24 font-light tracking-[-0.01em] text-white sm:text-[1.0625rem] sm:leading-27 xl:mt-17 xl:max-w-none xl:text-[1.1875rem] xl:whitespace-pre-line">
-          {slide.text}
-        </p>
-        <div className="mt-26 flex flex-wrap gap-14 xl:mt-28 xl:gap-23">
-          <Link
-            href={primaryButton.href}
-            className="inline-flex h-50 items-center justify-center gap-14 rounded-[3px] border border-[#de8836] bg-[#de8836] px-26 text-[0.9375rem] font-semibold text-white transition-colors hover:bg-white hover:text-copper xl:h-58 xl:w-221 xl:px-0 xl:text-[1.125rem]"
-          >
-            {primaryButton.label}
-            <Icon name="arrowRight" className="size-20 xl:size-24" strokeWidth={2} />
-          </Link>
-          <Link
-            href={secondaryButton.href}
-            className="inline-flex h-50 items-center justify-center gap-14 rounded-[3px] border border-white/80 px-26 text-[0.9375rem] font-semibold text-white transition-colors hover:border-copper hover:bg-copper hover:text-white xl:h-58 xl:w-227 xl:px-0 xl:text-[1.125rem]"
-          >
-            {secondaryButton.label}
-            <Icon name="arrowRight" className="size-20 xl:size-24" strokeWidth={2} />
-          </Link>
-        </div>
-
-        <div className="mt-32 flex gap-8 xl:mt-44">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              aria-label={fillLabel(data.labels.goToSlide, { n: index + 1 })}
-              onClick={() => setCurrent(index)}
-              className={`h-3 w-22 transition-colors ${index === current ? "bg-[#e8923c]" : "bg-white/35 hover:bg-[#e8923c]"}`}
-            />
-          ))}
-        </div>
       </div>
 
       <button

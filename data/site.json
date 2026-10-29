@@ -490,32 +490,21 @@
                 "label": "Building Today For A",
                 "titleTop": "Stronger",
                 "titleBottom": "Tomorrow",
-                "text": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
                 "image": "/images/hero.webp"
               },
               {
                 "label": "Crafting Quality In",
                 "titleTop": "Every",
                 "titleBottom": "Project",
-                "text": "Skilled engineers, premium materials and strict quality checks\nthat keep every build safe, durable and on schedule.",
                 "image": "/images/cta.webp"
               },
               {
                 "label": "Your Vision, Our",
                 "titleTop": "Expert",
                 "titleBottom": "Builders",
-                "text": "From first drawing to final handover, we turn your ideas\ninto landmark spaces built to last for generations.",
                 "image": "/images/banner.webp"
               }
-            ],
-            "primaryButton": {
-              "label": "Our Services",
-              "href": "/our-services"
-            },
-            "secondaryButton": {
-              "label": "View Projects",
-              "href": "/our-projects"
-            }
+            ]
           }
         }
       },
