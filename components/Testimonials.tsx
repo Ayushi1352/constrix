@@ -15,10 +15,10 @@ export default function Testimonials() {
   const go = (step: number) => setCurrent((value) => (value + step + total) % total);
 
   return (
-    <section className="py-48 sm:py-64 lg:py-80 overflow-hidden bg-white xl:pt-59 xl:pb-111">
+    <section className="py-48 sm:py-64 lg:py-80 overflow-hidden bg-[var(--color-white)] xl:pt-59 xl:pb-111">
       <div className="mx-auto flex w-full flex-col gap-40 px-16 sm:px-24 lg:flex-row lg:items-center lg:gap-40 lg:px-80 xl:items-start xl:justify-between xl:gap-60 xl:px-150">
         {/* photo collage; positions are % of the 671x504 design box */}
-        <div className="@container relative mx-auto aspect-[671/504] w-full max-w-560 shrink-0 lg:w-[46%] xl:mx-0 xl:w-671 xl:max-w-none">
+        <div className="[container-type:inline-size] relative mx-auto aspect-[671/504] w-full max-w-560 shrink-0 lg:w-[46%] xl:mx-0 xl:w-671 xl:max-w-none">
           <div className="absolute top-0 left-0 h-full w-[66.2%] overflow-hidden">
             <Image
               src={content.backgroundImage}
@@ -41,13 +41,13 @@ export default function Testimonials() {
         </div>
 
         <div className="min-w-0 flex-1 xl:pt-0">
-          <LineLabel align="left" className="font-bold! xl:[&>span:first-child]:w-56">
+          <LineLabel align="left" className="!font-bold xl:[&>span:first-child]:w-56">
             {content.label}
             <span className="ml-14 inline-block h-2 w-30 bg-copper align-middle xl:ml-18 xl:w-68" />
           </LineLabel>
-          <h2 className="mt-8 text-[1.875rem] leading-38 font-extrabold tracking-[-0.03em] text-[#030c26] sm:text-[2.625rem] sm:leading-52 xl:mt-6 xl:text-[3.5rem] xl:leading-64">
+          <h2 className="mt-8 text-[1.875rem] leading-38 font-extrabold tracking-[-0.03em] text-[var(--color-heading-navy-deep)] sm:text-[2.625rem] sm:leading-52 xl:mt-6 xl:text-[3.5rem] xl:leading-64">
             {content.title}{" "}
-            <span className="bg-linear-to-r from-copper-light to-copper-dark bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-copper-light to-copper-dark bg-clip-text text-transparent">
               {content.highlight}
             </span>
           </h2>
@@ -58,10 +58,10 @@ export default function Testimonials() {
             </span>
             <div>
               <p className="text-[1.25rem] leading-28 font-semibold text-coal xl:text-[1.375rem] xl:leading-30">{item.name}</p>
-              <p className="text-[0.875rem] leading-22 text-[#6b707e] xl:text-[0.9375rem] xl:leading-24">{item.role}</p>
+              <p className="text-[0.875rem] leading-22 text-[var(--color-text-testimonial)] xl:text-[0.9375rem] xl:leading-24">{item.role}</p>
             </div>
           </div>
-          <blockquote className="mt-20 max-w-680 text-[0.9375rem] xl:text-[1.0625rem] leading-24 text-[#6b707e] xl:mt-16 xl:ml-8 xl:min-h-130 xl:max-w-none xl:leading-26">
+          <blockquote className="mt-20 max-w-680 text-[0.9375rem] xl:text-[1.0625rem] leading-24 text-[var(--color-text-testimonial)] xl:mt-16 xl:ml-8 xl:min-h-130 xl:max-w-none xl:leading-26">
             &ldquo;{item.quote}&rdquo;
           </blockquote>
 
@@ -70,7 +70,7 @@ export default function Testimonials() {
               type="button"
               aria-label={data.labels.previousTestimonial}
               onClick={() => go(-1)}
-              className="flex h-48 w-60 items-center justify-center border-[1.5px] border-copper text-copper transition-colors hover:bg-copper hover:text-white xl:h-50 xl:w-64"
+              className="flex h-48 w-60 items-center justify-center border-[1.5px] border-copper text-copper transition-colors hover:bg-copper hover:text-[var(--color-white)] xl:h-50 xl:w-64"
             >
               <Icon name="arrowLeft" className="size-24 xl:size-26" strokeWidth={1.6} />
             </button>
@@ -78,7 +78,7 @@ export default function Testimonials() {
               type="button"
               aria-label={data.labels.nextTestimonial}
               onClick={() => go(1)}
-              className="-ml-[1.5px] flex h-48 w-60 items-center justify-center border-[1.5px] border-copper text-copper transition-colors hover:bg-copper hover:text-white xl:h-50 xl:w-64"
+              className="-ml-[1.5px] flex h-48 w-60 items-center justify-center border-[1.5px] border-copper text-copper transition-colors hover:bg-copper hover:text-[var(--color-white)] xl:h-50 xl:w-64"
             >
               <Icon name="arrowRight" className="size-24 xl:size-26" strokeWidth={1.6} />
             </button>

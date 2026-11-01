@@ -58,17 +58,17 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
 
   return (
     <section
-      className={`py-48 sm:py-64 lg:py-80 relative overflow-hidden bg-[#03090f] bg-[radial-gradient(120%_90%_at_0%_0%,#1b2f40_0%,#0a1620_38%,#03090f_70%)] ${rows === 2 ? "xl:pt-99 xl:pb-45" : "xl:pt-41 xl:pb-57"}`}
+      className={`py-48 sm:py-64 lg:py-80 relative overflow-hidden bg-[var(--color-project-overlay)] bg-[radial-gradient(120%_90%_at_0%_0%,#1b2f40_0%,#0a1620_38%,#03090f_70%)] ${rows === 2 ? "xl:pt-99 xl:pb-45" : "xl:pt-41 xl:pb-57"}`}
     >
-      <span className="text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.05)] pointer-events-none absolute top-30 left-1/2 hidden -translate-x-1/2 text-[11.875rem] xl:top-6 leading-none font-extrabold tracking-[0.02em] uppercase select-none xl:block">
+      <span className="text-transparent [-webkit-text-stroke:1px_var(--color-project-inset)] pointer-events-none absolute top-30 left-1/2 hidden -translate-x-1/2 text-[11.875rem] xl:top-6 leading-none font-extrabold tracking-[0.02em] uppercase select-none xl:block">
         {projects.watermark}
       </span>
 
       <div className="relative mx-auto w-full px-16 sm:px-24 lg:px-48 xl:px-80">
-        <LineLabel tone="light" className="font-normal!">{projects.label}</LineLabel>
-        <h2 className="mt-12 text-center text-[1.75rem] leading-36 font-extrabold tracking-[-0.03em] text-white sm:text-[2.5rem] sm:leading-48 xl:mt-8 xl:text-[3.5rem] xl:leading-70">
+        <LineLabel tone="light" className="!font-normal">{projects.label}</LineLabel>
+        <h2 className="mt-12 text-center text-[1.75rem] leading-36 font-extrabold tracking-[-0.03em] text-[var(--color-white)] sm:text-[2.5rem] sm:leading-48 xl:mt-8 xl:text-[3.5rem] xl:leading-70">
           {projects.title}{" "}
-          <span className="bg-linear-to-r from-copper-light to-copper bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-copper-light to-copper bg-clip-text text-transparent">
             {projects.highlight}
           </span>
         </h2>
@@ -76,14 +76,14 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
         <div className="mt-20 flex flex-wrap items-center justify-center gap-4 xl:mt-16 xl:gap-0">
           {tabs.map((tab, index) => (
             <div key={tab} className="flex shrink-0 items-center">
-              {index > 1 && <span className="hidden h-24 w-px bg-white/15 xl:block" />}
+              {index > 1 && <span className="hidden h-24 w-px bg-[var(--color-white-15)] xl:block" />}
               <button
                 type="button"
                 onClick={() => handleFilterChange(tab)}
                 className={`h-38 rounded-[3px] px-18 text-[0.875rem] xl:text-[1.0625rem] transition-colors xl:h-42 xl:px-35 ${
                   filter === tab
-                    ? "bg-linear-to-b from-copper-light to-copper font-medium text-white"
-                    : "font-normal text-white hover:bg-copper"
+                    ? "bg-gradient-to-b from-copper-light to-copper font-medium text-[var(--color-white)]"
+                    : "font-normal text-[var(--color-white)] hover:bg-copper"
                 }`}
               >
                 {tab}
@@ -99,7 +99,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
           {pageItems.map((project, index) => (
             <article
               key={`${project.title}-${index}`}
-              className="snap-start overflow-hidden rounded-[6px] border border-white/12 bg-[#040d14]"
+              className="snap-start overflow-hidden rounded-[6px] border border-[var(--color-white-12)] bg-[var(--color-project-bg)]"
             >
               <button
                 type="button"
@@ -116,8 +116,8 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
                 />
               </button>
               <div className="px-20 pt-12 pb-18 xl:px-22 xl:pt-13 xl:pb-17">
-                <h3 className="text-[1.0625rem] xl:text-[1.1875rem] leading-26 font-semibold text-white xl:leading-28 xl:font-bold">{project.title}</h3>
-                <p className="text-[0.875rem] leading-24 text-[#cfd4d8] xl:text-[1rem] xl:leading-27">{project.category}</p>
+                <h3 className="text-[1.0625rem] xl:text-[1.1875rem] leading-26 font-semibold text-[var(--color-white)] xl:leading-28 xl:font-bold">{project.title}</h3>
+                <p className="text-[0.875rem] leading-24 text-[var(--color-text-project)] xl:text-[1rem] xl:leading-27">{project.category}</p>
               </div>
             </article>
           ))}
@@ -127,7 +127,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
           <div className="mt-20 flex justify-center xl:mt-22">
             <Link
               href={projects.button.href}
-              className="inline-flex items-center gap-10 rounded-[4px] border border-copper bg-copper px-20 py-12 text-[0.9375rem] font-medium text-white transition-colors hover:bg-white hover:text-copper xl:px-24 xl:py-15 xl:text-[1.0625rem]"
+              className="inline-flex items-center gap-10 rounded-[4px] border border-copper bg-copper px-20 py-12 text-[0.9375rem] font-medium text-[var(--color-white)] transition-colors hover:bg-[var(--color-white)] hover:text-copper xl:px-24 xl:py-15 xl:text-[1.0625rem]"
             >
               {projects.button.label}
               <Icon name="arrowRight" className="size-18 xl:size-20" strokeWidth={2} />
@@ -141,18 +141,18 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
               type="button"
               onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
               disabled={safePage === 1}
-              className="flex size-40 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-colors enabled:hover:border-copper enabled:hover:bg-copper enabled:hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex size-40 items-center justify-center rounded-full border border-[var(--color-white-20)] bg-[var(--color-white-5)] text-[var(--color-white)] transition-colors enabled:hover:border-copper enabled:hover:bg-copper enabled:hover:text-[var(--color-white)] disabled:cursor-not-allowed disabled:opacity-40"
               aria-label={data.labels.previousPage}
             >
               <Icon name="chevronLeft" className="size-18" strokeWidth={2.4} />
             </button>
-            <div className="flex items-center gap-8 text-white text-[0.9375rem]">
+            <div className="flex items-center gap-8 text-[var(--color-white)] text-[0.9375rem]">
               {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
                 <button
                   key={page}
                   type="button"
                   onClick={() => setCurrentPage(page)}
-                  className={`flex size-34 items-center justify-center rounded-full transition-colors ${safePage === page ? "bg-copper text-white" : "bg-white/5 text-white/80 hover:bg-copper hover:text-white"}`}
+                  className={`flex size-34 items-center justify-center rounded-full transition-colors ${safePage === page ? "bg-copper text-[var(--color-white)]" : "bg-[var(--color-white-5)] text-[var(--color-white-80)] hover:bg-copper hover:text-[var(--color-white)]"}`}
                   aria-label={fillLabel(data.labels.goToPage, { n: page })}
                 >
                   {page}
@@ -163,7 +163,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
               type="button"
               onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
               disabled={safePage === totalPages}
-              className="flex size-40 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white transition-colors enabled:hover:border-copper enabled:hover:bg-copper enabled:hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex size-40 items-center justify-center rounded-full border border-[var(--color-white-20)] bg-[var(--color-white-5)] text-[var(--color-white)] transition-colors enabled:hover:border-copper enabled:hover:bg-copper enabled:hover:text-[var(--color-white)] disabled:cursor-not-allowed disabled:opacity-40"
               aria-label={data.labels.nextPage}
             >
               <Icon name="chevronRight" className="size-18" strokeWidth={2.4} />
@@ -178,7 +178,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
             type="button"
             aria-label={data.labels.previousProjects}
             onClick={() => slide(-1)}
-            className="absolute top-1/2 left-4 hidden size-44 lg:flex xl:top-358 xl:left-16 items-center justify-center rounded-full border border-white/25 bg-[#03090f]/60 text-copper-light transition-colors hover:border-copper hover:bg-copper hover:text-white xl:flex"
+            className="absolute top-1/2 left-4 hidden size-44 lg:flex xl:top-358 xl:left-16 items-center justify-center rounded-full border border-[var(--color-white-25)] bg-[var(--color-project-overlay-60)] text-copper-light transition-colors hover:border-copper hover:bg-copper hover:text-[var(--color-white)] xl:flex"
           >
             <Icon name="chevronLeft" className="size-20" strokeWidth={2.4} />
           </button>
@@ -186,7 +186,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
             type="button"
             aria-label={data.labels.nextProjects}
             onClick={() => slide(1)}
-            className="absolute top-1/2 right-4 hidden size-44 lg:flex xl:top-358 xl:right-15 items-center justify-center rounded-full border border-white/25 bg-[#03090f]/60 text-copper-light transition-colors hover:border-copper hover:bg-copper hover:text-white xl:flex"
+            className="absolute top-1/2 right-4 hidden size-44 lg:flex xl:top-358 xl:right-15 items-center justify-center rounded-full border border-[var(--color-white-25)] bg-[var(--color-project-overlay-60)] text-copper-light transition-colors hover:border-copper hover:bg-copper hover:text-[var(--color-white)] xl:flex"
           >
             <Icon name="chevronRight" className="size-20" strokeWidth={2.4} />
           </button>
@@ -199,13 +199,13 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
           aria-modal="true"
           aria-label={opened.title}
           onClick={() => setOpenIndex(null)}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 px-16 py-70 sm:px-80"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[var(--color-black-90)] px-16 py-70 sm:px-80"
         >
           <button
             type="button"
             aria-label={data.labels.closeImage}
             onClick={() => setOpenIndex(null)}
-            className="absolute top-16 right-16 flex size-44 items-center justify-center rounded-full border border-white/25 bg-[#03090f]/60 text-white transition-colors hover:border-copper hover:bg-copper"
+            className="absolute top-16 right-16 flex size-44 items-center justify-center rounded-full border border-[var(--color-white-25)] bg-[var(--color-project-overlay-60)] text-[var(--color-white)] transition-colors hover:border-copper hover:bg-copper"
           >
             <Icon name="close" className="size-20" strokeWidth={2.4} />
           </button>
@@ -215,8 +215,8 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
               <Image src={opened.image} alt={opened.title} fill sizes="(min-width: 1280px) 1200px, 100vw" className="object-contain" />
             </div>
             <figcaption className="mt-14 text-center">
-              <p className="text-[1.0625rem] leading-26 font-semibold text-white xl:text-[1.1875rem]">{opened.title}</p>
-              <p className="text-[0.875rem] leading-22 text-[#cfd4d8]">
+              <p className="text-[1.0625rem] leading-26 font-semibold text-[var(--color-white)] xl:text-[1.1875rem]">{opened.title}</p>
+              <p className="text-[0.875rem] leading-22 text-[var(--color-text-project)]">
                 {opened.category} · {(openIndex ?? 0) + 1} / {count}
               </p>
             </figcaption>
@@ -231,7 +231,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
                   event.stopPropagation();
                   step(-1);
                 }}
-                className="absolute top-1/2 left-8 flex size-44 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-[#03090f]/60 text-copper-light transition-colors hover:border-copper hover:bg-copper hover:text-white sm:left-20"
+                className="absolute top-1/2 left-8 flex size-44 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--color-white-25)] bg-[var(--color-project-overlay-60)] text-copper-light transition-colors hover:border-copper hover:bg-copper hover:text-[var(--color-white)] sm:left-20"
               >
                 <Icon name="chevronLeft" className="size-20" strokeWidth={2.4} />
               </button>
@@ -242,7 +242,7 @@ export default function Projects({ rows = 1, showViewAll = true, pageSize = 8 }:
                   event.stopPropagation();
                   step(1);
                 }}
-                className="absolute top-1/2 right-8 flex size-44 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-[#03090f]/60 text-copper-light transition-colors hover:border-copper hover:bg-copper hover:text-white sm:right-20"
+                className="absolute top-1/2 right-8 flex size-44 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--color-white-25)] bg-[var(--color-project-overlay-60)] text-copper-light transition-colors hover:border-copper hover:bg-copper hover:text-[var(--color-white)] sm:right-20"
               >
                 <Icon name="chevronRight" className="size-20" strokeWidth={2.4} />
               </button>

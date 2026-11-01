@@ -1,16 +1,13 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/*
-  The design is drawn on a 1686px wide canvas. Every spacing utility is one
-  "design pixel" (w-388 = 388px in the design) and font sizes are written as
-  text-[N/16 rem]. From 1280px up the root font size follows the viewport
-  (set on <html> in app/layout.tsx), so the desktop layout keeps the design's
-  exact proportions on every screen.
-*/
-@theme {
-  --spacing: 0.0625rem;
-
-  /* Brand colours. These are only defaults: site.json (theme.colors) overrides them in app/layout.tsx. */
+:root {
+  --color-bg-backdrop: #f5f5f5;
+  --color-primary: #0a1c26;
+  --color-accent: #d47930;
+  --color-text: #0a1c26;
+  --color-white: #ffffff;
   --color-copper: #d47930;
   --color-copper-light: #eb9a43;
   --color-copper-dark: #a95e1e;
@@ -25,13 +22,148 @@
   --color-peach: #fceddd;
   --color-mist: #f9fbfc;
   --color-slate: #5e6870;
-  /* Shown on both sides of the page when the screen is wider than 1920px (or the browser is zoomed out). */
-  --color-page: #f5f5f5;
+  --color-heading-navy: #030f28;
+  --color-heading-navy-deep: #030c26;
+  --color-heading-about: #051328;
+  --color-heading-card: #111418;
+  --color-text-nav-dark: #111;
+  --color-text-about-dark: #222;
+  --color-text-field: #1b2026;
+  --color-text-review-name: #1b2330;
+  --color-text-about-soft: #1c2536;
+  --color-text-review-heading: #1c2e42;
+  --color-text-body-dark: #2c3340;
+  --color-text-quote: #2f3440;
+  --color-text-service: #3c4347;
+  --color-text-process: #40424f;
+  --color-text-location: #41475d;
+  --color-text-quote-soft: #474c56;
+  --color-text-legal: #4a5568;
+  --color-text-why: #51566c;
+  --color-text-nav-muted: #555;
+  --color-text-why-soft: #555a6b;
+  --color-text-card: #555b64;
+  --color-text-process-soft: #595e71;
+  --color-text-blog: #5c6170;
+  --color-text-article: #61717f;
+  --color-text-review: #646b76;
+  --color-text-overview: #6a6f76;
+  --color-text-testimonial: #6b707e;
+  --color-text-recent: #6d727a;
+  --color-text-blog-soft: #707588;
+  --color-text-service-muted: #74797f;
+  --color-text-placeholder: #8d9298;
+  --color-text-footer-soft: #cfcfcf;
+  --color-text-project: #cfd4d8;
+  --color-text-band: #d0d6dc;
+  --color-text-footer: #e6e6e6;
+  --color-text-about-light: #f6f6f6;
+  --color-accent-blog: #ee7420;
+  --color-accent-blog-alt: #ee6f1a;
+  --color-accent-blog-soft: #f07117;
+  --color-accent-process: #f26a1d;
+  --color-accent-field: #fb7a15;
+  --color-accent-service: #fb7f1a;
+  --color-accent-location: #ff7c0b;
+  --color-accent-about: #d9761e;
+  --color-accent-bar: #e8923c;
+  --color-about-gradient-1: #6b310c;
+  --color-about-gradient-2: #8a4310;
+  --color-about-gradient-3: #b15a1b;
+  --color-about-gradient-4: #b9621f;
+  --color-about-gradient-5: #d57f2e;
+  --color-about-gradient-6: #e08a34;
+  --color-about-gradient-7: #e39a55;
+  --color-about-gradient-8: #e9a755;
+  --color-cta-gradient-1: #c16c1d;
+  --color-cta-gradient-2: #c56b19;
+  --color-cta-gradient-3: #e3801c;
+  --color-cta-gradient-4: #e99029;
+  --color-cta-gradient-5: #f7b750;
+  --color-hero-gradient-1: #cf7a2c;
+  --color-hero-gradient-2: #f7993f;
+  --color-project-overlay: #03090f;
+  --color-project-bg: #040d14;
+  --color-footer-bar-bg: #0a0f13;
+  --color-hero-bg: #0c1a26;
+  --color-about-dark-bg: #111a2c;
+  --color-nav-bar-bg: #192a31;
+  --color-border-card: #d8dfe6;
+  --color-border-location: #e6e3e0;
+  --color-border-sidebar: #e8e8e8;
+  --color-border-why: #e8e8ea;
+  --color-border-soft: #ececec;
+  --color-border-review: #efefef;
+  --color-border-light: #f0f0f0;
+  --color-border-info: #f2f2f2;
+  --color-nav-divider: #eeeeee;
+  --color-surface-warm: #f7f4f2;
+  --color-sidebar-bg: #f8f9fa;
+  --color-info-bg: #f9f9f9;
+  --color-review-bg: #faf9f7;
+  --color-nav-icon-bg: #fbede3;
+  --color-process-bg: #fbfbfb;
+  --color-benefits-bg: #fcf7f4;
+  --color-services-bg: #fcf8f7;
+  --color-surface-white: #fdfdfd;
+  --color-review-badge-bg: #feead7;
+  --color-shadow-black-8: rgba(0, 0, 0, 0.08);
+  --color-shadow-black-12: rgba(0, 0, 0, 0.12);
+  --color-shadow-black-15: rgba(0, 0, 0, 0.15);
+  --color-shadow-black-20: rgba(0, 0, 0, 0.2);
+  --color-shadow-black-25: rgba(0, 0, 0, 0.25);
+  --color-shadow-blog: rgba(15, 25, 45, 0.09);
+  --color-shadow-process: rgba(20, 30, 50, 0.05);
+  --color-shadow-service-hover: rgba(200, 122, 46, 0.35);
+  --color-shadow-nav: rgba(213, 122, 47, 0.3);
+  --color-project-inset: rgba(255, 255, 255, 0.05);
+  --color-shadow-service: rgba(60, 40, 20, 0.05);
+  --color-shadow-service-strong: rgba(60, 40, 20, 0.14);
+  --color-black-90: rgba(0, 0, 0, 0.9);
+  --color-flame-40: rgba(251, 125, 27, 0.4);
+  --color-hero-panel-70: rgba(22, 34, 44, 0.7);
+  --color-ink-50: rgba(10, 28, 38, 0.5);
+  --color-ink-65: rgba(10, 28, 38, 0.65);
+  --color-ink-75: rgba(10, 28, 38, 0.75);
+  --color-ink-80: rgba(10, 28, 38, 0.8);
+  --color-night-70: rgba(6, 18, 25, 0.7);
+  --color-project-overlay-60: rgba(3, 9, 15, 0.6);
+  --color-service-tint-35: rgba(246, 227, 214, 0.35);
+  --color-service-tint-60: rgba(246, 227, 214, 0.6);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-12: rgba(255, 255, 255, 0.12);
+  --color-white-15: rgba(255, 255, 255, 0.15);
+  --color-white-20: rgba(255, 255, 255, 0.2);
+  --color-white-25: rgba(255, 255, 255, 0.25);
+  --color-white-5: rgba(255, 255, 255, 0.05);
+  --color-white-70: rgba(255, 255, 255, 0.7);
+  --color-white-8: rgba(255, 255, 255, 0.08);
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-white-90: rgba(255, 255, 255, 0.9);
+}
 
-  /* Fonts from site.json (theme.fonts) via app/fonts.generated.ts; the second part is the fallback. */
-  --font-main: var(--font-main-face, sans-serif);
-  --font-alt: var(--font-alt-face, sans-serif);
-  --font-display: var(--font-display-face, sans-serif);
-  --font-ui: var(--font-ui-face, sans-serif);
-  --font-text: var(--font-text-face, sans-serif);
+html,
+body {
+  max-width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-backdrop);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
 }

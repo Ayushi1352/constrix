@@ -1,23 +1,6 @@
 {
   "Constrix": {
     "theme": {
-      "colors": {
-        "copper": "#d47930",
-        "copper-light": "#eb9a43",
-        "copper-dark": "#a95e1e",
-        "flame": "#fb7d1b",
-        "tangerine": "#fb7d1b",
-        "nav": "#0a1c26",
-        "ink": "#0a1c26",
-        "coal": "#0a1c26",
-        "night": "#061219",
-        "panel": "#08161f",
-        "cream": "#fcf8f4",
-        "peach": "#fceddd",
-        "mist": "#f9fbfc",
-        "slate": "#5e6870",
-        "page": "#f5f5f5"
-      },
       "fonts": {
         "main": {
           "family": "Poppins",
@@ -80,6 +63,14 @@
           ],
           "italic": false
         }
+      },
+      "fontRoles": {
+        "primary": "main",
+        "heading": "main",
+        "alt": "alt",
+        "display": "display",
+        "ui": "ui",
+        "text": "text"
       }
     },
     "templateComponents": {
@@ -313,6 +304,12 @@
         "variants": {
           "ConstrixHeader1": {
             "site": {
+              "lang": "en",
+              "homeHref": "/",
+              "map": {
+                "embedUrl": "https://www.google.com/maps?q={query}&z=15&output=embed",
+                "openUrl": "https://www.google.com/maps/search/?api=1&query={query}"
+              },
               "name": "Constrix",
               "title": "Constrix | Construction & Infrastructure Solutions",
               "description": "Comprehensive construction and infrastructure solutions\nfor residential, commercial, industrial and civil projects.",
@@ -540,7 +537,8 @@
               "testimonials": {
                 "title": "Testimonials"
               }
-            }
+            },
+            "homeHref": "/"
           }
         }
       },

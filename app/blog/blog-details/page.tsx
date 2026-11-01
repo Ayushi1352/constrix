@@ -16,7 +16,7 @@ export default function BlogDetailsPage() {
   return (
     <>
       <PageBanner title={title} breadcrumbs={[{ label: title }]} />
-      <section className="py-48 sm:py-64 lg:py-80 bg-white xl:pt-60 xl:pb-100">
+      <section className="py-48 sm:py-64 lg:py-80 bg-[var(--color-white)] xl:pt-60 xl:pb-100">
         <div className="mx-auto flex w-full max-w-1686 flex-col gap-40 px-24 sm:px-36 lg:flex-row lg:gap-36 lg:px-64 xl:justify-between xl:gap-48 xl:px-105">
           <BlogArticle post={post} />
           <aside className="w-full shrink-0 lg:w-340 xl:w-420">

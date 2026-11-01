@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -12,33 +13,29 @@ export const metadata: Metadata = {
   description: site.site.description,
 };
 
-// Colours come from site.json (theme.colors) and override the globals.css defaults; invalid values are skipped.
-const isHex = (v: string) => /^#([0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(v);
-const themeCss = `:root{${Object.entries(site.theme.colors)
-  .filter(([, v]) => isHex(v))
-  .map(([k, v]) => `--color-${k}:${v}`)
-  .join(";")}}`;
+// Which font each role uses comes from site.json (theme.fontRoles).
+const themeStyle = Object.fromEntries(
+  Object.entries(site.theme.fontRoles).map(([role, font]) => [`--font-${role}`, `var(--font-${font}-face)`]),
+) as CSSProperties;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang={site.site.lang}
+      style={themeStyle}
       data-scroll-behavior="smooth"
       // Root font size: 16px, and from 1280px it follows the viewport width so the 1686px design scales as a whole.
       // Width only: the screen height (short screens, browser zoom) must not shrink the design's font sizes.
-      // Tailwind v4 leaves buttons on the default cursor, so everything clickable gets the pointer.
+      // Everything clickable gets the pointer.
       className={`${fontVariables} scroll-smooth text-[16px] antialiased xl:text-[length:min(16px,calc(100vw/105.375))] [&_:where(a[href],button:not(:disabled),select,[role=button])]:cursor-pointer`}
     >
-      <head>
-        <style dangerouslySetInnerHTML={{ __html: themeCss }} />
-      </head>
-      <body className="min-h-screen bg-page font-main text-ink">
+      <body className="min-h-screen">
         {/*
           The whole site sits in one frame, at most 1920px wide and centred. Up to 1920px it fills the
           screen, so nothing changes; on wider screens or when the browser is zoomed out the page stays
           in the middle with equal space on both sides instead of stretching.
         */}
-        <div className="mx-auto flex min-h-screen w-full max-w-[1920px] flex-col overflow-x-clip bg-white">
+        <div className="mx-auto flex min-h-screen w-full max-w-[1920px] flex-col overflow-x-clip bg-[var(--color-white)]">
           <Navbar />
           <main className="flex-1">
             <ScrollToTop>{children}</ScrollToTop>

@@ -27,16 +27,16 @@ export default function PageBanner({ title, breadcrumbs }: PageBannerProps) {
         className="object-cover object-[center_30%]"
       />
       {/* CSS overlay that keeps the page title and breadcrumbs readable without modifying the banner image */}
-      <div className="pointer-events-none absolute inset-0 bg-[#0a1c26]/65" />
+      <div className="pointer-events-none absolute inset-0 bg-[var(--color-ink-65)]" />
       <div className="relative px-16 text-center xl:pt-12">
-        <h1 className="font-ui text-[2.125rem] leading-44 font-medium text-white sm:text-[2.75rem] sm:leading-56 xl:text-[3.5rem] xl:leading-70">
+        <h1 className="font-ui text-[2.125rem] leading-44 font-medium text-[var(--color-white)] sm:text-[2.75rem] sm:leading-56 xl:text-[3.5rem] xl:leading-70">
           {title}
         </h1>
         <nav
           aria-label={data.labels.breadcrumb}
-          className="mt-6 flex flex-wrap items-center justify-center gap-8 font-ui text-[0.9375rem] text-white sm:gap-12 xl:mt-16 xl:gap-17 xl:text-[1.125rem]"
+          className="mt-6 flex flex-wrap items-center justify-center gap-8 font-ui text-[0.9375rem] text-[var(--color-white)] sm:gap-12 xl:mt-16 xl:gap-17 xl:text-[1.125rem]"
         >
-          <Link href="/" className="transition-colors hover:text-copper-light">
+          <Link href={data.pageBanner.homeHref} className="transition-colors hover:text-copper-light">
             {data.pageBanner.homeLabel}
           </Link>
           {items.map((item, index) => {
@@ -46,7 +46,7 @@ export default function PageBanner({ title, breadcrumbs }: PageBannerProps) {
                 key={index}
                 className="flex items-center gap-8 sm:gap-12 xl:gap-17"
               >
-                <span className="text-white/70">/</span>
+                <span className="text-[var(--color-white-70)]">/</span>
                 {item.href && !isLast ? (
                   <Link
                     href={item.href}

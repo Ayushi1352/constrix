@@ -41,12 +41,12 @@ export default function SitemapPage() {
     <>
       <PageBanner title={sitemap.title} />
 
-      <main className="py-48 sm:py-64 lg:py-80 bg-white">
+      <main className="py-48 sm:py-64 lg:py-80 bg-[var(--color-white)]">
         <div className="mx-auto w-full max-w-1000 px-16 sm:px-24 md:px-32">
           
           {/* Top Intro callout with vertical bar */}
           <div className="border-l-4 border-copper py-6 pl-18 sm:pl-24">
-            <p className="text-[0.9375rem] leading-[1.75rem] text-[#2c3340] xl:text-[1.0625rem] xl:leading-[1.875rem]">
+            <p className="text-[0.9375rem] leading-[1.75rem] text-[var(--color-text-body-dark)] xl:text-[1.0625rem] xl:leading-[1.875rem]">
               {sitemap.intro}
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function SitemapPage() {
           <div className="mt-40 space-y-36 sm:mt-48 sm:space-y-44">
             
             {/* 1. Main Pages */}
-            <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
+            <section className="border-t border-[var(--color-border-light)] pt-32 sm:pt-36">
               <h2 className="font-main text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:leading-[2rem] lg:leading-[2.125rem]">
                 <span className="text-copper">1.</span> {sitemap.groups.main.title}
               </h2>
@@ -77,7 +77,7 @@ export default function SitemapPage() {
             </section>
 
             {/* 2. Construction Services */}
-            <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
+            <section className="border-t border-[var(--color-border-light)] pt-32 sm:pt-36">
               <h2 className="font-main text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:leading-[2rem] lg:leading-[2.125rem]">
                 <span className="text-copper">2.</span> {sitemap.groups.services.title}
               </h2>
@@ -99,7 +99,7 @@ export default function SitemapPage() {
             </section>
 
             {/* 3. Project Categories */}
-            <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
+            <section className="border-t border-[var(--color-border-light)] pt-32 sm:pt-36">
               <h2 className="font-main text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:leading-[2rem] lg:leading-[2.125rem]">
                 <span className="text-copper">3.</span> {sitemap.groups.projects.title}
               </h2>
@@ -121,7 +121,7 @@ export default function SitemapPage() {
             </section>
 
             {/* 4. Blog & Articles */}
-            <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
+            <section className="border-t border-[var(--color-border-light)] pt-32 sm:pt-36">
               <h2 className="font-main text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:leading-[2rem] lg:leading-[2.125rem]">
                 <span className="text-copper">4.</span> {sitemap.groups.blog.title}
               </h2>
@@ -143,7 +143,7 @@ export default function SitemapPage() {
             </section>
 
             {/* 5. Legal & Support */}
-            <section className="border-t border-[#f0f0f0] pt-32 sm:pt-36">
+            <section className="border-t border-[var(--color-border-light)] pt-32 sm:pt-36">
               <h2 className="font-main text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:leading-[2rem] lg:leading-[2.125rem]">
                 <span className="text-copper">5.</span> {sitemap.groups.support.title}
               </h2>

@@ -10,7 +10,7 @@ export function LineLabel({
   tone?: "dark" | "light" | "orange";
   className?: string;
 }) {
-  const color = tone === "light" ? "text-white" : tone === "orange" ? "text-flame font-bold" : "text-coal";
+  const color = tone === "light" ? "text-[var(--color-white)]" : tone === "orange" ? "text-flame font-bold" : "text-coal";
   return (
     <p
       className={`flex items-center gap-14 font-main text-[0.8125rem] font-medium tracking-[0.3em] uppercase xl:gap-20 xl:text-[1.0625rem] ${align === "center" ? "justify-center" : ""} ${color} ${className}`}

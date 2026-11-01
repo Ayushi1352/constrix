@@ -10,7 +10,7 @@ export default function BlogArticle({ post }: { post: Post }) {
 
   return (
     <article className="min-w-0 flex-1">
-      <div className="relative aspect-[1022/470] overflow-hidden rounded-[6px] shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
+      <div className="relative aspect-[1022/470] overflow-hidden rounded-[6px] shadow-[0_2px_10px_var(--color-shadow-black-8)]">
         <Image
           src={image}
           alt={blogDetail.introTitle}
@@ -24,21 +24,21 @@ export default function BlogArticle({ post }: { post: Post }) {
       <h2 className="mt-24 font-main text-[1.75rem] xl:text-[2.375rem] font-bold text-coal xl:mt-28">
         {blogDetail.introTitle}
       </h2>
-      <p className="mt-8 font-text text-[1rem] xl:text-[1.25rem] leading-[1.75rem] text-[#61717f]">
+      <p className="mt-8 font-text text-[1rem] xl:text-[1.25rem] leading-[1.75rem] text-[var(--color-text-article)]">
         {blogDetail.intro}
       </p>
 
       <ol className="mt-28 space-y-24 sm:mt-32 sm:space-y-28">
         {blogDetail.steps.map((step, index) => (
           <li key={step.title} className="flex items-start gap-16 sm:gap-20">
-            <span className="flex size-54 sm:size-60 shrink-0 items-center justify-center rounded-[4px] bg-flame text-[1.375rem] xl:text-[1.6875rem] font-bold text-white shadow-sm">
+            <span className="flex size-54 sm:size-60 shrink-0 items-center justify-center rounded-[4px] bg-flame text-[1.375rem] xl:text-[1.6875rem] font-bold text-[var(--color-white)] shadow">
               {String(index + 1).padStart(2, "0")}
             </span>
             <div className="min-w-0 pt-2">
               <h3 className="font-main text-[1.4375rem] xl:text-[1.9375rem] font-bold text-coal leading-snug">
                 {step.title}
               </h3>
-              <p className="mt-4 font-text text-[1rem] xl:text-[1.1875rem] leading-[1.625rem] text-[#61717f]">
+              <p className="mt-4 font-text text-[1rem] xl:text-[1.1875rem] leading-[1.625rem] text-[var(--color-text-article)]">
                 {step.text}
               </p>
             </div>
@@ -49,7 +49,7 @@ export default function BlogArticle({ post }: { post: Post }) {
       <h2 className="mt-32 font-main text-[1.75rem] xl:text-[2.375rem] font-bold text-coal sm:mt-36">
         {blogDetail.conclusionTitle}
       </h2>
-      <p className="mt-8 font-text text-[1rem] xl:text-[1.25rem] leading-[1.75rem] text-[#61717f]">
+      <p className="mt-8 font-text text-[1rem] xl:text-[1.25rem] leading-[1.75rem] text-[var(--color-text-article)]">
         {blogDetail.conclusion}
       </p>
     </article>

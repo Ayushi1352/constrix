@@ -8,11 +8,14 @@ import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const OUT = new URL("../app/fonts.generated.ts", import.meta.url);
 const site = JSON.parse(readFileSync(new URL("../data/site.json", import.meta.url), "utf8"));
-const fonts = site[Object.keys(site)[0]].theme.fonts;
+const { fonts, fontRoles } = site[Object.keys(site)[0]].theme;
 // The list of Google Fonts (with their weights and styles) that ships with next/font.
 const catalog = require("next/dist/compiled/@next/font/dist/google/font-data.json");
 
 const errors = [];
+for (const [role, key] of Object.entries(fontRoles)) {
+  if (!fonts[key]) errors.push(`fontRoles.${role} uses "${key}", which is not in theme.fonts`);
+}
 const loaders = Object.entries(fonts).map(([key, font]) => {
   const data = catalog[font.family];
   const weights = font.weights.map(String);

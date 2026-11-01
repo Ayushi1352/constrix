@@ -38,11 +38,11 @@ export default function QuoteForm() {
 
   return (
     <div className="rounded-[4px] bg-panel px-20 py-36 sm:px-32 lg:w-[52%] xl:w-820 xl:shrink-0 xl:px-0 xl:pt-41 xl:pr-39 xl:pb-31 xl:pl-52">
-      <BarLabel className="xl:text-[1.1875rem]!">{form.label}</BarLabel>
-      <h2 className="mt-8 font-display text-[2.5rem] leading-44 font-bold text-white uppercase sm:text-[3.125rem] sm:leading-54 xl:mt-18 xl:text-[3.5rem] xl:leading-64">
+      <BarLabel className="xl:!text-[1.1875rem]">{form.label}</BarLabel>
+      <h2 className="mt-8 font-display text-[2.5rem] leading-44 font-bold text-[var(--color-white)] uppercase sm:text-[3.125rem] sm:leading-54 xl:mt-18 xl:text-[3.5rem] xl:leading-64">
         {form.title} <span className="text-flame">{form.highlight}</span>
       </h2>
-      <p className="mt-10 text-[0.9375rem] xl:text-[1.125rem] leading-25 text-white xl:mt-9 xl:leading-28">{form.text}</p>
+      <p className="mt-10 text-[0.9375rem] xl:text-[1.125rem] leading-25 text-[var(--color-white)] xl:mt-9 xl:leading-28">{form.text}</p>
 
       <form
         className="mt-22 grid gap-x-20 gap-y-18 sm:grid-cols-2 xl:mt-33 xl:gap-x-30 xl:gap-y-24"
@@ -74,7 +74,7 @@ export default function QuoteForm() {
           </Field>
           <button
             type="submit"
-            className="flex h-60 items-center justify-center gap-20 rounded-[4px] border border-flame bg-flame text-[1.125rem] font-semibold text-white transition-colors hover:bg-white hover:text-flame sm:col-span-2 xl:-mt-3 xl:h-71 xl:gap-24 xl:text-[1.25rem]"
+            className="flex h-60 items-center justify-center gap-20 rounded-[4px] border border-flame bg-flame text-[1.125rem] font-semibold text-[var(--color-white)] transition-colors hover:bg-[var(--color-white)] hover:text-flame sm:col-span-2 xl:-mt-3 xl:h-71 xl:gap-24 xl:text-[1.25rem]"
           >
             {form.button}
             <Icon name="arrowRight" className="size-22" strokeWidth={2.2} />

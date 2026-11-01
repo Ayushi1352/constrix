@@ -18,7 +18,7 @@ export default function ServiceOverview({ service }: { service: Service }) {
             {detail.titleBottom} <span className="text-flame">{detail.highlight}</span>
           </span>
         </h2>
-        <p className="mt-14 text-[0.9375rem] xl:text-[1.0625rem] leading-24 text-[#6a6f76] xl:mt-18 xl:leading-26 xl:whitespace-pre-line">
+        <p className="mt-14 text-[0.9375rem] xl:text-[1.0625rem] leading-24 text-[var(--color-text-overview)] xl:mt-18 xl:leading-26 xl:whitespace-pre-line">
           {detail.text}
         </p>
       </div>
