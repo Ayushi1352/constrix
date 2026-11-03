@@ -1,32 +1,25 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/PageBanner";
-import ServiceOverview from "@/components/ServiceOverview";
-import ServiceFeatures from "@/components/ServiceFeatures";
-import ServiceSidebar from "@/components/ServiceSidebar";
-import ModernBand from "@/components/ModernBand";
-import { site as data, pageTitle } from "@/data";
+import rawData from "@/data/templates.json";
+import type { ConstructionTemplateData } from "@/types/templates.types";
+import { Breadcrumb } from "@/components/common/Breadcrumb";
+import { ServiceDetail } from "@/components/sections/ServiceDetail";
+import { ModernBand } from "@/components/sections/ModernBand";
 
+const templateData: ConstructionTemplateData = rawData;
+const sectionData = templateData.categories.Construction.sections;
+const commonData = templateData.common;
+const services = sectionData.Services?.variants?.ConstructionServices1?.items ?? [];
 // One common detail page for every service: all service links point here and it shows the first service.
-// The banner and breadcrumb carry the common page title from site.json, not the service title.
-const service = data.services.items[0];
-const { title } = data.pages.serviceDetail;
+const service = services[0];
 
-export const metadata: Metadata = { title: pageTitle(title) };
+export const metadata: Metadata = { title: service?.title, description: service?.detail.text };
 
 export default function ServiceDetailsPage() {
   return (
-    <>
-      <PageBanner title={title} breadcrumbs={[{ label: title }]} />
-      <section className="py-48 sm:py-64 lg:py-80 bg-[var(--color-white)] xl:pt-60 xl:pb-90">
-        <div className="mx-auto flex w-full max-w-1686 flex-col gap-40 px-24 sm:px-36 lg:flex-row lg:gap-36 lg:px-64 xl:justify-between xl:gap-48 xl:px-105">
-          <div className="min-w-0 flex-1">
-            <ServiceOverview service={service} />
-            <ServiceFeatures title={service.title} />
-          </div>
-          <ServiceSidebar activeTitle={service.title} />
-        </div>
-      </section>
-      <ModernBand />
-    </>
+    <main className="flex-1">
+      <Breadcrumb data={commonData.serviceDetailBreadcrumb} ui={commonData.globalUI} />
+      <ServiceDetail data={sectionData.ServiceDetail?.variants?.ConstructionServiceDetail1} service={service} services={services} />
+      <ModernBand data={sectionData.ModernBand?.variants?.ConstructionModernBand1} />
+    </main>
   );
 }

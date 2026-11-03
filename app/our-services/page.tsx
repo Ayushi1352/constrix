@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/PageBanner";
-import Services from "@/components/Services";
-import Cta from "@/components/Cta";
-import { site as data, pageTitle } from "@/data";
+import rawData from "@/data/templates.json";
+import type { ConstructionTemplateData } from "@/types/templates.types";
+import { Breadcrumb } from "@/components/common/Breadcrumb";
+import { Services } from "@/components/sections/Services";
+import { Cta } from "@/components/sections/Cta";
 
-const { title } = data.pages.ourServices;
+const templateData: ConstructionTemplateData = rawData;
+const sectionData = templateData.categories.Construction.sections;
+const commonData = templateData.common;
 
-export const metadata: Metadata = { title: pageTitle(title) };
+export const metadata: Metadata = { ...commonData.servicesBreadcrumb?.seo };
 
 export default function OurServicesPage() {
   return (
-    <>
-      <PageBanner title={title} />
-      <Services showPagination />
-      <Cta />
-    </>
+    <main className="flex-1">
+      <Breadcrumb data={commonData.servicesBreadcrumb} ui={commonData.globalUI} />
+      <Services data={sectionData.Services?.variants?.ConstructionServices1} ui={commonData.globalUI} showPagination />
+      <Cta data={sectionData.Cta?.variants?.ConstructionCta1} />
+    </main>
   );
 }

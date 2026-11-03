@@ -1,30 +1,23 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/PageBanner";
-import BlogArticle from "@/components/BlogArticle";
-import RecentPosts from "@/components/RecentPosts";
-import AdviceCard from "@/components/AdviceCard";
-import { site as data, pageTitle } from "@/data";
+import rawData from "@/data/templates.json";
+import type { ConstructionTemplateData } from "@/types/templates.types";
+import { Breadcrumb } from "@/components/common/Breadcrumb";
+import { BlogDetail } from "@/components/sections/BlogDetail";
 
+const templateData: ConstructionTemplateData = rawData;
+const sectionData = templateData.categories.Construction.sections;
+const commonData = templateData.common;
+const posts = sectionData.Blogs?.variants?.ConstructionBlogs1?.posts ?? [];
 // One common detail page for every blog post: all blog links point here and it shows the first post.
-// The banner and breadcrumb carry the common page title from site.json, not the post title.
-const post = data.blog.posts[0];
-const { title } = data.pages.blogDetail;
+const post = posts[0];
 
-export const metadata: Metadata = { title: pageTitle(title) };
+export const metadata: Metadata = { title: post?.title.replace(/\n/g, " "), description: post?.text.replace(/\n/g, " ") };
 
 export default function BlogDetailsPage() {
   return (
-    <>
-      <PageBanner title={title} breadcrumbs={[{ label: title }]} />
-      <section className="py-48 sm:py-64 lg:py-80 bg-[var(--color-white)] xl:pt-60 xl:pb-100">
-        <div className="mx-auto flex w-full max-w-1686 flex-col gap-40 px-24 sm:px-36 lg:flex-row lg:gap-36 lg:px-64 xl:justify-between xl:gap-48 xl:px-105">
-          <BlogArticle post={post} />
-          <aside className="w-full shrink-0 lg:w-340 xl:w-420">
-            <RecentPosts currentTitle={post.title} />
-            <AdviceCard />
-          </aside>
-        </div>
-      </section>
-    </>
+    <main className="flex-1">
+      <Breadcrumb data={commonData.blogDetailBreadcrumb} ui={commonData.globalUI} />
+      <BlogDetail data={sectionData.BlogDetail?.variants?.ConstructionBlogDetail1} post={post} posts={posts} />
+    </main>
   );
 }

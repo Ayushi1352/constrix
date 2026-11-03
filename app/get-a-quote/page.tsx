@@ -1,25 +1,20 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/PageBanner";
-import { site as data, pageTitle } from "@/data";
-import QuoteIntro from "@/components/QuoteIntro";
-import QuoteForm from "@/components/QuoteForm";
-import Benefits from "@/components/Benefits";
+import rawData from "@/data/templates.json";
+import type { ConstructionTemplateData } from "@/types/templates.types";
+import { Breadcrumb } from "@/components/common/Breadcrumb";
+import { Quote } from "@/components/sections/Quote";
 
-const { title } = data.pages.getAQuote;
+const templateData: ConstructionTemplateData = rawData;
+const sectionData = templateData.categories.Construction.sections;
+const commonData = templateData.common;
 
-export const metadata: Metadata = { title: pageTitle(title) };
+export const metadata: Metadata = { ...commonData.quoteBreadcrumb?.seo };
 
 export default function GetAQuotePage() {
   return (
-    <>
-      <PageBanner title={title} />
-      <section className="py-48 sm:py-64 lg:py-80 bg-[var(--color-surface-white)] xl:pt-51 xl:pb-38">
-        <div className="mx-auto flex w-full flex-col gap-40 px-16 sm:px-24 lg:flex-row lg:gap-32 lg:px-48 xl:justify-between xl:gap-40 xl:px-80">
-          <QuoteIntro />
-          <QuoteForm />
-        </div>
-      </section>
-      <Benefits />
-    </>
+    <main className="flex-1">
+      <Breadcrumb data={commonData.quoteBreadcrumb} ui={commonData.globalUI} />
+      <Quote data={sectionData.Quote?.variants?.ConstructionQuote1} />
+    </main>
   );
 }

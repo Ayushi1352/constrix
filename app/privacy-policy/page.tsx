@@ -1,48 +1,21 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/PageBanner";
-import { site as data, fillContact, pageTitle } from "@/data";
+import rawData from "@/data/templates.json";
+import type { ConstructionTemplateData } from "@/types/templates.types";
+import { Breadcrumb } from "@/components/common/Breadcrumb";
+import { PolicyPage } from "@/components/sections/PolicyPage";
 
-export const metadata: Metadata = {
-  title: pageTitle(data.privacy.metaTitle),
-  description: data.privacy.metaDescription,
-};
+const templateData: ConstructionTemplateData = rawData;
+const sectionData = templateData.categories.Construction.sections;
+const commonData = templateData.common;
+const { phone, email } = commonData.company;
+
+export const metadata: Metadata = { ...commonData.privacyBreadcrumb?.seo };
 
 export default function PrivacyPolicyPage() {
-  const { privacy } = data;
-
   return (
-    <>
-      <PageBanner title={privacy.title} />
-
-      <main className="py-48 sm:py-64 lg:py-80 bg-[var(--color-white)]">
-        <div className="mx-auto w-full max-w-1000 px-16 sm:px-24 md:px-32">
-          
-          {/* Top Intro callout with vertical bar */}
-          <div className="border-l-4 border-copper py-6 pl-18 sm:pl-24">
-            <p className="text-[0.9375rem] leading-[1.75rem] text-[var(--color-text-body-dark)] xl:text-[1.0625rem] xl:leading-[1.875rem]">
-              {privacy.intro}
-            </p>
-          </div>
-
-          {/* Simple Clean Numbered Sections */}
-          <div className="mt-40 space-y-36 sm:mt-48 sm:space-y-44">
-            {privacy.items.map((item, index) => (
-              <section
-                key={item.title}
-                className="border-t border-[var(--color-border-light)] pt-32 sm:pt-36"
-              >
-                <h2 className="font-main text-[1.125rem] sm:text-[1.25rem] lg:text-[1.375rem] leading-[1.875rem] font-bold text-coal sm:leading-[2rem] lg:leading-[2.125rem]">
-                  <span className="text-copper">{index + 1}.</span> {item.title}
-                </h2>
-                <p className="mt-14 text-[0.9375rem] leading-[1.75rem] text-[var(--color-text-legal)] sm:mt-16 xl:text-[1.0625rem] xl:leading-[1.875rem]">
-                  {fillContact(item.content)}
-                </p>
-              </section>
-            ))}
-          </div>
-
-        </div>
-      </main>
-    </>
+    <main className="flex-1">
+      <Breadcrumb data={commonData.privacyBreadcrumb} ui={commonData.globalUI} />
+      <PolicyPage data={sectionData.PrivacyPolicy?.variants?.ConstructionPrivacyPolicy1} values={{ phone, email }} />
+    </main>
   );
 }

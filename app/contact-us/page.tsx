@@ -1,25 +1,20 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/PageBanner";
-import { site as data, pageTitle } from "@/data";
-import InfoCards from "@/components/InfoCards";
-import ContactForm from "@/components/ContactForm";
-import Location from "@/components/Location";
+import rawData from "@/data/templates.json";
+import type { ConstructionTemplateData } from "@/types/templates.types";
+import { Breadcrumb } from "@/components/common/Breadcrumb";
+import { Contact } from "@/components/sections/Contact";
 
-const { title } = data.pages.contactUs;
+const templateData: ConstructionTemplateData = rawData;
+const sectionData = templateData.categories.Construction.sections;
+const commonData = templateData.common;
 
-export const metadata: Metadata = { title: pageTitle(title) };
+export const metadata: Metadata = { ...commonData.contactBreadcrumb?.seo };
 
 export default function ContactUsPage() {
   return (
-    <>
-      <PageBanner title={title} />
-      <section className="py-48 sm:py-64 lg:py-80 bg-gradient-to-b from-[var(--color-surface-white)] from-10% to-cream to-40% xl:pt-64 xl:pb-213">
-        <InfoCards />
-        <div className="mx-auto mt-32 flex w-full flex-col gap-32 px-16 sm:px-24 lg:flex-row lg:gap-24 lg:px-48 xl:mt-40 xl:px-80">
-          <ContactForm />
-          <Location />
-        </div>
-      </section>
-    </>
+    <main className="flex-1">
+      <Breadcrumb data={commonData.contactBreadcrumb} ui={commonData.globalUI} />
+      <Contact data={sectionData.Contact?.variants?.ConstructionContact1} company={commonData.company} />
+    </main>
   );
 }
