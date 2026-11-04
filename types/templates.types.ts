@@ -484,11 +484,25 @@ export interface ConstructionSections {
   Sitemap?: Section<"Sitemap", SitemapData>;
 }
 
+export interface TemplateComponentEntry {
+  key: string;
+  component: string;
+}
+
+export interface TemplateComponentsData {
+  shared: {
+    Header: string;
+    Footer: string;
+  };
+  pages: Record<string, { components: TemplateComponentEntry[] }>;
+}
+
 export interface ConstructionTemplateData {
   common: CommonData;
   categories: {
     Construction: {
       sections: ConstructionSections;
+      templateComponents: TemplateComponentsData;
     };
   };
 }

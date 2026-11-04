@@ -1529,6 +1529,354 @@
             }
           }
         }
+      },
+      "templateComponents": {
+        "shared": {
+          "Header": "ConstructionHeader1",
+          "Footer": "common.Footer"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Hero",
+                "component": "ConstructionHero1"
+              },
+              {
+                "key": "Services",
+                "component": "ConstructionServices1"
+              },
+              {
+                "key": "AboutUs",
+                "component": "ConstructionAboutUs1"
+              },
+              {
+                "key": "Projects",
+                "component": "ConstructionProjects1"
+              },
+              {
+                "key": "Process",
+                "component": "ConstructionProcess1"
+              },
+              {
+                "key": "Testimonials",
+                "component": "ConstructionTestimonials1"
+              },
+              {
+                "key": "Cta",
+                "component": "ConstructionCta1"
+              },
+              {
+                "key": "Blogs",
+                "component": "ConstructionBlogs1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "about-us": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.aboutBreadcrumb"
+              },
+              {
+                "key": "AboutUs",
+                "component": "ConstructionAboutUs1"
+              },
+              {
+                "key": "Process",
+                "component": "ConstructionProcess1"
+              },
+              {
+                "key": "Cta",
+                "component": "ConstructionCta1"
+              },
+              {
+                "key": "WhyChooseUs",
+                "component": "ConstructionWhyChooseUs1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "our-services": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.servicesBreadcrumb"
+              },
+              {
+                "key": "Services",
+                "component": "ConstructionServices1"
+              },
+              {
+                "key": "Cta",
+                "component": "ConstructionCta1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "service-details": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.serviceDetailBreadcrumb"
+              },
+              {
+                "key": "ServiceDetail",
+                "component": "ConstructionServiceDetail1"
+              },
+              {
+                "key": "ModernBand",
+                "component": "ConstructionModernBand1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "our-projects": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.projectsBreadcrumb"
+              },
+              {
+                "key": "Projects",
+                "component": "ConstructionProjects1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "blog": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.blogsBreadcrumb"
+              },
+              {
+                "key": "Blogs",
+                "component": "ConstructionBlogs1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "blog-details": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.blogDetailBreadcrumb"
+              },
+              {
+                "key": "BlogDetail",
+                "component": "ConstructionBlogDetail1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "testimonials": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.testimonialsBreadcrumb"
+              },
+              {
+                "key": "ClientReviews",
+                "component": "ConstructionClientReviews1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "contact-us": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.contactBreadcrumb"
+              },
+              {
+                "key": "Contact",
+                "component": "ConstructionContact1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "get-a-quote": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.quoteBreadcrumb"
+              },
+              {
+                "key": "Quote",
+                "component": "ConstructionQuote1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "faq": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.faqBreadcrumb"
+              },
+              {
+                "key": "Faq",
+                "component": "ConstructionFaq1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "terms-and-conditions": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.termsBreadcrumb"
+              },
+              {
+                "key": "Terms",
+                "component": "ConstructionTerms1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "privacy-policy": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.privacyBreadcrumb"
+              },
+              {
+                "key": "PrivacyPolicy",
+                "component": "ConstructionPrivacyPolicy1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "sitemap": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "Breadcrumb",
+                "component": "common.sitemapBreadcrumb"
+              },
+              {
+                "key": "Sitemap",
+                "component": "ConstructionSitemap1"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          },
+          "not-found": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "ConstructionHeader1"
+              },
+              {
+                "key": "NotFoundSection",
+                "component": "common.notFound"
+              },
+              {
+                "key": "Footer",
+                "component": "common.Footer"
+              }
+            ]
+          }
+        }
       }
     }
   }
